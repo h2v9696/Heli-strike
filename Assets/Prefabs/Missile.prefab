@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61109031667702242}
   - component: {fileID: 114389597319519258}
   - component: {fileID: 50200557838692920}
+  - component: {fileID: 114678746617958156}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -152,6 +153,18 @@ MonoBehaviour:
   lifeTime: 2
   missileFireTail: {fileID: 1717449321076144}
   missileFireTailShadow: {fileID: 1638087429792676}
+--- !u!114 &114678746617958156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1459781105333006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e2f966e33070043bd856cb45a403ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1128341687018540, guid: 3262adcef37fa0d479f1e1a501d7096c, type: 2}
 --- !u!212 &212258956456587558
 SpriteRenderer:
   m_ObjectHideFlags: 1
