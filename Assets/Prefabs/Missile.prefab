@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e9c86f9a78c8b4b94e644a35cef444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: -7
-  lifeTime: 3
+  moveSpeed: -10
+  lifeTime: 2
   missileFireTail: {fileID: 1717449321076144}
   missileFireTailShadow: {fileID: 1638087429792676}
 --- !u!212 &212258956456587558
@@ -181,7 +181,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -856195011
+  m_SortingLayerID: -1867535027
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14c91733f8e6aff46836d67475c56ba4, type: 3}
   m_Color: {r: 0.5588235, g: 0.5670415, b: 0.5670415, a: 0.653}
@@ -216,7 +216,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -856195011
+  m_SortingLayerID: -1867535027
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5c5b3b35ea9a4424cbb9e489d8f3d565, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -251,7 +251,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -856195011
+  m_SortingLayerID: -1867535027
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 14c91733f8e6aff46836d67475c56ba4, type: 3}
   m_Color: {r: 1, g: 0.853, b: 0.559, a: 0.978}

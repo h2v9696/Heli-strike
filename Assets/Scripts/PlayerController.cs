@@ -9,19 +9,26 @@ public class PlayerController : MonoBehaviour {
 	//public GameObject point;
 	private Vector2 target;
 	public GameObject shadow;
+	//firing
+	public GameObject missile;
+	public GameObject missileFirePoint;
+	private int firePoint = 1;
 
 
 	// Use this for initialization
 	void Start () {
 
 		transform.position = new Vector3 (0, 0, 0);
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		Move ();
+		if (Input.GetKeyDown (KeyCode.Z)) 
+		{
+			Shot ();
+		}
 
 	}
 
@@ -47,5 +54,22 @@ public class PlayerController : MonoBehaviour {
 		pos.y = Mathf.Clamp (pos.y, min.y + 1f, max.y - 1f);
 		transform.position = pos;
 
+	}
+	void Shot ()
+	{
+		//int firePoint;
+		Vector3 offset = new Vector3 (0.3f, 0, 0);
+		if (firePoint == 1) 
+		{
+			Instantiate (missile, missileFirePoint.transform.position + offset, missile.transform.rotation);
+			firePoint = 2;
+			return;
+		}
+		if (firePoint == 2) 
+		{
+			Instantiate (missile, missileFirePoint.transform.position - offset, missile.transform.rotation);
+			firePoint = 1;
+			return;
+		}
 	}
 }
