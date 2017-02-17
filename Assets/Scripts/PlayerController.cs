@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 		Move ();
 		if (Input.GetKeyDown (KeyCode.Z)) 
 		{
-			Shot ();
+			shotMissile ();
 		}
 
 	}
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
 		transform.position = pos;
 
 	}
-	void Shot ()
+	void shotMissile ()
 	{
 		//int firePoint;
 		Vector3 offset = new Vector3 (0.3f, 0, 0);
