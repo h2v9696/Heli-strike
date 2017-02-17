@@ -238,8 +238,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1001 &1738896948
 Prefab:
   m_ObjectHideFlags: 0
@@ -340,3 +341,5 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32d0736b5ae4f314aa973de7e7881fa7, type: 2}
   m_IsPrefabParent: 0
+=======
+>>>>>>> 1b0de69cb6bac77c5ccae23d338bd1279f6e519f
