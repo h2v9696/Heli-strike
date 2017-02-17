@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,13 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - Enemy
   - DestroyArea
+=======
+  - Player
+  - 
+>>>>>>> 10eb9cfcefcbd78317a371a78dd001425685c111
   - 
   - 
   - 
@@ -40,4 +46,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Missile
+    uniqueID: 2427432269
+    locked: 0
+  - name: Player
+    uniqueID: 2046325949
     locked: 0
