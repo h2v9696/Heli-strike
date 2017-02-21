@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Enemy
+  - EnemyBullet
+  - PlayerBullet
+>>>>>>> a8e4b6e2deff4a98a440c4825faf4867b04843b5
   layers:
   - Default
   - TransparentFX
@@ -13,8 +20,13 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - 
   - 
+=======
+  - Player
+  - 
+>>>>>>> a8e4b6e2deff4a98a440c4825faf4867b04843b5
   - 
   - 
   - 
@@ -41,9 +53,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: Default
     uniqueID: 958819813
     locked: 0
   - name: UI
     uniqueID: 4289474757
+=======
+  - name: Projectiles
+    uniqueID: 119315481
+    locked: 0
+  - name: Player
+    uniqueID: 375024047
+>>>>>>> a8e4b6e2deff4a98a440c4825faf4867b04843b5
     locked: 0
