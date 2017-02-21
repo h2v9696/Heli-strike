@@ -10,6 +10,7 @@ public class EnemyAttack : MonoBehaviour {
 	public float shootDelay;
 	private float shootCounter;
 	public bool canShot;
+	public bool isSingleShot;
 
 	void Start () {
 		player = FindObjectOfType<PlayerController> ();
@@ -21,8 +22,13 @@ public class EnemyAttack : MonoBehaviour {
 
 	void Update () {
 		shootCounter -= Time.deltaTime;
-		if (shootCounter<=0) {
+		if (shootCounter<=0 && !isSingleShot) {
 			StartCoroutine ("DoubleShoot");
+			shootCounter = shootDelay;
+		}
+		if (shootCounter<=0 && isSingleShot) {
+			Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
+
 			shootCounter = shootDelay;
 		}
 
@@ -33,4 +39,5 @@ public class EnemyAttack : MonoBehaviour {
 		Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
 
 	}
+
 }
