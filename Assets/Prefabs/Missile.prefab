@@ -165,6 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1128341687018540, guid: 3262adcef37fa0d479f1e1a501d7096c, type: 2}
+  enemyHealthManager: {fileID: 0}
+  dameToGive: 5
 --- !u!212 &212258956456587558
 SpriteRenderer:
   m_ObjectHideFlags: 1
