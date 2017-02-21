@@ -91,11 +91,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &390973929 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1153025411776130, guid: 0cfb2aa476dad9f4ab2c7f3c5a4981e5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1917396525}
 --- !u!1 &1791228894
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,11 +217,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114812471867820106, guid: 0cfb2aa476dad9f4ab2c7f3c5a4981e5,
-        type: 2}
-      propertyPath: shadow
-      value: 
-      objectReference: {fileID: 390973929}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0cfb2aa476dad9f4ab2c7f3c5a4981e5, type: 2}
   m_IsPrefabParent: 0

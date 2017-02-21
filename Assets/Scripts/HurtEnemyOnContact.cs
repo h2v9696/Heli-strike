@@ -5,6 +5,8 @@ using UnityEngine;
 public class HurtEnemyOnContact : MonoBehaviour {
 
 	public GameObject explosion;
+	public EnemyHealthManager enemyHealthManager;
+	public int dameToGive;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +22,10 @@ public class HurtEnemyOnContact : MonoBehaviour {
 	{
 		if (other.tag == "Enemy") 
 		{
-			Destroy (other.gameObject);
+			
 			Destroy (gameObject);
-			Instantiate (explosion, other.transform.position, other.transform.rotation);
+			enemyHealthManager = other.GetComponent<EnemyHealthManager> ();
+			enemyHealthManager.TakeDamage (dameToGive);
 		}
 	}
 }

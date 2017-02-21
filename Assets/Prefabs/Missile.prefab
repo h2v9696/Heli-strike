@@ -165,6 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1128341687018540, guid: 3262adcef37fa0d479f1e1a501d7096c, type: 2}
+  enemyHealthManager: {fileID: 0}
+  dameToGive: 5
 --- !u!212 &212258956456587558
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -194,7 +196,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1867535027
+  m_SortingLayerID: 119315481
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 14c91733f8e6aff46836d67475c56ba4, type: 3}
   m_Color: {r: 0.5588235, g: 0.5670415, b: 0.5670415, a: 0.653}
@@ -229,7 +231,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1867535027
+  m_SortingLayerID: 119315481
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5c5b3b35ea9a4424cbb9e489d8f3d565, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -264,7 +266,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1867535027
+  m_SortingLayerID: 119315481
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 14c91733f8e6aff46836d67475c56ba4, type: 3}
   m_Color: {r: 1, g: 0.853, b: 0.559, a: 0.978}
