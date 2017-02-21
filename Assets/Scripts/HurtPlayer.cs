@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class HurtPlayer : MonoBehaviour {
 	public int damageGiven;
-	//public GameObject weapon;
-
+	private PlayerHealthManager player;
+	void Start () {
+		player = FindObjectOfType<PlayerHealthManager> ();
+	
+	}
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player") {
+			
 			//damageGiven = weapon.power;
 			//HealthManager.HurtPlayer (damageToGive);
 
-			var player = other.GetComponent<PlayerController> ();
+			player.TakeDamage (0);
 			Debug.Log ("Player took dam");
 		}
 	}

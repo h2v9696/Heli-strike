@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114247514825209790}
   m_Layer: 0
   m_Name: EnemyMissile
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   lifeTime: 2
-  power: 3
+  power: 5
   missileFireTail: {fileID: 1491115397720458}
   missileFireTailShadow: {fileID: 1874671143666866}
 --- !u!212 &212249469563691106
