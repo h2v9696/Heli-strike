@@ -135,6 +135,12 @@ Prefab:
       propertyPath: enemyMaxHealth
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114400355820721094, guid: bff9fdc06ee54fe498adbea71293e923,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bff9fdc06ee54fe498adbea71293e923, type: 2}
   m_IsPrefabParent: 0
@@ -192,6 +198,12 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -1.03
       objectReference: {fileID: 0}
+    - target: {fileID: 114192171677476416, guid: b05149f194f4d76448ab5772f1c4240d,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b05149f194f4d76448ab5772f1c4240d, type: 2}
   m_IsPrefabParent: 0
@@ -234,6 +246,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114811329522313712, guid: af9df2f668e26be4c8a9f5a4e215c5ec,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af9df2f668e26be4c8a9f5a4e215c5ec, type: 2}
   m_IsPrefabParent: 0
@@ -281,6 +299,12 @@ Prefab:
       propertyPath: enemyMaxHealth
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114359526443575946, guid: adc69d4dc00823e47bf71878482b5c58,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adc69d4dc00823e47bf71878482b5c58, type: 2}
   m_IsPrefabParent: 0
@@ -327,7 +351,7 @@ Prefab:
         type: 2}
       propertyPath: explosion
       value: 
-      objectReference: {fileID: 114736729991976614, guid: 60cb99e0e83273d4fa62e009f878ab69,
+      objectReference: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
         type: 2}
     - target: {fileID: 114876184309945780, guid: 085b91138a464d94f92491bbffdc2820,
         type: 2}

@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 114192171677476416}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4562108368706738}
   m_Layer: 0
   m_Name: Enemy 4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,8 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMaxHealth: 4
   enemyHealth: 2
-  explosion: {fileID: 114736729991976614, guid: 60cb99e0e83273d4fa62e009f878ab69,
-    type: 2}
+  explosion: {fileID: 0}
   enemyDeath: {fileID: 1869986365875472, guid: 92d65a985dbfa9d4c9e71581e6daa0b6, type: 2}
 --- !u!114 &114332934706818090
 MonoBehaviour:
@@ -255,6 +254,7 @@ MonoBehaviour:
   shootPoint: {fileID: 4127863801481724}
   shootDelay: 1
   canShot: 1
+  isSingleShot: 0
 --- !u!212 &212488183940394712
 SpriteRenderer:
   m_ObjectHideFlags: 1

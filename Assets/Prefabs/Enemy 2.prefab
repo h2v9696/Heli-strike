@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114400355820721094}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4468818250348736}
   m_Layer: 0
   m_Name: Enemy 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,9 +306,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c47f479ea8fc646b5bdf757c114c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyMaxHealth: 0
   enemyHealth: 3
-  explosion: {fileID: 114736729991976614, guid: 60cb99e0e83273d4fa62e009f878ab69,
-    type: 2}
+  explosion: {fileID: 0}
+  enemyDeath: {fileID: 0}
 --- !u!212 &212323102468219700
 SpriteRenderer:
   m_ObjectHideFlags: 1
