@@ -7,14 +7,16 @@ public class EnemyHealthManager : MonoBehaviour {
 	public int enemyHealth;
 	public Explosion explosion;
 	public GameObject enemyDeath;
-
+	private Animator animator;
+	public bool isConstructEnemy;
 	void Start () {
 		enemyHealth = enemyMaxHealth;
+		animator = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (enemyHealth == (enemyMaxHealth / 2)) {
+		if (enemyHealth <= (enemyMaxHealth / 2)) {
 			if (transform.childCount!=0) {
 				var gun = transform.GetChild (0);
 			
@@ -27,12 +29,13 @@ public class EnemyHealthManager : MonoBehaviour {
 			Instantiate (explosion, transform.position, transform.rotation);
 			var parent = transform.parent;
 			Destroy (parent.gameObject);
-			Instantiate (enemyDeath, transform.position, enemyDeath.transform.rotation);
+			if (isConstructEnemy)
+				Instantiate (enemyDeath, transform.position, enemyDeath.transform.rotation);
 		}
 	}
 	public void TakeDamage(int damageTaken) {
 		enemyHealth -= damageTaken;
-
+		animator.SetTrigger ("Damage");
 
 	}
 }
