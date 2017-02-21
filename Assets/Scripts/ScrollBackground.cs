@@ -5,20 +5,24 @@ using UnityEngine;
 public class ScrollBackground : MonoBehaviour {
 
 	public float speed = 0.5f;
+	private float fixSpeed;
+	void Start() {
+		fixSpeed = speed;
+	}
 
 	void Update()
 	{
-		//Vector2 offset = new Vector2 (0,Time.time * speed);
-		//GetComponent<Renderer>().material.SetTextureOffset("_MainText",offset);
-
-		//GetComponent<Renderer> ().material.mainTextureOffset = offset;
-		//GetComponent<Renderer>().sharedMaterial.SetTextureOffset(
-
-		//layers = new Transform[transform.childCount];
-		//for (int i = 0; i < transform.childCount; i++) {
-		//	layers [i] = transform.GetChild (i);
-		//}
+		speed = fixSpeed;
 
 		GetComponent<Rigidbody2D> ().velocity = (transform.up * speed * -1);
+		Debug.Log (speed);
+
 	}
+	public float GetSpeed() {
+		return speed;
+	}
+	public void SetSpeed(float newSpeed) {
+		fixSpeed = newSpeed;
+	}
+
 }

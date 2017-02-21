@@ -12,8 +12,8 @@ public class ProgressBar : MonoBehaviour {
 	private Slider progressBar;  
  	// Use this for initialization
 	void Start () {
-		//curPoint.transform.SetParent (camera_curPoint.transform);
-		//startPoint.transform.SetParent (backGround_startPoint.transform);
+		curPoint.transform.SetParent (camera_curPoint.transform);
+		startPoint.transform.SetParent (backGround_startPoint.transform);
 		progressBar = GetComponent<Slider> ();
 		float maxValue = endPoint.transform.position.y - startPoint.transform.position.y;
 		progressBar.maxValue = maxValue;
