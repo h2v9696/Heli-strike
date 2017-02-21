@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 50116787343318722}
   - component: {fileID: 61512252778061272}
   - component: {fileID: 114192171677476416}
+  - component: {fileID: 95618835701934744}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -115,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1167725208806458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: -0.389, z: 0}
+  m_LocalPosition: {x: -0.005, y: -1.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4068128233718510}
@@ -197,6 +198,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.26, y: 0.66}
+--- !u!95 &95618835701934744
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1495706008307292}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5c5d7bc23d0c0a4482646187408fbc6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114144573441234860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,10 +240,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c47f479ea8fc646b5bdf757c114c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHealth: 4
+  enemyMaxHealth: 15
   enemyHealth: 2
-  explosion: {fileID: 0}
+  explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
+    type: 2}
   enemyDeath: {fileID: 1869986365875472, guid: 92d65a985dbfa9d4c9e71581e6daa0b6, type: 2}
+  isConstructEnemy: 1
 --- !u!114 &114332934706818090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,13 +268,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21fc91a2dc34ff48a57e4fa17bcb620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 1171744911522798, guid: 060953e005095d642bef0640c074a63a,
+  enemyBullet: {fileID: 1813481426395868, guid: c1da416a8b0d8914da5250791fa5f353,
     type: 2}
   player: {fileID: 0}
   shootPoint: {fileID: 4127863801481724}
   shootDelay: 1
   canShot: 1
-  isSingleShot: 0
+  isSingleShot: 1
 --- !u!212 &212488183940394712
 SpriteRenderer:
   m_ObjectHideFlags: 1

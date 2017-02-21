@@ -13,12 +13,19 @@ public class PlayerController : MonoBehaviour {
 	public GameObject missile;
 	public GameObject missileFirePoint;
 	private int firePoint = 1;
+	//deathMovement
+	private bool isLiving;
+	private Vector3 firstScale;
+	public GameObject explosion;
+
 
 
 	// Use this for initialization
 	void Start () {
-
+		isLiving = true;
+		firstScale = transform.lossyScale;
 		transform.position = new Vector3 (0, 0, 0);
+
 	}
 	
 	// Update is called once per frame
@@ -29,7 +36,18 @@ public class PlayerController : MonoBehaviour {
 		{
 			shotMissile ();
 		}
-
+		if (Input.GetKeyDown (KeyCode.X)) 
+		{
+			isLiving = false;
+		}
+		if (Input.GetKeyDown (KeyCode.C)) 
+		{
+			isLiving = true;
+		}
+		if (isLiving == false) 
+		{
+			deathMovement ();
+		}
 	}
 
 	void Move ()
@@ -71,5 +89,20 @@ public class PlayerController : MonoBehaviour {
 			firePoint = 1;
 			return;
 		}
+	}
+	void deathMovement()
+	{
+		if (transform.localScale.x > firstScale.x * 3 / 4) {
+			transform.localScale = new Vector2 (transform.localScale.x - transform.localScale.x * 0.004f, transform.localScale.y - transform.localScale.y * 0.004f);
+			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + 10);
+		} else 
+		{
+			explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x * 3f, explosion.transform.localScale.y * 3f, explosion.transform.localScale.z * 3f);
+			Instantiate (explosion, transform.position, transform.rotation);
+			explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x / 3f, explosion.transform.localScale.y / 3f, explosion.transform.localScale.z / 3f);
+			Destroy (gameObject);
+			isLiving = true;
+		}
+
 	}
 }
