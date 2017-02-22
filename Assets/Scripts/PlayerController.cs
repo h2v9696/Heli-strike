@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 
 	//deathMovement
 	public bool isLiving;
+	public Sprite damageSprite;
 	private Vector3 firstScale;
 	public GameObject explosion;
 
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 		isLiving = true;
 		firstScale = transform.lossyScale;
 		transform.position = new Vector3 (0, 0, 0);
+		damageSprite = Resources.Load<Sprite> ("DamagePlayer");
 
 	}
 	
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (isLiving == false) 
 		{
+			GetComponent<SpriteRenderer> ().sprite = damageSprite;
 			deathMovement ();
 		}
 	}
@@ -104,6 +107,7 @@ public class PlayerController : MonoBehaviour {
 			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + 10);
 		} else 
 		{
+			//GetComponent<SpriteRenderer> ().sprite = damageSprite;
 			explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x * 3f, explosion.transform.localScale.y * 3f, explosion.transform.localScale.z * 3f);
 			Instantiate (explosion, transform.position, transform.rotation);
 			explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x / 3f, explosion.transform.localScale.y / 3f, explosion.transform.localScale.z / 3f);
