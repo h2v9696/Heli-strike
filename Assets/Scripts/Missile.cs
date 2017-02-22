@@ -22,7 +22,7 @@ public class Missile : MonoBehaviour {
 		missileFireTail.transform.localScale = new Vector2 (missileFireTail.transform.localScale.x + missileFireTail.transform.localScale.x * 0.4f * Time.deltaTime, missileFireTail.transform.localScale.y + missileFireTail.transform.localScale.y * 0.4f * Time.deltaTime);
 		missileFireTail.transform.position = new Vector2 (missileFireTail.transform.position.x, missileFireTail.transform.position.y - missileFireTail.transform.position.y * 0.03f * Time.deltaTime);
 
-		missileFireTailShadow.transform.localScale = new Vector2 (missileFireTailShadow.transform.localScale.x + missileFireTailShadow.transform.localScale.x * 0.2f * Time.deltaTime, missileFireTailShadow.transform.localScale.y + missileFireTailShadow.transform.localScale.y * 0.4f * Time.deltaTime);
+		missileFireTailShadow.transform.localScale = new Vector2 (missileFireTailShadow.transform.localScale.x + missileFireTailShadow.transform.localScale.x * 0.4f * Time.deltaTime, missileFireTailShadow.transform.localScale.y + missileFireTailShadow.transform.localScale.y * 0.4f * Time.deltaTime);
 		missileFireTailShadow.transform.position = new Vector2 (missileFireTailShadow.transform.position.x, missileFireTailShadow.transform.position.y - missileFireTailShadow.transform.position.y * 0.03f * Time.deltaTime);
 	}
 	

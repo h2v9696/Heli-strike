@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HurtEnemyOnContact : MonoBehaviour {
 
-	public GameObject explosion;
+	//public GameObject explosion;
 	public EnemyHealthManager enemyHealthManager;
 	public int dameToGive;
 
