@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4680098198428516}
   m_Layer: 0
   m_Name: Enemy 6
-  m_TagString: Enemy
+  m_TagString: Undefined
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4320012994501460}
   shootDelay: 2
-  canShot: 0
+  canShot: 1
   isSingleShot: 0
   isConstruct: 1
 --- !u!114 &114945317497789358
@@ -274,8 +274,8 @@ MonoBehaviour:
   enemyHealth: 2
   explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
     type: 2}
-  enemyDeath: {fileID: 0}
-  isConstructEnemy: 0
+  enemyDeath: {fileID: 1272717192393318, guid: b554c672f41b1f146b0a6b315a2e612d, type: 2}
+  isConstructEnemy: 1
 --- !u!212 &212059664573030176
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -305,7 +305,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1413551257
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8b9a39ae3361a24429d268926587f42b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -340,8 +340,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: -1550618461
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fc904a6c2d7f68a4288d7f5d20980f64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
