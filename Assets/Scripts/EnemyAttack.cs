@@ -11,7 +11,7 @@ public class EnemyAttack : MonoBehaviour {
 	private float shootCounter;
 	public bool canShot;
 	public bool isSingleShot;
-
+	public bool isConstruct;
 	void Start () {
 		player = FindObjectOfType<PlayerController> ();
 		shootCounter = 0;
@@ -22,22 +22,36 @@ public class EnemyAttack : MonoBehaviour {
 
 	void Update () {
 		shootCounter -= Time.deltaTime;
-		if (shootCounter<=0 && !isSingleShot) {
-			StartCoroutine ("DoubleShoot");
+		if (shootCounter <= 0 && isConstruct) {
+			StartCoroutine ("ConstructShoot");
 			shootCounter = shootDelay;
-		}
-		if (shootCounter<=0 && isSingleShot) {
-			Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
+		} else {
+			if (shootCounter <= 0 && !isSingleShot) {
+				StartCoroutine ("DoubleShoot");
+				shootCounter = shootDelay;
+			}
+			if (shootCounter <= 0 && isSingleShot) {
+				Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
 
-			shootCounter = shootDelay;
+				shootCounter = shootDelay;
+			}
 		}
 
 	}
-	IEnumerator DoubleShoot(){
+	IEnumerator DoubleShoot() {
 		Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
-		yield return new WaitForSeconds (0.1f);
+		yield return new WaitForSeconds (0.2f);
 		Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
-
 	}
 
+	IEnumerator ConstructShoot() {
+		int i=4;
+		Vector3 offset = new Vector3(0.25f,0,0);
+		while (0 < i) {
+			i--;
+			Instantiate (enemyBullet, shootPoint.position + offset, gameObject.transform.rotation);
+			yield return new WaitForSeconds (0.1f);
+			Instantiate (enemyBullet, shootPoint.position - offset, gameObject.transform.rotation);
+		}
+	}
 }

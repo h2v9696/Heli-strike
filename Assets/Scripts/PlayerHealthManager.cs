@@ -6,21 +6,33 @@ using UnityEngine.UI;
 public class PlayerHealthManager : MonoBehaviour {
 
 	public int playerHealth;
+	//for death effect
+
+	public PlayerController playerController;
 	public Explosion explosion;
+
+
 	private Animator animator;
+
+
 	private Slider healthBar;
 	public GameObject Slider;
 
-	void Start () {
+	void Start () 
+	{
+		playerController = GetComponent<PlayerController> ();
+
 		healthBar = Slider.GetComponent<Slider> ();
 		//healthBar.maxValue = playerHealth;
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		animator = GetComponent<Animator> ();
 		healthBar.value = playerHealth;
 	}
+
 	public void TakeDamage(int damageTaken) {
 		playerHealth -= damageTaken;
 
@@ -32,9 +44,7 @@ public class PlayerHealthManager : MonoBehaviour {
 		{
 			if (playerHealth <= 0) 
 			{
-				Instantiate (explosion, transform.position, transform.rotation);
-
-				Destroy (gameObject);
+				playerController.isLiving = false;
 			} else 
 			{
 				animator.SetTrigger ("Damage");

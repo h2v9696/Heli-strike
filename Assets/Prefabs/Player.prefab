@@ -236,8 +236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 10
+  playerController: {fileID: 0}
   explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
     type: 2}
+  Slider: {fileID: 0}
 --- !u!114 &114812471867820106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,6 +255,9 @@ MonoBehaviour:
   shadow: {fileID: 1153025411776130}
   missile: {fileID: 1459781105333006, guid: 8a7ea24813c13b0418a5037d0e433ccc, type: 2}
   missileFirePoint: {fileID: 1768815576195038}
+  bullet: {fileID: 1196057262165784, guid: 36cf7f7696f8db34eac6d9eda3357782, type: 2}
+  isLiving: 0
+  explosion: {fileID: 1128341687018540, guid: 3262adcef37fa0d479f1e1a501d7096c, type: 2}
 --- !u!212 &212092477986005824
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -282,7 +287,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1598482591
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4af8b7296a6e5d4418d1a1ecb82e0c04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -317,7 +322,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 375024047
+  m_SortingLayerID: 1598482591
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8837a9c0cb491c042a8c025387936755, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -352,7 +357,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 375024047
+  m_SortingLayerID: 1598482591
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0575d6da8f944a1458b34dae877e6c80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

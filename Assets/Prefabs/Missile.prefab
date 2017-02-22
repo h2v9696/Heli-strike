@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e2f966e33070043bd856cb45a403ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1128341687018540, guid: 3262adcef37fa0d479f1e1a501d7096c, type: 2}
   enemyHealthManager: {fileID: 0}
   dameToGive: 5
 --- !u!212 &212258956456587558
@@ -231,7 +230,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 119315481
+  m_SortingLayerID: -1413551257
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5c5b3b35ea9a4424cbb9e489d8f3d565, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

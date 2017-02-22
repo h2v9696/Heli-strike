@@ -9,12 +9,17 @@ public class PlayerController : MonoBehaviour {
 	//public GameObject point;
 	private Vector2 target;
 	public GameObject shadow;
-	//firing
+
+	//firing missile
 	public GameObject missile;
 	public GameObject missileFirePoint;
 	private int firePoint = 1;
+
+	//firing bullet
+	public GameObject bullet;
+
 	//deathMovement
-	private bool isLiving;
+	public bool isLiving;
 	private Vector3 firstScale;
 	public GameObject explosion;
 
@@ -31,19 +36,19 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Move ();
-		if (Input.GetKeyDown (KeyCode.Z)) 
+		if (isLiving) 
 		{
-			shotMissile ();
+			Move ();
+			if (Input.GetKeyDown (KeyCode.Z)) 
+			{
+				shotMissile ();
+			}
+			if (Input.GetKeyDown (KeyCode.X)) 
+			{
+				shot ();
+			}
 		}
-		if (Input.GetKeyDown (KeyCode.X)) 
-		{
-			isLiving = false;
-		}
-		if (Input.GetKeyDown (KeyCode.C)) 
-		{
-			isLiving = true;
-		}
+
 		if (isLiving == false) 
 		{
 			deathMovement ();
@@ -73,6 +78,7 @@ public class PlayerController : MonoBehaviour {
 		transform.position = pos;
 
 	}
+
 	void shotMissile ()
 	{
 		//int firePoint;
@@ -90,6 +96,7 @@ public class PlayerController : MonoBehaviour {
 			return;
 		}
 	}
+
 	void deathMovement()
 	{
 		if (transform.localScale.x > firstScale.x * 3 / 4) {
@@ -104,5 +111,10 @@ public class PlayerController : MonoBehaviour {
 			isLiving = true;
 		}
 
+	}
+
+	void shot()
+	{
+		Instantiate (bullet, missileFirePoint.transform.position, missileFirePoint.transform.rotation);
 	}
 }
