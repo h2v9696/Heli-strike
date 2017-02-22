@@ -239,7 +239,6 @@ MonoBehaviour:
   playerController: {fileID: 0}
   explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
     type: 2}
-  Slider: {fileID: 0}
 --- !u!114 &114812471867820106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,8 +254,11 @@ MonoBehaviour:
   shadow: {fileID: 1153025411776130}
   missile: {fileID: 1459781105333006, guid: 8a7ea24813c13b0418a5037d0e433ccc, type: 2}
   missileFirePoint: {fileID: 1768815576195038}
+  missileShotDelay: 0.5
   bullet: {fileID: 1196057262165784, guid: 36cf7f7696f8db34eac6d9eda3357782, type: 2}
+  bulletShotDelay: 0.2
   isLiving: 0
+  damageSprite: {fileID: 0}
   explosion: {fileID: 1128341687018540, guid: 3262adcef37fa0d479f1e1a501d7096c, type: 2}
 --- !u!212 &212092477986005824
 SpriteRenderer:

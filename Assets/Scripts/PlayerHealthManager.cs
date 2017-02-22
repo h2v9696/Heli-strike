@@ -11,6 +11,8 @@ public class PlayerHealthManager : MonoBehaviour {
 	public PlayerController playerController;
 	public Explosion explosion;
 
+	private int playerMaxHealth;
+
 
 	private Animator animator;
 
@@ -21,6 +23,7 @@ public class PlayerHealthManager : MonoBehaviour {
 	void Start () 
 	{
 		playerController = GetComponent<PlayerController> ();
+		playerMaxHealth = playerHealth;
 		//Slider = FindObjectOfType<ProgressBar> ();
 
 		//healthBar = Slider.GetComponent<Slider> ();
@@ -31,6 +34,10 @@ public class PlayerHealthManager : MonoBehaviour {
 	void Update () 
 	{
 		animator = GetComponent<Animator> ();
+		if (playerHealth > playerMaxHealth) 
+		{
+			playerHealth = playerMaxHealth;
+		}
 
 		//healthBar.value = playerHealth;
 	}

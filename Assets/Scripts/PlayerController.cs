@@ -10,13 +10,18 @@ public class PlayerController : MonoBehaviour {
 	private Vector2 target;
 	public GameObject shadow;
 
+
 	//firing missile
 	public GameObject missile;
 	public GameObject missileFirePoint;
+	public float missileShotDelay;
+	private float missileShotDelayCounter;
 	private int firePoint = 1;
 
 	//firing bullet
 	public GameObject bullet;
+	public float bulletShotDelay;
+	private float bulletShotDelayCounter;
 
 	//deathMovement
 	public bool isLiving;
@@ -44,10 +49,34 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.Z)) 
 			{
 				shotMissile ();
+				missileShotDelayCounter = missileShotDelay;
+	
+			}
+			if (Input.GetKey (KeyCode.Z)) 
+			{
+				missileShotDelayCounter -= Time.deltaTime;
+				if (missileShotDelayCounter <= 0) 
+				{
+					shotMissile ();
+					missileShotDelayCounter = missileShotDelay;
+				}
+
 			}
 			if (Input.GetKeyDown (KeyCode.X)) 
 			{
 				shot ();
+				bulletShotDelayCounter = bulletShotDelay;
+
+			}
+			if (Input.GetKey(KeyCode.X)) 
+			{
+				bulletShotDelayCounter -= Time.deltaTime;
+				if (bulletShotDelayCounter <= 0) 
+				{
+					shot ();
+					bulletShotDelayCounter = bulletShotDelay;
+				}
+
 			}
 		}
 
