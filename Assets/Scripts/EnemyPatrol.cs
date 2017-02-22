@@ -11,6 +11,7 @@ public class EnemyPatrol : MonoBehaviour {
 	//public float turnSpeed = 1.5f;
 	private float speed;
 	public bool canMove;
+	public float rotationTime;
 	void Start () {
 		//transform.rotation = Quaternion.identity;
 		if (points.transform.childCount != 0) {
@@ -31,7 +32,7 @@ public class EnemyPatrol : MonoBehaviour {
 			//transform.LookAt(transform.position + new Vector3(0,0,1),relativePos);
 			Quaternion rotation = Quaternion.AngleAxis (angle, Vector3.forward);
 			//Quaternion rotation = Quaternion.LookRotation (relativePos);
-			transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * 6f);
+			transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationTime);
 			//SmoothLook(relativePos);
 			//transform.localRotation = Quaternion.Slerp (transform.localRotation, rotation, Time.deltaTime*2);
 			//transform.Translate (Vector3.forward * Time.deltaTime * moveSpeed);
@@ -48,8 +49,8 @@ public class EnemyPatrol : MonoBehaviour {
 				speed = moveSpeed;
 			//Debug.Log (nextPoint);
 			if (nextPoint == points.transform.childCount) {
-				nextPoint = points.transform.childCount - 1;
-				//nextPoint = 0;
+				//nextPoint = points.transform.childCount - 1;
+				nextPoint = 0;
 				speed = 0;
 			}
 		}
