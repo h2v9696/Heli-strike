@@ -15,14 +15,15 @@ public class PlayerHealthManager : MonoBehaviour {
 	private Animator animator;
 
 
-	private Slider healthBar;
-	public ProgressBar Slider;
+	//private Slider healthBar;
+	//public GameObject Slider;
 
 	void Start () 
 	{
 		playerController = GetComponent<PlayerController> ();
-		Slider = FindObjectOfType<ProgressBar> ();
-		healthBar = Slider.GetComponent<Slider> ();
+		//Slider = FindObjectOfType<ProgressBar> ();
+
+		//healthBar = Slider.GetComponent<Slider> ();
 		//healthBar.maxValue = playerHealth;
 	}
 
@@ -30,7 +31,8 @@ public class PlayerHealthManager : MonoBehaviour {
 	void Update () 
 	{
 		animator = GetComponent<Animator> ();
-		healthBar.value = playerHealth;
+
+		//healthBar.value = playerHealth;
 	}
 
 	public void TakeDamage(int damageTaken) {
