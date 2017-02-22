@@ -12,9 +12,9 @@ public class EnemyMissile : MonoBehaviour {
 	public GameObject missileFireTailShadow;
 
 
-	// Use this for initialization
-	void Start () 
-	{
+	private PlayerHealthManager player;
+	void Start () {
+		player = FindObjectOfType<PlayerHealthManager> ();
 		GetComponent<Rigidbody2D> ().velocity = transform.up.normalized * moveSpeed;
 		Destroy (gameObject, lifeTime);
 	}
@@ -31,8 +31,8 @@ public class EnemyMissile : MonoBehaviour {
 			//damageGiven = weapon.power;
 			//HealthManager.HurtPlayer (damageToGive);
 
-			var player = other.GetComponent<PlayerController> ();
-			Debug.Log ("Player took dam");
+
+			player.TakeDamage (power);
 			Destroy (gameObject);
 		}
 	}
