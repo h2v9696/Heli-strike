@@ -16,12 +16,12 @@ public class PlayerHealthManager : MonoBehaviour {
 
 
 	private Slider healthBar;
-	public GameObject Slider;
+	public ProgressBar Slider;
 
 	void Start () 
 	{
 		playerController = GetComponent<PlayerController> ();
-
+		Slider = FindObjectOfType<ProgressBar> ();
 		healthBar = Slider.GetComponent<Slider> ();
 		//healthBar.maxValue = playerHealth;
 	}
