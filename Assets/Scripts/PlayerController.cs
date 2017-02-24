@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed;
+	//private PauseScreen pauseMenu;
+	//private bool isPausing;
 	//private bool isMoving;
 	//public GameObject point;
 	private Vector2 target;
@@ -25,9 +27,12 @@ public class PlayerController : MonoBehaviour {
 
 	//deathMovement
 	public bool isLiving;
-	public Sprite damageSprite;
+	private Sprite damageSprite;
 	private Vector3 firstScale;
 	public GameObject explosion;
+
+	public GameObject[] fireType;
+	public int currentFireType;
 
 
 
@@ -37,14 +42,24 @@ public class PlayerController : MonoBehaviour {
 		firstScale = transform.lossyScale;
 		transform.position = new Vector3 (0, 0, 0);
 		damageSprite = Resources.Load<Sprite> ("DamagePlayer");
-
+		//pauseMenu = FindObjectOfType<PauseScreen> ();
+		//isPausing = pauseMenu.isPaused;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (isLiving) 
+		if (isLiving ) 
 		{
+
+			//change fire type
+			if (Input.GetMouseButtonDown (1)) 
+			{
+				currentFireType++;
+				if (currentFireType >= fireType.Length)
+					currentFireType = 0;
+			}
+
 			Move ();
 			if (Input.GetKeyDown (KeyCode.Z)) 
 			{
@@ -64,7 +79,7 @@ public class PlayerController : MonoBehaviour {
 			}
 			if (Input.GetKeyDown (KeyCode.X)) 
 			{
-				shot ();
+				shot (fireType[currentFireType]);
 				bulletShotDelayCounter = bulletShotDelay;
 
 			}
@@ -73,7 +88,7 @@ public class PlayerController : MonoBehaviour {
 				bulletShotDelayCounter -= Time.deltaTime;
 				if (bulletShotDelayCounter <= 0) 
 				{
-					shot ();
+					shot (fireType[currentFireType]);
 					bulletShotDelayCounter = bulletShotDelay;
 				}
 
@@ -146,8 +161,13 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
-	void shot()
+	void shot(GameObject fireType)
 	{
-		Instantiate (bullet, missileFirePoint.transform.position, missileFirePoint.transform.rotation);
+		Transform firePosition;
+		for (int i = 0; i < fireType.transform.childCount; i++) 
+		{
+			firePosition = fireType.transform.GetChild (i);
+			Instantiate (bullet, firePosition.transform.position, firePosition.transform.rotation);
+		}
 	}
 }

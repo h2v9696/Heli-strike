@@ -60,4 +60,8 @@ public class PlayerHealthManager : MonoBehaviour {
 			}
 		}
 	}
+	public int playerCurrentHealth ()
+	{
+		return playerHealth;
+	}
 }
