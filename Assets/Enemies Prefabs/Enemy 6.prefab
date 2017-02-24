@@ -229,6 +229,9 @@ MonoBehaviour:
   moveSpeed: 2
   points: {fileID: 4240230462550860}
   canMove: 0
+  rotationTime: 6
+  shadow: {fileID: 0}
+  isFlying: 0
 --- !u!114 &114709888355556530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,6 +262,7 @@ MonoBehaviour:
   canShot: 1
   isSingleShot: 0
   isConstruct: 1
+  isFlying: 0
 --- !u!114 &114945317497789358
 MonoBehaviour:
   m_ObjectHideFlags: 1
