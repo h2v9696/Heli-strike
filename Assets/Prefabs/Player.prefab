@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 95970662721746858}
   - component: {fileID: 60743418185468134}
   - component: {fileID: 114463777688971834}
+  - component: {fileID: 114174579742742836}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -398,6 +399,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114174579742742836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1485544843134522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0897708983a474c9902e40e9f09ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  explosion: {fileID: 1128341687018540, guid: 3262adcef37fa0d479f1e1a501d7096c, type: 2}
 --- !u!114 &114463777688971834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -433,7 +447,7 @@ MonoBehaviour:
   bullet: {fileID: 1196057262165784, guid: 36cf7f7696f8db34eac6d9eda3357782, type: 2}
   bulletShotDelay: 0.2
   isLiving: 0
-  explosion: {fileID: 1128341687018540, guid: 3262adcef37fa0d479f1e1a501d7096c, type: 2}
+  playerDeathParticle: {fileID: 0}
   fireType:
   - {fileID: 1750996774079248}
   - {fileID: 1466701418104000}
@@ -468,7 +482,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1598482591
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 4af8b7296a6e5d4418d1a1ecb82e0c04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -538,7 +552,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1598482591
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0575d6da8f944a1458b34dae877e6c80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
