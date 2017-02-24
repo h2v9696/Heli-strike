@@ -13,8 +13,6 @@ public class EnemyPatrol : MonoBehaviour {
 	public bool canMove;
 	public float rotationTime;
 	public GameObject shadow;
-	public bool isFlying;
-
 	void Start () {
 		//Lay list cac diem de di chuyen
 		if (points.transform.childCount != 0) {
@@ -39,9 +37,9 @@ public class EnemyPatrol : MonoBehaviour {
 			transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationTime);
 			transform.position = Vector3.MoveTowards (transform.position, listPoints [nextPoint].position, Time.deltaTime * speed);
 			//Vi tri bong
-			if (isFlying)
-				shadow.transform.position = new Vector3(transform.position.x - transform.position.x * 0.1f,transform.position.y - transform.position.y * 0.1f, transform.position.z);
-
+			if (shadow != null) {
+				shadow.transform.position = new Vector3 (transform.position.x - transform.position.x * 0.1f, transform.position.y - transform.position.y * 0.1f, transform.position.z);
+			}
 			if (distance <= 0.5f) {
 				nextPoint++;
 			} else
