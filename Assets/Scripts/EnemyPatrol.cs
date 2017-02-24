@@ -12,8 +12,11 @@ public class EnemyPatrol : MonoBehaviour {
 	private float speed;
 	public bool canMove;
 	public float rotationTime;
+	public GameObject shadow;
+	public bool isFlying;
+
 	void Start () {
-		//transform.rotation = Quaternion.identity;
+		//Lay list cac diem de di chuyen
 		if (points.transform.childCount != 0) {
 			for (int i = 0; i < points.transform.childCount; i++) {
 				listPoints [i] = points.transform.GetChild (i);
@@ -23,6 +26,7 @@ public class EnemyPatrol : MonoBehaviour {
 			speed = moveSpeed;
 		else
 			speed = 0;
+		
 	}
 	void Update () {
 		if (points.transform.childCount != 0) {
@@ -33,24 +37,19 @@ public class EnemyPatrol : MonoBehaviour {
 			Quaternion rotation = Quaternion.AngleAxis (angle, Vector3.forward);
 			//Quaternion rotation = Quaternion.LookRotation (relativePos);
 			transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationTime);
-			//SmoothLook(relativePos);
-			//transform.localRotation = Quaternion.Slerp (transform.localRotation, rotation, Time.deltaTime*2);
-			//transform.Translate (Vector3.forward * Time.deltaTime * moveSpeed);
 			transform.position = Vector3.MoveTowards (transform.position, listPoints [nextPoint].position, Time.deltaTime * speed);
-			//GetComponent<Rigidbody2D>().velocity = direction*moveSpeed;
+			//Vi tri bong
+			if (isFlying)
+				shadow.transform.position = new Vector3(transform.position.x - transform.position.x * 0.1f,transform.position.y - transform.position.y * 0.1f, transform.position.z);
 
-			//Debug.Log (direction);
 			if (distance <= 0.5f) {
-				//speed = turnSpeed;
-				//transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-				//if (distance <= 0.1f)
 				nextPoint++;
 			} else
 				speed = moveSpeed;
-			//Debug.Log (nextPoint);
+		
 			if (nextPoint == points.transform.childCount) {
-				//nextPoint = points.transform.childCount - 1;
-				nextPoint = 0;
+				nextPoint = points.transform.childCount - 1;
+				//nextPoint = 0;
 				speed = 0;
 			}
 		}

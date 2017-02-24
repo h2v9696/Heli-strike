@@ -9,9 +9,13 @@ public class EnemyHealthManager : MonoBehaviour {
 	public GameObject enemyDeath;
 	private Animator animator;
 	public bool isConstructEnemy;
+	private Sprite deathSprite;
+	private EnemyPatrol enemy;
 	void Start () {
 		enemyHealth = enemyMaxHealth;
 		animator = GetComponent<Animator> ();
+		deathSprite = Resources.Load<Sprite> ("DeathEnemy");
+		enemy = GetComponent<EnemyPatrol> ();
 	}
 
 	// Update is called once per frame
@@ -25,14 +29,21 @@ public class EnemyHealthManager : MonoBehaviour {
 		}
 		if (enemyHealth <= 0) {
 			//explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z) * enemyHealth;
-
-			Instantiate (explosion, transform.position, transform.rotation);
-			var parent = transform.parent;
-			Destroy (parent.gameObject);
-			if (isConstructEnemy)
-				Instantiate (enemyDeath, transform.position, enemyDeath.transform.rotation);
+			if (!enemy.isFlying) {
+				explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z)*3f;
+				Instantiate (explosion, transform.position, transform.rotation);
+				explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z)/3f;
+				//Instantiate (explosion, transform.position, transform.rotation);
+				var parent = transform.parent;
+				Destroy (parent.gameObject);
+				if (isConstructEnemy)
+					Instantiate (enemyDeath, transform.position, enemyDeath.transform.rotation);
+				
+			}
+			
 		}
 	}
+
 	public void TakeDamage(int damageTaken) {
 		enemyHealth -= damageTaken;
 		animator.SetTrigger ("Damage");
