@@ -31,6 +31,11 @@ public class PauseScreen : MonoBehaviour {
 		isPaused = false;
 	}
 
+	public bool getIsPaused()
+	{
+		return isPaused;
+	}
+
 	//public void MainMenu()
 	//{
 	//	Application.LoadLevel (titleScreen);
