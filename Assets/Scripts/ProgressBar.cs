@@ -12,6 +12,8 @@ public class ProgressBar : MonoBehaviour {
 	private Slider progressBar;  
  	// Use this for initialization
 	void Start () {
+		//camera_curPoint = GameObject.Find ("Main Camera");
+		//backGround_startPoint = GameObject.Find ("Background");
 		curPoint.transform.SetParent (camera_curPoint.transform);
 		startPoint.transform.SetParent (backGround_startPoint.transform);
 		progressBar = GetComponent<Slider> ();
@@ -21,6 +23,8 @@ public class ProgressBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//camera_curPoint = GameObject.Find ("Main Camera");
+		//backGround_startPoint = GameObject.Find ("Background");
 		float progress = curPoint.transform.position.y - startPoint.transform.position.y;
 		progressBar.value = progress;
 	}
