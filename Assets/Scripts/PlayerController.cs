@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed;
-	//private PauseScreen pauseMenu;
-	//private bool isPausing;
+	private PauseScreen pauseMenu;
+	public bool isPausing;
 	//private bool isMoving;
 	//public GameObject point;
 	private Vector2 target;
@@ -42,14 +42,16 @@ public class PlayerController : MonoBehaviour {
 		firstScale = transform.lossyScale;
 		transform.position = new Vector3 (0, 0, 0);
 		damageSprite = Resources.Load<Sprite> ("DamagePlayer");
-		//pauseMenu = FindObjectOfType<PauseScreen> ();
-		//isPausing = pauseMenu.isPaused;
+
+		pauseMenu = FindObjectOfType<PauseScreen> ();
+		isPausing = pauseMenu.getIsPaused();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (isLiving ) 
+		isPausing = pauseMenu.getIsPaused();
+		if (isLiving && !isPausing ) 
 		{
 
 			//change fire type
