@@ -18,7 +18,7 @@ public class ScrollBackground : MonoBehaviour {
 		if (theProgressBar.progress >= theProgressBar.maxValue)
 			speed = 0f;
 
-		GetComponent<Rigidbody2D> ().velocity = (transform.up * speed * -1);
+		GetComponent<Rigidbody2D> ().velocity = (Vector3.up * speed * -1);
 
 
 	}

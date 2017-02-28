@@ -64,6 +64,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4151071239893948}
+  - component: {fileID: 50242190444058002}
+  - component: {fileID: 114197436831060288}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -115,6 +117,7 @@ GameObject:
   - component: {fileID: 61145803058876374}
   - component: {fileID: 114876184309945780}
   - component: {fileID: 95424114692357174}
+  - component: {fileID: 114433947919086998}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -130,6 +133,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4778421388679752}
+  - component: {fileID: 50753474637898054}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -144,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1392125865618048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.92, y: 4.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4365659147949746}
@@ -201,7 +205,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1911666961173918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06930274, y: 0.07967067, z: 0}
+  m_LocalPosition: {x: -7.43, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4927494575103300}
@@ -229,7 +233,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639877151015832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.72, y: -4.21, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: -2, z: 2}
   m_Children: []
   m_Father: {fileID: 4778421388679752}
@@ -248,6 +252,26 @@ Transform:
   m_Father: {fileID: 4151071239893948}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50242190444058002
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392125865618048}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50704643258918458
 Rigidbody2D:
   serializedVersion: 4
@@ -255,6 +279,26 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639877151015832}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &50753474637898054
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1911666961173918}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -299,6 +343,30 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114197436831060288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1392125865618048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+--- !u!114 &114433947919086998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639877151015832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
 --- !u!114 &114876184309945780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -316,6 +384,9 @@ MonoBehaviour:
     type: 2}
   enemyDeath: {fileID: 0}
   isConstructEnemy: 0
+  deathAnimationTime: 0.25
+  isDeath: 0
+  isFlying: 0
 --- !u!114 &114928752989993940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,7 +403,6 @@ MonoBehaviour:
   canMove: 1
   rotationTime: 6
   shadow: {fileID: 0}
-  isFlying: 0
 --- !u!212 &212512095272469854
 SpriteRenderer:
   m_ObjectHideFlags: 1

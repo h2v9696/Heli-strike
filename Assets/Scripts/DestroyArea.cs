@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroyArea : MonoBehaviour 
 {
+	private SpawnPoint spawnPoint;
 	void Start()
 	{Debug.Log (" ");}
 	void OnTriggerExit2D(Collider2D c)
@@ -12,5 +13,10 @@ public class DestroyArea : MonoBehaviour
 		Destroy (c.gameObject);
 	}
 
-
+	void OnTriggerEnter2D(Collider2D c)
+	{
+		if (c.name == "SpawnPoint")
+			
+		c.gameObject.GetComponent<SpawnPoint> ().SpawnEnemy ();
+	}
 }
