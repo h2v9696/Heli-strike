@@ -8,20 +8,29 @@ public class GameOver : MonoBehaviour {
 	private PlayerController playerController;
 	public GameObject gameOverCanvas;
 	public string restart;
+	public float delay = 4f;
+	float delayTimer;
+	private PlayerHealthManager playerHealth;
 
 
 
 	void Start () {
 		playerController = FindObjectOfType<PlayerController> ();
+		playerHealth = FindObjectOfType<PlayerHealthManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (playerController.isLiving==false) {
-			gameOverCanvas.SetActive (true);
+		if (playerHealth.playerHealth<=0) {
+			delayTimer += Time.deltaTime;
+			if (delayTimer >= delay) {
+				gameOverCanvas.SetActive (true);
 
-			Time.timeScale = 0f;
+				Time.timeScale = 0f;
+			}
+			//StartCoroutine(showGameOverScreen ());
 		}
+		
 		
 	}
 
@@ -29,4 +38,12 @@ public class GameOver : MonoBehaviour {
 	{
 		Application.LoadLevel (restart);
 	}
+
+	/*IEnumerator showGameOverScreen()
+	{
+		yield return new WaitForSeconds (delay);
+		gameOverCanvas.SetActive (true);
+
+		Time.timeScale = 0f;
+	}*/
 }
