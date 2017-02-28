@@ -102,6 +102,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1731355655546022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4799662511615764}
+  m_Layer: 0
+  m_Name: Death
+  m_TagString: Untagged
+  m_Icon: {fileID: -2349822300998112484, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1758195436422278
 GameObject:
   m_ObjectHideFlags: 1
@@ -288,11 +303,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338365273103660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.15, y: 1.54, z: 0}
+  m_LocalPosition: {x: -3.73, y: -1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4093200798794872}
   - {fileID: 4724912078888804}
+  - {fileID: 4799662511615764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -328,6 +344,19 @@ Transform:
   - {fileID: 4072357432187216}
   m_Father: {fileID: 4427990404708070}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4799662511615764
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731355655546022}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.89, y: 8.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4427990404708070}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4807106196615228
 Transform:
@@ -435,7 +464,7 @@ MonoBehaviour:
   canMove: 0
   rotationTime: 6
   shadow: {fileID: 1374823063093486}
-  isFlying: 1
+  deathPoint: {fileID: 4799662511615764}
 --- !u!114 &114375031188295464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -464,6 +493,8 @@ MonoBehaviour:
     type: 2}
   enemyDeath: {fileID: 0}
   isConstructEnemy: 0
+  isDeath: 0
+  isFlying: 1
 --- !u!114 &114997284070471852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -479,10 +510,11 @@ MonoBehaviour:
     type: 2}
   player: {fileID: 0}
   shootPoint: {fileID: 4202268168665296}
-  shootDelay: 1
+  shootDelay: 2
   canShot: 1
   isSingleShot: 0
   isConstruct: 0
+  isFlying: 1
 --- !u!212 &212049767637161506
 SpriteRenderer:
   m_ObjectHideFlags: 1
