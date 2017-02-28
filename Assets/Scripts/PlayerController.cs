@@ -35,11 +35,15 @@ public class PlayerController : MonoBehaviour {
 	public GameObject[] fireType;
 	public int currentFireType;
 	private bool isFireBullet;
+	//count number of missile of player
+	public int numberMissile;
+	private int maxNumberMissile;
 
 
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		isLiving = true;
 		firstScale = transform.lossyScale;
 		transform.position = new Vector3 (0, 0, 0);
@@ -49,11 +53,13 @@ public class PlayerController : MonoBehaviour {
 		isPausing = pauseMenu.getIsPaused();
 		playerDeathParticle = GetComponent<PlayerDeathParticle> ();
 		isFireBullet = true;
+		maxNumberMissile = numberMissile;
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		isPausing = pauseMenu.getIsPaused();
 		if (isLiving && !isPausing ) 
 		{
@@ -67,6 +73,7 @@ public class PlayerController : MonoBehaviour {
 				} else 
 				{
 					shotMissile ();
+					numberMissile -=1;
 					missileShotDelayCounter = missileShotDelay;
 				}
 			}
@@ -87,18 +94,21 @@ public class PlayerController : MonoBehaviour {
 					if (missileShotDelayCounter <= 0) 
 					{
 						shotMissile ();
+						numberMissile -=1;
 						missileShotDelayCounter = missileShotDelay;
 					}
 				}
 			}
 
 			//change bullet fire type
-			if (Input.GetMouseButtonDown (1)) 
+			/*
+			 if (Input.GetMouseButtonDown (1)) 
 			{
 				currentFireType++;
 				if (currentFireType >= fireType.Length)
 					currentFireType = 0;
 			}
+			*/
 
 			//change fire type
 			if (Input.GetAxis ("Mouse ScrollWheel") != 0f) 
@@ -115,10 +125,12 @@ public class PlayerController : MonoBehaviour {
 				isFireBullet = false;
 			}
 
+
 			//fire missile by key
 			if (Input.GetKeyDown (KeyCode.Space)) 
 			{
 				shotMissile ();
+				numberMissile -=1;
 				missileShotDelayCounter = missileShotDelay;
 			}
 			if (Input.GetKey (KeyCode.Space)) 
@@ -127,9 +139,16 @@ public class PlayerController : MonoBehaviour {
 				if (missileShotDelayCounter <= 0) 
 				{
 					shotMissile ();
+					numberMissile -=1;
 					missileShotDelayCounter = missileShotDelay;
 				}
 			}
+
+			//for reset number of missile
+			if (numberMissile < 0)
+				numberMissile = 0;
+			if (numberMissile > maxNumberMissile)
+				numberMissile = maxNumberMissile;
 		}
 
 		if (isLiving == false) 
@@ -167,18 +186,22 @@ public class PlayerController : MonoBehaviour {
 	{
 		//int firePoint;
 		Vector3 offset = new Vector3 (0.3f, 0, 0);
-		if (firePoint == 1) 
+		if (numberMissile > 0) 
 		{
-			Instantiate (missile, missileFirePoint.transform.position + offset, missile.transform.rotation);
-			firePoint = 2;
-			return;
+			if (firePoint == 1) {
+				Instantiate (missile, missileFirePoint.transform.position + offset, missile.transform.rotation);
+				firePoint = 2;
+				return;
+			}
+			if (firePoint == 2) {
+				Instantiate (missile, missileFirePoint.transform.position - offset, missile.transform.rotation);
+				firePoint = 1;
+				return;
+			}
+
+
 		}
-		if (firePoint == 2) 
-		{
-			Instantiate (missile, missileFirePoint.transform.position - offset, missile.transform.rotation);
-			firePoint = 1;
-			return;
-		}
+
 	}
 
 
@@ -191,9 +214,29 @@ public class PlayerController : MonoBehaviour {
 			Instantiate (bullet, firePosition.transform.position, firePosition.transform.rotation);
 		}
 	}
+
+
 	public void setIsLiving()
 	{
 		isLiving = true;
 
+	}
+
+
+
+	public void addMissile(int numberToAdd)
+	{
+		numberMissile += numberToAdd;
+	}
+
+
+	public void changeMissileType()
+	{
+		missile = Resources.Load<GameObject> ("Missile_2");
+	}
+
+	public void changeBulletType()
+	{
+		currentFireType = 1;
 	}
 }

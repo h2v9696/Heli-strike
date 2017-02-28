@@ -452,6 +452,7 @@ MonoBehaviour:
   - {fileID: 1750996774079248}
   - {fileID: 1466701418104000}
   currentFireType: 0
+  numberMissile: 20
 --- !u!212 &212092477986005824
 SpriteRenderer:
   m_ObjectHideFlags: 1

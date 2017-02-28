@@ -39,6 +39,11 @@ public class PlayerHealthManager : MonoBehaviour {
 			playerHealth = playerMaxHealth;
 		}
 
+		if (playerHealth <= 0) 
+		{
+			playerController.isLiving = false;
+		}
+
 		//healthBar.value = playerHealth;
 	}
 
@@ -51,13 +56,9 @@ public class PlayerHealthManager : MonoBehaviour {
 	{
 		if (other.tag == "EnemyBullet") 
 		{
-			if (playerHealth <= 0) 
-			{
-				playerController.isLiving = false;
-			} else 
-			{
+
 				animator.SetTrigger ("Damage");
-			}
+
 		}
 
 	}
