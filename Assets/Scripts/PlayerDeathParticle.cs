@@ -5,18 +5,45 @@ using UnityEngine;
 public class PlayerDeathParticle : MonoBehaviour {
 
 	public PlayerController player;
+
+	//for explosion animation
 	public GameObject explosion;
+	private float timeExplosionDelay;
+	private float timeExplosionDelayCounter;
+	private Vector3 offset;
+	private int currentExplosionPos;
 
 	void Start()
 	{
 		player = GetComponent<PlayerController> ();
+		timeExplosionDelay = 0.5f;
+		timeExplosionDelayCounter = timeExplosionDelay;
+		offset = new Vector3 (0.2f, 0.5f, 0f);
+		currentExplosionPos = 1;
 	}
 
 	public void deathParticle(Vector3 firstScale)
 	{
-		if (transform.localScale.x > firstScale.x * 3 / 4) {
+		if (transform.localScale.x > firstScale.x * 3 / 4) 
+		{
+			timeExplosionDelayCounter -= Time.deltaTime;
+			if (timeExplosionDelayCounter <= 0) 
+			{
+				if (currentExplosionPos == 1) 
+				{
+					Instantiate (explosion, transform.position + offset, transform.rotation);
+					currentExplosionPos = 2;
+				}
+				else if (currentExplosionPos == 2) 
+				{
+					Instantiate (explosion, transform.position - offset, transform.rotation);
+					currentExplosionPos = 1;
+				}
+				timeExplosionDelayCounter = timeExplosionDelay;
+			}
+
 			transform.localScale = new Vector2 (transform.localScale.x - transform.localScale.x * 0.004f, transform.localScale.y - transform.localScale.y * 0.004f);
-			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + 10);
+			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + 5);
 		} else 
 		{
 			//GetComponent<SpriteRenderer> ().sprite = damageSprite;
