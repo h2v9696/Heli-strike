@@ -8,6 +8,8 @@ public class PauseScreen : MonoBehaviour {
 
 	public bool isPaused;
 
+	public string mainMenu;
+
 	public GameObject pauseMenuCanvas;
 
 	void Update()
@@ -36,8 +38,8 @@ public class PauseScreen : MonoBehaviour {
 		return isPaused;
 	}
 
-	//public void MainMenu()
-	//{
-	//	Application.LoadLevel (titleScreen);
-	//}
+	public void MainMenu()
+	{
+		Application.LoadLevel (mainMenu);
+	}
 }

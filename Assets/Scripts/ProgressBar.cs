@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour {
 	public GameObject camera_curPoint;
 	public GameObject backGround_startPoint;
+
 	public GameObject startPoint;
 	public GameObject endPoint;
 	public GameObject curPoint;
+
+	public float maxValue;
+	public float progress;
+
 	private Slider progressBar;  
  	// Use this for initialization
 	void Start () {
@@ -17,7 +22,8 @@ public class ProgressBar : MonoBehaviour {
 		curPoint.transform.SetParent (camera_curPoint.transform);
 		startPoint.transform.SetParent (backGround_startPoint.transform);
 		progressBar = GetComponent<Slider> ();
-		float maxValue = endPoint.transform.position.y - startPoint.transform.position.y;
+		//float 
+		maxValue = endPoint.transform.position.y - startPoint.transform.position.y;
 		progressBar.maxValue = maxValue;
 	}
 	
@@ -25,7 +31,8 @@ public class ProgressBar : MonoBehaviour {
 	void Update () {
 		//camera_curPoint = GameObject.Find ("Main Camera");
 		//backGround_startPoint = GameObject.Find ("Background");
-		float progress = curPoint.transform.position.y - startPoint.transform.position.y;
+		//float
+		progress = curPoint.transform.position.y - startPoint.transform.position.y;
 		progressBar.value = progress;
 	}
 }

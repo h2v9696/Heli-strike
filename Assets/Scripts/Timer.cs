@@ -4,18 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
-/*	public float startTime=0;
-	private string rounder;
-
+	public float second	;
+	public int min;
+	string rounder;
+	//private PauseScreen thePauseScreen;
+	//private bool isPausing;
 	private Text theText;
 	void Start()
-	{
+	{   second = 54f;
 		theText = GetComponent<Text> ();
+	//	thePauseScreen = FindObjectOfType<PauseScreen> ();
 	}
 
 	void Update()
-	{	startTime += Time.deltaTime;
-		rounder.Format("{0:0.00}",startTime);
-		theText.text = "" + startTime;
-	}*/
+	{	second += Time.deltaTime;
+		
+		//isPausing = thePauseScreen.getIsPaused ();
+		//Debug.Log (isPausing);
+		if(second >= 59f) 
+		{
+			second = 0f; 
+			min++;
+		}
+		 rounder = string.Format("{0:00}.{1:00}",min,Mathf.Round(second));
+		theText.text = "" + rounder;
+
+	}
 }

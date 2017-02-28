@@ -1020,6 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1276688732979832}
+  level_1: chinh
 --- !u!114 &114835039650672916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1059,7 +1060,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114719789493423404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114816069948595610}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114843596110161106
@@ -1154,6 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1045395575880438}
+  level_1: 
 --- !u!222 &222044829491332872
 CanvasRenderer:
   m_ObjectHideFlags: 1
