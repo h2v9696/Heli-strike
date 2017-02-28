@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed;
+	private PauseScreen pauseMenu;
+	public bool isPausing;
 	//private bool isMoving;
 	//public GameObject point;
 	private Vector2 target;
@@ -25,9 +27,14 @@ public class PlayerController : MonoBehaviour {
 
 	//deathMovement
 	public bool isLiving;
-	public Sprite damageSprite;
+	private Sprite damageSprite;
 	private Vector3 firstScale;
-	public GameObject explosion;
+	//public GameObject explosion;
+	public PlayerDeathParticle playerDeathParticle;
+
+	public GameObject[] fireType;
+	public int currentFireType;
+	private bool isFireBullet;
 
 
 
@@ -38,21 +45,83 @@ public class PlayerController : MonoBehaviour {
 		transform.position = new Vector3 (0, 0, 0);
 		damageSprite = Resources.Load<Sprite> ("DamagePlayer");
 
+		pauseMenu = FindObjectOfType<PauseScreen> ();
+		isPausing = pauseMenu.getIsPaused();
+		playerDeathParticle = GetComponent<PlayerDeathParticle> ();
+		isFireBullet = true;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (isLiving) 
+		isPausing = pauseMenu.getIsPaused();
+		if (isLiving && !isPausing ) 
 		{
 			Move ();
+			if (Input.GetMouseButtonDown (0)) 
+			{
+				if (isFireBullet) 
+				{
+					shot (fireType [currentFireType]);
+					bulletShotDelayCounter = bulletShotDelay;
+				} else 
+				{
+					shotMissile ();
+					missileShotDelayCounter = missileShotDelay;
+				}
+			}
+			if (Input.GetMouseButton (0)) 
+			{
+				if (isFireBullet) 
+				{
+					bulletShotDelayCounter -= Time.deltaTime;
+					if (bulletShotDelayCounter <= 0) 
+					{
+						shot (fireType[currentFireType]);
+						bulletShotDelayCounter = bulletShotDelay;
+					}
+
+				} else 
+				{
+					missileShotDelayCounter -= Time.deltaTime;
+					if (missileShotDelayCounter <= 0) 
+					{
+						shotMissile ();
+						missileShotDelayCounter = missileShotDelay;
+					}
+				}
+			}
+
+			//change bullet fire type
+			if (Input.GetMouseButtonDown (1)) 
+			{
+				currentFireType++;
+				if (currentFireType >= fireType.Length)
+					currentFireType = 0;
+			}
+
+			//change fire type
+			if (Input.GetAxis ("Mouse ScrollWheel") != 0f) 
+			{
+				isFireBullet = !isFireBullet;
+			}
+
 			if (Input.GetKeyDown (KeyCode.Z)) 
+			{
+				isFireBullet = true;
+			}
+			if (Input.GetKeyDown (KeyCode.X)) 
+			{
+				isFireBullet = false;
+			}
+
+			//fire missile by key
+			if (Input.GetKeyDown (KeyCode.Space)) 
 			{
 				shotMissile ();
 				missileShotDelayCounter = missileShotDelay;
-	
 			}
-			if (Input.GetKey (KeyCode.Z)) 
+			if (Input.GetKey (KeyCode.Space)) 
 			{
 				missileShotDelayCounter -= Time.deltaTime;
 				if (missileShotDelayCounter <= 0) 
@@ -60,30 +129,13 @@ public class PlayerController : MonoBehaviour {
 					shotMissile ();
 					missileShotDelayCounter = missileShotDelay;
 				}
-
-			}
-			if (Input.GetKeyDown (KeyCode.X)) 
-			{
-				shot ();
-				bulletShotDelayCounter = bulletShotDelay;
-
-			}
-			if (Input.GetKey(KeyCode.X)) 
-			{
-				bulletShotDelayCounter -= Time.deltaTime;
-				if (bulletShotDelayCounter <= 0) 
-				{
-					shot ();
-					bulletShotDelayCounter = bulletShotDelay;
-				}
-
 			}
 		}
 
 		if (isLiving == false) 
 		{
 			GetComponent<SpriteRenderer> ().sprite = damageSprite;
-			deathMovement ();
+			playerDeathParticle.deathParticle(firstScale);
 		}
 	}
 
@@ -129,25 +181,19 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void deathMovement()
+
+	void shot(GameObject fireType)
 	{
-		if (transform.localScale.x > firstScale.x * 3 / 4) {
-			transform.localScale = new Vector2 (transform.localScale.x - transform.localScale.x * 0.004f, transform.localScale.y - transform.localScale.y * 0.004f);
-			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + 10);
-		} else 
+		Transform firePosition;
+		for (int i = 0; i < fireType.transform.childCount; i++) 
 		{
-			//GetComponent<SpriteRenderer> ().sprite = damageSprite;
-			explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x * 3f, explosion.transform.localScale.y * 3f, explosion.transform.localScale.z * 3f);
-			Instantiate (explosion, transform.position, transform.rotation);
-			explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x / 3f, explosion.transform.localScale.y / 3f, explosion.transform.localScale.z / 3f);
-			Destroy (gameObject);
-			isLiving = true;
+			firePosition = fireType.transform.GetChild (i);
+			Instantiate (bullet, firePosition.transform.position, firePosition.transform.rotation);
 		}
-
 	}
-
-	void shot()
+	public void setIsLiving()
 	{
-		Instantiate (bullet, missileFirePoint.transform.position, missileFirePoint.transform.rotation);
+		isLiving = true;
+
 	}
 }

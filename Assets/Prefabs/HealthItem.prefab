@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114861545297765872}
   m_Layer: 0
   m_Name: HealthItem
-  m_TagString: Untagged
+  m_TagString: CollectItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthManager: {fileID: 0}
   healthHealPoint: 4
+  animator: {fileID: 0}
 --- !u!212 &212027018314968596
 SpriteRenderer:
   m_ObjectHideFlags: 1

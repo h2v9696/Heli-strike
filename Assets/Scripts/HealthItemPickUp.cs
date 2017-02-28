@@ -6,6 +6,7 @@ public class HealthItemPickUp : MonoBehaviour {
 
 	public PlayerHealthManager playerHealthManager;
 	public int healthHealPoint;
+	public Animator animator;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,9 @@ public class HealthItemPickUp : MonoBehaviour {
 		if (other.tag == "Player") 
 		{
 			playerHealthManager = other.GetComponent<PlayerHealthManager> ();
+			animator = other.GetComponent<Animator> ();
 			playerHealthManager.TakeDamage (-healthHealPoint);
+			animator.SetTrigger ("Collect");
 			Destroy (gameObject);
 		}
 	}

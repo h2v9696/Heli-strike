@@ -59,5 +59,10 @@ public class PlayerHealthManager : MonoBehaviour {
 				animator.SetTrigger ("Damage");
 			}
 		}
+
+	}
+	public int playerCurrentHealth ()
+	{
+		return playerHealth;
 	}
 }
