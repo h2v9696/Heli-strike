@@ -7,11 +7,13 @@ public class PlayerDeathParticle : MonoBehaviour {
 	public PlayerController player;
 
 	//for explosion animation
-	public GameObject explosion;
+	public Explosion explosion;
 	private float timeExplosionDelay;
 	private float timeExplosionDelayCounter;
 	private Vector3 offset;
 	private int currentExplosionPos;
+	private Explosion cloneExplosion;
+
 
 	void Start()
 	{
@@ -24,19 +26,27 @@ public class PlayerDeathParticle : MonoBehaviour {
 
 	public void deathParticle(Vector3 firstScale)
 	{
+		
+
 		if (transform.localScale.x > firstScale.x * 3 / 4) 
 		{
+	
+
+
 			timeExplosionDelayCounter -= Time.deltaTime;
 			if (timeExplosionDelayCounter <= 0) 
 			{
 				if (currentExplosionPos == 1) 
 				{
-					Instantiate (explosion, transform.position + offset, transform.rotation);
+					cloneExplosion = Instantiate (explosion, transform.position + offset, transform.rotation);
+					cloneExplosion.transform.localScale = new Vector3 (cloneExplosion.transform.localScale.x * 2f, cloneExplosion.transform.localScale.y * 2f, cloneExplosion.transform.localScale.z * 2f);
+
 					currentExplosionPos = 2;
 				}
 				else if (currentExplosionPos == 2) 
 				{
-					Instantiate (explosion, transform.position - offset, transform.rotation);
+					cloneExplosion = Instantiate (explosion, transform.position - offset, transform.rotation);
+					cloneExplosion.transform.localScale = new Vector3 (cloneExplosion.transform.localScale.x * 2f, cloneExplosion.transform.localScale.y * 2f, cloneExplosion.transform.localScale.z * 2f);
 					currentExplosionPos = 1;
 				}
 				timeExplosionDelayCounter = timeExplosionDelay;
@@ -47,9 +57,8 @@ public class PlayerDeathParticle : MonoBehaviour {
 		} else 
 		{
 			//GetComponent<SpriteRenderer> ().sprite = damageSprite;
-			explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x * 3f, explosion.transform.localScale.y * 3f, explosion.transform.localScale.z * 3f);
-			Instantiate (explosion, transform.position, transform.rotation);
-			explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x / 3f, explosion.transform.localScale.y / 3f, explosion.transform.localScale.z / 3f);
+			cloneExplosion = Instantiate (explosion, transform.position , transform.rotation);
+			cloneExplosion.transform.localScale = new Vector3 (cloneExplosion.transform.localScale.x * 3f, cloneExplosion.transform.localScale.y * 3f, cloneExplosion.transform.localScale.z * 3f);
 			Destroy (gameObject);
 			player.setIsLiving ();
 		}
