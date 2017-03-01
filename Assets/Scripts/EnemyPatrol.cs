@@ -17,6 +17,7 @@ public class EnemyPatrol : MonoBehaviour {
 	public Transform deathPoint;
 	public bool cantRotate;
 	public float speedAdd = 0.15f;
+	public bool isBoss;
 
 	void Start () {
 		enemyHealth = GetComponent<EnemyHealthManager> ();
@@ -41,6 +42,9 @@ public class EnemyPatrol : MonoBehaviour {
 				transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
 
 			} else {
+				if (isBoss && nextPoint == 0) {
+					speed = moveSpeed;
+				}
 				distance = Vector3.Distance (transform.position, listPoints [nextPoint].position);
 				Vector3 relativePos = listPoints [nextPoint].position - transform.position;
 				if (!cantRotate) {
@@ -56,9 +60,14 @@ public class EnemyPatrol : MonoBehaviour {
 				//else	speed = moveSpeed;
 			
 				if (nextPoint == points.transform.childCount) {
-					nextPoint = points.transform.childCount - 1;
-					//nextPoint = 0;
-					speed = 0;
+					if (!isBoss) {
+						nextPoint = points.transform.childCount - 1;
+						speed = 0;
+
+					} else {
+						nextPoint = 0;
+						speed = 0.5f;
+					}
 				}
 			} 
 		} else {
