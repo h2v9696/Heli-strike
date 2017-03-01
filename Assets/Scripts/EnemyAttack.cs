@@ -13,6 +13,8 @@ public class EnemyAttack : MonoBehaviour {
 	public bool isSingleShot;
 	public bool isConstruct;
 	public bool isFlying;
+	public bool isMissile;
+
 	void Start () {
 		player = FindObjectOfType<PlayerController> ();
 		shootCounter = 0;
@@ -62,11 +64,24 @@ public class EnemyAttack : MonoBehaviour {
 	IEnumerator FlyShoot() {
 		int i=3;
 		Vector3 offset = new Vector3(0.5f,0,0);
-		while (0 < i) {
-			i--;
-			Instantiate (enemyBullet, shootPoint.position + offset, gameObject.transform.rotation);
-			yield return new WaitForSeconds (0.1f);
-			Instantiate (enemyBullet, shootPoint.position - offset, gameObject.transform.rotation);
+		if (!isMissile) {
+			while (0 < i) {
+				i--;
+				if (!isSingleShot) {
+					Instantiate (enemyBullet, shootPoint.position + offset, gameObject.transform.rotation);
+					yield return new WaitForSeconds (0.1f);
+					Instantiate (enemyBullet, shootPoint.position - offset, gameObject.transform.rotation);
+				} else {
+					Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
+					yield return new WaitForSeconds (0.1f);
+				}
+			}
+		} else {
+			Vector3 offset2 = new Vector3(0.3f,0,0);
+			Instantiate (enemyBullet, shootPoint.position + offset2, gameObject.transform.rotation);
+			yield return new WaitForSeconds (0.2f);
+			Instantiate (enemyBullet, shootPoint.position - offset2, gameObject.transform.rotation);
+
 		}
 	}
 }
