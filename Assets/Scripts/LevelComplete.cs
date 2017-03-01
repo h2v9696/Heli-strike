@@ -9,26 +9,41 @@ public class LevelComplete : MonoBehaviour {
 	public GameObject levelCompleteCanvas;
 	public string nextLevel;
 	public float delay = 4f;
+	public bool isComplete;
 	float delayTimer;
 	void Start () {
 		status = FindObjectOfType<ProgressBar> ();
+
 	}
 	
-	// Update is called once per frame
+
 	void Update () 
 	{
 		if(status.progress>=status.maxValue)
 		{
 			delayTimer += Time.deltaTime;
-		if (delayTimer >= delay) 
-			{
-			levelCompleteCanvas.SetActive (true);
-			Time.timeScale = 0f;
-			}
+
+				if (delayTimer >= delay) 
+					{
+				isComplete = true;
+						levelCompleteCanvas.SetActive (true);
+
+
+							Time.timeScale = 0f;
+
+
+					}
 		}
 	}
+
+
+
 	public void NextLevel()
 	{
 		Application.LoadLevel (nextLevel);
 	}
+
+
+
+
 }

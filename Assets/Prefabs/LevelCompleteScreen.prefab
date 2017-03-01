@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 223355555950375954}
   - component: {fileID: 114507312414376020}
   - component: {fileID: 114296950354868360}
-  - component: {fileID: 114535887531487440}
   - component: {fileID: 114906241747538638}
   m_Layer: 5
   m_Name: LevelCompleteScreen
@@ -353,20 +352,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114535887531487440
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1258242697621362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63298b67bc3a22469aa3f8825f89b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverCanvas: {fileID: 1255392291691956}
-  restart: Chinh
-  delay: 4
 --- !u!114 &114676142401118422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,7 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCompleteCanvas: {fileID: 1255392291691956}
   nextLevel: Chinh
-  delay: 4
+  delay: 0
 --- !u!114 &114928526896963778
 MonoBehaviour:
   m_ObjectHideFlags: 1

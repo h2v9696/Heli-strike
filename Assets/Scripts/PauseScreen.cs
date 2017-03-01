@@ -11,6 +11,14 @@ public class PauseScreen : MonoBehaviour {
 	public string mainMenu;
 
 	public GameObject pauseMenuCanvas;
+	private GameOver gameOver;
+	private LevelComplete levelComplete;
+
+	void Start()
+	{
+		gameOver = FindObjectOfType<GameOver> ();
+		levelComplete = FindObjectOfType<LevelComplete> ();
+	}
 
 	void Update()
 	{
@@ -19,6 +27,7 @@ public class PauseScreen : MonoBehaviour {
 			Time.timeScale = 0f;
 		} else {
 			pauseMenuCanvas.SetActive (false);
+			if (gameOver.isOver == false && levelComplete.isComplete == false)				
 			Time.timeScale = 1f;
 		}
 

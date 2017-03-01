@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour {
 
@@ -11,25 +12,26 @@ public class GameOver : MonoBehaviour {
 	public float delay = 4f;
 	float delayTimer;
 	private PlayerHealthManager playerHealth;
+	public bool isOver;
 
 
 
 	void Start () {
-		//playerController = FindObjectOfType<PlayerController> ();
+
 		playerHealth = FindObjectOfType<PlayerHealthManager> ();
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 
 		if (playerHealth.playerHealth<=0) {
 			delayTimer += Time.deltaTime;
 			if (delayTimer >= delay) {
+				isOver = true;
 				gameOverCanvas.SetActive (true);
-
-				Time.timeScale = 0f;
+						Time.timeScale = 0;
 			}
-			//StartCoroutine(showGameOverScreen ());
+
 		}
 		
 		
@@ -37,8 +39,11 @@ public class GameOver : MonoBehaviour {
 
 	public void Restart()
 	{
-		Application.LoadLevel (restart);
+		
+		SceneManager.LoadScene (restart);
 	}
+
+	
 
 	/*IEnumerator showGameOverScreen()
 	{
