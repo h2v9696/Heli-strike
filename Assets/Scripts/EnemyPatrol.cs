@@ -18,6 +18,7 @@ public class EnemyPatrol : MonoBehaviour {
 	public bool cantRotate;
 	public float speedAdd = 0.15f;
 	public bool isBoss;
+	public bool isFlying;
 
 	void Start () {
 		enemyHealth = GetComponent<EnemyHealthManager> ();
@@ -37,10 +38,10 @@ public class EnemyPatrol : MonoBehaviour {
 	void Update () {
 		
 		if (points.transform.childCount != 0) {
-			if (enemyHealth.enemyHealth <= 0 && deathPoint != null) {
+			
+			if (isFlying && enemyHealth.enemyHealth <= 0 && deathPoint != null) {
 				speed += speedAdd;
 				transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
-
 			} else {
 				if (isBoss && nextPoint == 0) {
 					speed = moveSpeed;
@@ -69,15 +70,16 @@ public class EnemyPatrol : MonoBehaviour {
 						speed = 0.5f;
 					}
 				}
-			} 
+			}
 		} else {
-			if (enemyHealth.enemyHealth <= 0 && deathPoint != null) {
-				speed += speedAdd;
-				transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
-
+			if (isFlying) {
+				if (enemyHealth.enemyHealth <= 0 && deathPoint != null) {
+					speed += speedAdd;
+					transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
+				}
 			}
 		}
-			//Vi tri bong
+		//Vi tri bong
 		if (shadow != null) {
 			shadow.transform.position = new Vector3 (transform.position.x - transform.position.x * 0.1f, transform.position.y - transform.position.y * 0.1f, transform.position.z);
 		}

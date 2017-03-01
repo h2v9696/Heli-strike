@@ -11,7 +11,6 @@ public class EnemyHealthManager : MonoBehaviour {
 	public bool isConstructEnemy;
 	public Sprite deathSprite;
 	private Vector3 firstScale;
-	public bool isDeath;
 	public bool isFlying;
 	private bool isExplosion;
 	private Explosion clone;
@@ -22,11 +21,9 @@ public class EnemyHealthManager : MonoBehaviour {
 		firstScale = transform.lossyScale;
 		enemyHealth = enemyMaxHealth;
 		animator = GetComponent<Animator> ();
-		//deathSprite = Resources.Load<Sprite> ("DeathEnemy");
 		isExplosion = false;
 	}
 
-	// Update is called once per frame
 	void Update () {
 		if (enemyHealth <= (enemyMaxHealth / 2)) {
 			if (transform.childCount!=0) {
@@ -37,12 +34,10 @@ public class EnemyHealthManager : MonoBehaviour {
 		}
 		if (enemyHealth <= 0) {
 
-			//explosion.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z) * enemyHealth;
 			if (!isFlying) {
 				// Can add them hieu ung no
 				clone = Instantiate (explosion, transform.position, transform.rotation);
 				clone.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z) * 3f;
-				//Instantiate (explosion, transform.position, transform.rotation);
 				var parent = transform.parent;
 				Destroy (parent.gameObject);
 				if (isConstructEnemy)

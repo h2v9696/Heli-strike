@@ -8,6 +8,7 @@ TagManager:
   - Undefined
   - EnemyBullet
   - CollectItem
+  - Boss
   layers:
   - Default
   - TransparentFX
