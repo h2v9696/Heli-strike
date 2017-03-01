@@ -514,7 +514,6 @@ MonoBehaviour:
   enemyDeath: {fileID: 0}
   isConstructEnemy: 0
   deathSprite: {fileID: 21300000, guid: f1f36bfd34aeeb84f92bb21b867949d1, type: 3}
-  isDeath: 0
   isFlying: 1
   angle: 10
   scaleReduce: 0.008
@@ -571,6 +570,7 @@ MonoBehaviour:
   cantRotate: 1
   speedAdd: 0.05
   isBoss: 0
+  isFlying: 1
 --- !u!212 &212173530549762118
 SpriteRenderer:
   m_ObjectHideFlags: 1
