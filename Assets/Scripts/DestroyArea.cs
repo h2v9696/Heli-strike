@@ -5,8 +5,7 @@ using UnityEngine;
 public class DestroyArea : MonoBehaviour 
 {
 	private SpawnPoint spawnPoint;
-	void Start()
-	{Debug.Log (" ");}
+
 	void OnTriggerExit2D(Collider2D c)
 	{
 		Debug.Log ("Left the Area");

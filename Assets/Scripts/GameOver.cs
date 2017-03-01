@@ -15,12 +15,13 @@ public class GameOver : MonoBehaviour {
 
 
 	void Start () {
-		playerController = FindObjectOfType<PlayerController> ();
+		//playerController = FindObjectOfType<PlayerController> ();
 		playerHealth = FindObjectOfType<PlayerHealthManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (playerHealth.playerHealth<=0) {
 			delayTimer += Time.deltaTime;
 			if (delayTimer >= delay) {
