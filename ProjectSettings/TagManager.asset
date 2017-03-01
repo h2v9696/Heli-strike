@@ -51,6 +51,9 @@ TagManager:
   - name: Collecties
     uniqueID: 203935505
     locked: 0
+  - name: Boss
+    uniqueID: 975089677
+    locked: 0
   - name: Projectiles
     uniqueID: 2881416039
     locked: 0
