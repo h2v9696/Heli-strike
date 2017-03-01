@@ -17,7 +17,7 @@ public class EnemyHealthManager : MonoBehaviour {
 	private Explosion clone;
 	public float angle = 5f;
 	public float scaleReduce = 0.008f;
-
+	//public bool isBoss;
 	void Start () {
 		firstScale = transform.lossyScale;
 		enemyHealth = enemyMaxHealth;

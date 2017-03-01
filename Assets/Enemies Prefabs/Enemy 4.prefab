@@ -143,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523823330064418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.82, y: 2.41, z: 0}
+  m_LocalPosition: {x: 6.251671, y: 2.8656592, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4453175690528176}
@@ -231,7 +231,10 @@ MonoBehaviour:
   canMove: 0
   rotationTime: 6
   shadow: {fileID: 0}
-  isFlying: 0
+  deathPoint: {fileID: 0}
+  cantRotate: 0
+  speedAdd: 0.15
+  isBoss: 0
 --- !u!114 &114192171677476416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,6 +252,11 @@ MonoBehaviour:
     type: 2}
   enemyDeath: {fileID: 1869986365875472, guid: 92d65a985dbfa9d4c9e71581e6daa0b6, type: 2}
   isConstructEnemy: 1
+  deathSprite: {fileID: 0}
+  isDeath: 0
+  isFlying: 0
+  angle: 5
+  scaleReduce: 0.008
 --- !u!114 &114332934706818090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8f9812e1ee61441aedad1e76e73583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunCantRotate: 0
 --- !u!114 &114789931717169060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -280,6 +289,7 @@ MonoBehaviour:
   isSingleShot: 1
   isConstruct: 0
   isFlying: 0
+  isMissile: 0
 --- !u!212 &212488183940394712
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -344,7 +354,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1413551257
+  m_SortingLayerID: -1550618461
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 299e53c31356f3640bf3f1a0a8de0826, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

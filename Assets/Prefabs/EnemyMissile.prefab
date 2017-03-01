@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3b92a137956f5458eee94834adac9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 8
   lifeTime: 2
   power: 5
   missileFireTail: {fileID: 1491115397720458}
