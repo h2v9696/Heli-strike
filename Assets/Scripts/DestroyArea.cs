@@ -8,7 +8,7 @@ public class DestroyArea : MonoBehaviour
 
 	void OnTriggerExit2D(Collider2D c)
 	{
-		Debug.Log ("Left the Area");
+		
 		Destroy (c.gameObject);
 	}
 
