@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float moveSpeed;
+	private float maxMoveSpeed;
 	private PauseScreen pauseMenu;
 	public bool isPausing;
+
+	private float distance;
+	private float previousDistance;
 	//private bool isMoving;
 	//public GameObject point;
 	private Vector2 target;
@@ -55,6 +59,11 @@ public class PlayerController : MonoBehaviour {
 		isFireBullet = true;
 		maxNumberMissile = numberMissile;
 
+
+		maxMoveSpeed = moveSpeed;
+		distance = 0f;
+		previousDistance = 0f;
+
 	}
 	
 	// Update is called once per frame
@@ -64,6 +73,10 @@ public class PlayerController : MonoBehaviour {
 		if (isLiving && !isPausing ) 
 		{
 			Move ();
+
+
+
+		
 			if (Input.GetMouseButtonDown (0)) 
 			{
 				if (isFireBullet) 
@@ -170,6 +183,29 @@ public class PlayerController : MonoBehaviour {
 
 		target = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		pos = Vector2.MoveTowards (transform.position, target, moveSpeed);
+
+		// dieu khien toc do di chuyen qua moi frame
+		if (distance > previousDistance) 
+		{
+			moveSpeed = maxMoveSpeed * distance * 0.5f;
+			if (moveSpeed > maxMoveSpeed * 2f) 
+			{
+				moveSpeed = maxMoveSpeed * 2f;
+			}
+
+		}
+		else if (distance < previousDistance) 
+		{
+			moveSpeed = maxMoveSpeed * distance * 0.2f ;
+			if (moveSpeed < maxMoveSpeed * 0.2f) 
+			{
+				moveSpeed = maxMoveSpeed * 0.2f;
+			}
+		}
+
+		previousDistance = distance;
+		distance = Vector2.Distance (target, (Vector2)transform.position);
+
 
 		//dieu khien vi tri cua bong
 		shadow.transform.position = new Vector2(transform.position.x - transform.position.x * 0.1f,transform.position.y - transform.position.y * 0.1f);
