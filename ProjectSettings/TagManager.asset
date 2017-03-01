@@ -48,11 +48,11 @@ TagManager:
   - name: Background
     uniqueID: 229938417
     locked: 0
-  - name: Enemy
-    uniqueID: 2744348835
-    locked: 0
   - name: Projectiles
     uniqueID: 2881416039
+    locked: 0
+  - name: Enemy
+    uniqueID: 2744348835
     locked: 0
   - name: Tree
     uniqueID: 3401732307

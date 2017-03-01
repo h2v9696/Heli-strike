@@ -9,18 +9,20 @@ public class EnemyHealthManager : MonoBehaviour {
 	public GameObject enemyDeath;
 	private Animator animator;
 	public bool isConstructEnemy;
-	private Sprite deathSprite;
+	public Sprite deathSprite;
 	private Vector3 firstScale;
 	public bool isDeath;
 	public bool isFlying;
 	private bool isExplosion;
 	private Explosion clone;
+	public float angle = 5f;
+	public float scaleReduce = 0.008f;
 
 	void Start () {
 		firstScale = transform.lossyScale;
 		enemyHealth = enemyMaxHealth;
 		animator = GetComponent<Animator> ();
-		deathSprite = Resources.Load<Sprite> ("DeathEnemy");
+		//deathSprite = Resources.Load<Sprite> ("DeathEnemy");
 		isExplosion = false;
 	}
 
@@ -28,9 +30,9 @@ public class EnemyHealthManager : MonoBehaviour {
 	void Update () {
 		if (enemyHealth <= (enemyMaxHealth / 2)) {
 			if (transform.childCount!=0) {
-				var gun = transform.GetChild (0);
-			
-				Destroy (gun.gameObject);
+				var gun = transform.Find ("Gun");
+				if (gun!=null)
+					Destroy (gun.gameObject);
 			}
 		}
 		if (enemyHealth <= 0) {
@@ -47,7 +49,8 @@ public class EnemyHealthManager : MonoBehaviour {
 					Instantiate (enemyDeath, transform.position, enemyDeath.transform.rotation);
 				
 			} else {
-				GetComponent<SpriteRenderer> ().sprite = deathSprite;
+				if (deathSprite != null)
+					GetComponent<SpriteRenderer> ().sprite = deathSprite;
 
 				if (!isExplosion) {
 					clone = Instantiate (explosion, transform.position, transform.rotation);
@@ -58,12 +61,14 @@ public class EnemyHealthManager : MonoBehaviour {
 
 				if (transform.localScale.x > firstScale.x * 3 / 4) {
 					
-					transform.localScale = new Vector2 (transform.localScale.x - transform.localScale.x * 0.006f, transform.localScale.y - transform.localScale.y * 0.004f);
-					transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + 5);		
+					transform.localScale = new Vector2 (transform.localScale.x - transform.localScale.x * scaleReduce, transform.localScale.y - transform.localScale.y * 0.004f);
+					transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + angle);		
 				} else {
 					var parent = transform.parent;
 					Destroy (parent.gameObject);
-					Instantiate (explosion, transform.position, transform.rotation);
+					clone = Instantiate (explosion, transform.position, transform.rotation);
+					clone.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z) * 2f;
+
 				}
 			}
 			
