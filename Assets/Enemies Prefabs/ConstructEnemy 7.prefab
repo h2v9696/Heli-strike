@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4875776171102016}
   m_Layer: 0
   m_Name: ConstructEnemy 7
-  m_TagString: Undefined
+  m_TagString: ConstructEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,6 +232,10 @@ MonoBehaviour:
     type: 2}
   enemyDeath: {fileID: 1272717192393318, guid: b554c672f41b1f146b0a6b315a2e612d, type: 2}
   isConstructEnemy: 0
+  deathSprite: {fileID: 0}
+  isFlying: 0
+  angle: 5
+  scaleReduce: 0.008
 --- !u!114 &114529168074850846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -251,6 +255,8 @@ MonoBehaviour:
   canShot: 0
   isSingleShot: 0
   isConstruct: 1
+  isFlying: 0
+  isMissile: 0
 --- !u!114 &114726188927953532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -265,6 +271,13 @@ MonoBehaviour:
   moveSpeed: 2
   points: {fileID: 4298041155099010}
   canMove: 0
+  rotationTime: 0
+  shadow: {fileID: 0}
+  deathPoint: {fileID: 0}
+  cantRotate: 0
+  speedAdd: 0.15
+  isBoss: 0
+  isFlying: 0
 --- !u!114 &114787026846738966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,6 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8f9812e1ee61441aedad1e76e73583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunCantRotate: 0
 --- !u!212 &212359277253733042
 SpriteRenderer:
   m_ObjectHideFlags: 1
