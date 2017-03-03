@@ -425,7 +425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCompleteCanvas: {fileID: 1255392291691956}
   nextLevel: Chinh
-  delay: 0
+  delay: 4
+  isComplete: 0
 --- !u!114 &114928526896963778
 MonoBehaviour:
   m_ObjectHideFlags: 1
