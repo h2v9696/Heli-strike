@@ -5,6 +5,7 @@ using UnityEngine;
 public class MissileExplosionDamageArea : MonoBehaviour {
 
 	private EnemyHealthManager enemyHealthManager;
+	private BossHealthManager bossHealthManager;
 	public int dameToGive;
 	public float explosionRadius;
 
@@ -20,12 +21,19 @@ public class MissileExplosionDamageArea : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Enemy") 
+		if (other.tag == "Enemy" || other.tag == "ConstructEnemy")
 		{
 			enemyHealthManager = other.GetComponent<EnemyHealthManager> ();
 			enemyHealthManager.TakeDamage (dameToGive * 3);
 			MakeRadiusDamage ();
 			Destroy (gameObject);
+		}
+		if (other.tag == "Boss" ) 
+		{
+
+			Destroy (gameObject);
+			bossHealthManager = other.GetComponent<BossHealthManager> ();
+			bossHealthManager.TakeDamage (dameToGive * 3);
 		}
 	}
 
@@ -34,7 +42,7 @@ public class MissileExplosionDamageArea : MonoBehaviour {
 		Collider2D[] colls = Physics2D.OverlapCircleAll (transform.position, explosionRadius);
 		foreach (Collider2D col in colls) 
 		{
-			if (col.tag == "Enemy") 
+			if (col.tag == "Enemy" || col.tag == "ConstructEnemy") 
 			{
 				enemyHealthManager = col.GetComponent<EnemyHealthManager> ();
 				enemyHealthManager.TakeDamage (dameToGive);
