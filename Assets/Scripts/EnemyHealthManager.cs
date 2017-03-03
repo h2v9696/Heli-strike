@@ -16,12 +16,16 @@ public class EnemyHealthManager : MonoBehaviour {
 	private Explosion clone;
 	public float angle = 5f;
 	public float scaleReduce = 0.008f;
+	public int enemyDead;
+	public int constructEnemyDead;
 	//public bool isBoss;
 	void Start () {
 		firstScale = transform.lossyScale;
 		enemyHealth = enemyMaxHealth;
 		animator = GetComponent<Animator> ();
 		isExplosion = false;
+		enemyDead = 0;
+		constructEnemyDead = 0;
 	}
 
 	void Update () {
@@ -35,13 +39,22 @@ public class EnemyHealthManager : MonoBehaviour {
 		if (enemyHealth <= 0) {
 
 			if (!isFlying) {
+
 				// Can add them hieu ung no
 				clone = Instantiate (explosion, transform.position, transform.rotation);
 				clone.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z) * 3f;
 				var parent = transform.parent;
 				Destroy (parent.gameObject);
-				if (isConstructEnemy)
+				if (isConstructEnemy) {
 					Instantiate (enemyDeath, transform.position, enemyDeath.transform.rotation);
+					constructEnemyDead++;
+					PlayerPrefs.SetInt ("ConstructionDestroyed", constructEnemyDead);
+
+				} else {
+					enemyDead++;
+					PlayerPrefs.SetInt ("EnemyKilled", enemyDead);
+
+				}
 				
 			} else {
 				if (deathSprite != null)
@@ -61,6 +74,8 @@ public class EnemyHealthManager : MonoBehaviour {
 				} else {
 					var parent = transform.parent;
 					Destroy (parent.gameObject);
+					enemyDead++;
+					PlayerPrefs.SetInt ("EnemyKilled", enemyDead);
 					clone = Instantiate (explosion, transform.position, transform.rotation);
 					clone.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z) * 2f;
 
