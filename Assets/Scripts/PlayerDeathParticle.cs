@@ -38,20 +38,20 @@ public class PlayerDeathParticle : MonoBehaviour {
 			{
 				if (currentExplosionPos == 1) 
 				{
-					cloneExplosion = Instantiate (explosion, transform.position + offset, transform.rotation);
+					cloneExplosion = Instantiate (explosion, transform.position - offset, transform.rotation);
 					cloneExplosion.transform.localScale = new Vector3 (cloneExplosion.transform.localScale.x * 2f, cloneExplosion.transform.localScale.y * 2f, cloneExplosion.transform.localScale.z * 2f);
 
 					currentExplosionPos = 2;
 				}
 				else if (currentExplosionPos == 2) 
 				{
-					cloneExplosion = Instantiate (explosion, transform.position - offset, transform.rotation);
+					cloneExplosion = Instantiate (explosion, transform.position + offset, transform.rotation);
 					cloneExplosion.transform.localScale = new Vector3 (cloneExplosion.transform.localScale.x * 2f, cloneExplosion.transform.localScale.y * 2f, cloneExplosion.transform.localScale.z * 2f);
 					currentExplosionPos = 1;
 				}
 				timeExplosionDelayCounter = timeExplosionDelay;
 			}
-
+			transform.position = new Vector2 (transform.position.x + 0.03f, transform.position.y + 0.03f);
 			transform.localScale = new Vector2 (transform.localScale.x - transform.localScale.x * 0.004f, transform.localScale.y - transform.localScale.y * 0.004f);
 			transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + 5);
 		} else 

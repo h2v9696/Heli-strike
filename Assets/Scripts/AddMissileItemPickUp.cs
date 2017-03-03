@@ -9,20 +9,32 @@ public class AddMissileItemPickUp : MonoBehaviour {
 	private Animator animator;
 	public bool isUpgradeType;
 
+
+	private bool collected;
+
+
+
 	// Use this for initialization
 	void Start () {
-		
+		collected = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (collected == true && GetComponent<AudioSource>().isPlaying == false)
+		{
+			Destroy (gameObject);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player") 
 		{
+			
+
+			GetComponent<AudioSource> ().Play ();
+
 			playerController = other.GetComponent<PlayerController> ();
 			animator = other.GetComponent<Animator> ();
 
@@ -33,7 +45,10 @@ public class AddMissileItemPickUp : MonoBehaviour {
 			{
 				playerController.changeMissileType ();
 			}
-			Destroy (gameObject);
+			Destroy (GetComponent<Collider2D> ());
+			Destroy (GetComponent<SpriteRenderer> ());
+	
+			collected = true;
 		}
 	}
 }
