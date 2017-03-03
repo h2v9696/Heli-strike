@@ -49,6 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4484787734705822}
+  - component: {fileID: 50298022085475054}
   m_Layer: 0
   m_Name: ConstructEnemy 2
   m_TagString: ConstructEnemy
@@ -88,6 +89,7 @@ GameObject:
   - component: {fileID: 61796386573511518}
   - component: {fileID: 114294998558368656}
   - component: {fileID: 95503060869534846}
+  - component: {fileID: 114984673491985404}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -128,8 +130,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1245711290242604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 0.49, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.738409, y: 21.88785, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4173758083550236}
@@ -164,6 +166,26 @@ Transform:
   m_Father: {fileID: 4173758083550236}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50298022085475054
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245711290242604}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50858091094436710
 Rigidbody2D:
   serializedVersion: 4
@@ -278,6 +300,8 @@ MonoBehaviour:
   isFlying: 0
   angle: 5
   scaleReduce: 0.008
+  enemyDead: 0
+  constructEnemyDead: 0
 --- !u!114 &114475661251767324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,6 +314,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 0
+--- !u!114 &114984673491985404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1533464777953494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
 --- !u!212 &212037719953793738
 SpriteRenderer:
   m_ObjectHideFlags: 1

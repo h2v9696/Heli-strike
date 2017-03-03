@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour {
 	//private bool isPausing;
 	private Text theText;
 	void Start()
-	{   second = 54f;
+	{   second = 0f;
 		theText = GetComponent<Text> ();
 	//	thePauseScreen = FindObjectOfType<PauseScreen> ();
 	}

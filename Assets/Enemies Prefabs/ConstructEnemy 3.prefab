@@ -49,6 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4349455145999302}
+  - component: {fileID: 50889593711028498}
   m_Layer: 0
   m_Name: ConstructEnemy 3
   m_TagString: ConstructEnemy
@@ -88,6 +89,7 @@ GameObject:
   - component: {fileID: 61997483161301494}
   - component: {fileID: 114272606368448342}
   - component: {fileID: 95022183112891254}
+  - component: {fileID: 114970543986575206}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -115,8 +117,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907831329093020}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 0.49, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.9044907, y: 22.123566, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4821961346030040}
@@ -179,6 +181,26 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &50889593711028498
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907831329093020}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -257,6 +279,8 @@ MonoBehaviour:
   isFlying: 0
   angle: 5
   scaleReduce: 0.008
+  enemyDead: 0
+  constructEnemyDead: 0
 --- !u!114 &114283901535049960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,6 +314,18 @@ MonoBehaviour:
   isConstruct: 1
   isFlying: 0
   isMissile: 0
+--- !u!114 &114970543986575206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988177149640264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
 --- !u!212 &212021895550067820
 SpriteRenderer:
   m_ObjectHideFlags: 1
