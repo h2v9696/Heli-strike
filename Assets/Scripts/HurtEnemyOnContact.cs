@@ -5,7 +5,8 @@ using UnityEngine;
 public class HurtEnemyOnContact : MonoBehaviour {
 
 	//public GameObject explosion;
-	public EnemyHealthManager enemyHealthManager;
+	private EnemyHealthManager enemyHealthManager;
+	private BossHealthManager bossHealthManager;
 	public int dameToGive;
 
 	// Use this for initialization
@@ -20,12 +21,19 @@ public class HurtEnemyOnContact : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Enemy") 
+		if (other.tag == "Enemy" ||other.tag == "ConstructEnemy") 
 		{
 			
 			Destroy (gameObject);
 			enemyHealthManager = other.GetComponent<EnemyHealthManager> ();
 			enemyHealthManager.TakeDamage (dameToGive);
+		}
+		if (other.tag == "Boss" ) 
+		{
+
+			Destroy (gameObject);
+			bossHealthManager = other.GetComponent<BossHealthManager> ();
+			bossHealthManager.TakeDamage (dameToGive);
 		}
 	}
 }

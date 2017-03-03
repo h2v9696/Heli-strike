@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bb69bee5bb39f47a610546b8d0b51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dameToGive: 8
+  dameToGive: 1
   explosionRadius: 3
 --- !u!114 &114389597319519258
 MonoBehaviour:
