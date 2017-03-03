@@ -24,8 +24,8 @@ public class EnemyHealthManager : MonoBehaviour {
 		enemyHealth = enemyMaxHealth;
 		animator = GetComponent<Animator> ();
 		isExplosion = false;
-		enemyDead = 0;
-		constructEnemyDead = 0;
+		enemyDead = PlayerPrefs.GetInt("EnemyKilled");
+		constructEnemyDead = PlayerPrefs.GetInt ("ConstructionDestroyed");
 	}
 
 	void Update () {
