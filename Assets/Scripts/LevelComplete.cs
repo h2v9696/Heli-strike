@@ -10,9 +10,20 @@ public class LevelComplete : MonoBehaviour {
 	public string nextLevel;
 	public float delay = 4f;
 	public bool isComplete;
+
+	public Text theTextEnemyKill;
+	public Text theTextConstructKill;
+	public Text theTextEnemySurvived;
+
+	public int intEnemyKilled;
+	public int intConstructKilled;
+
+	private LevelManager levelManager;
+
 	float delayTimer;
 	void Start () {
 		status = FindObjectOfType<ProgressBar> ();
+		levelManager = FindObjectOfType<LevelManager> ();
 
 	}
 	
@@ -27,7 +38,14 @@ public class LevelComplete : MonoBehaviour {
 					{
 				isComplete = true;
 						levelCompleteCanvas.SetActive (true);
+				intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
+				theTextEnemyKill.text = "Enemy Killed: " + intEnemyKilled;
 
+				intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
+				theTextConstructKill.text = "Construct Destroyed: " + intConstructKilled;
+
+
+				theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled- intConstructKilled);
 
 							Time.timeScale = 0f;
 

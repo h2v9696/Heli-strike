@@ -327,7 +327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 1595202204399200}
   restart: Chinh
-  delay: 4
+  delay: 0
+  isOver: 0
 --- !u!114 &114505128795180408
 MonoBehaviour:
   m_ObjectHideFlags: 1

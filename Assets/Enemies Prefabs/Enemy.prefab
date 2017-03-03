@@ -166,7 +166,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583077091593586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.15, y: -3.82, z: 0}
+  m_LocalPosition: {x: -9.05, y: -3.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4151071239893948}
@@ -179,7 +179,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194836533830702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.63, y: 1.6, z: 0}
+  m_LocalPosition: {x: -8.28, y: 3.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4151071239893948}
@@ -192,7 +192,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484708094183680}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.41, y: -1.85, z: 0}
+  m_LocalPosition: {x: -18.29, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4151071239893948}
@@ -205,7 +205,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1911666961173918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.43, y: 0.26, z: 0}
+  m_LocalPosition: {x: 2.82, y: 5.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4927494575103300}
@@ -220,7 +220,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285554533567158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.32, y: -3.11, z: 0}
+  m_LocalPosition: {x: -17.51, y: -2.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4151071239893948}
@@ -246,7 +246,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347064543670188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.4, y: 0.23, z: 0}
+  m_LocalPosition: {x: -13.78, y: 5.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4151071239893948}
@@ -384,9 +384,12 @@ MonoBehaviour:
     type: 2}
   enemyDeath: {fileID: 0}
   isConstructEnemy: 0
-  deathAnimationTime: 0.25
-  isDeath: 0
+  deathSprite: {fileID: 0}
   isFlying: 0
+  angle: 5
+  scaleReduce: 0.008
+  enemyDead: 0
+  constructEnemyDead: 0
 --- !u!114 &114928752989993940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -403,6 +406,11 @@ MonoBehaviour:
   canMove: 1
   rotationTime: 6
   shadow: {fileID: 0}
+  deathPoint: {fileID: 0}
+  cantRotate: 0
+  speedAdd: 0.15
+  isBoss: 0
+  isFlying: 0
 --- !u!212 &212512095272469854
 SpriteRenderer:
   m_ObjectHideFlags: 1

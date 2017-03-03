@@ -14,11 +14,21 @@ public class GameOver : MonoBehaviour {
 	private PlayerHealthManager playerHealth;
 	public bool isOver;
 
+public Text theTextEnemyKill;
+	public Text theTextConstructKill;
+	public Text theTextEnemySurvived;
+
+	public int intEnemyKilled;
+	public int intConstructKilled;
+
+	private LevelManager levelManager;
+
 
 
 	void Start () {
 
 		playerHealth = FindObjectOfType<PlayerHealthManager> ();
+		levelManager = FindObjectOfType<LevelManager> ();
 	}
 	
 
@@ -29,6 +39,15 @@ public class GameOver : MonoBehaviour {
 			if (delayTimer >= delay) {
 				isOver = true;
 				gameOverCanvas.SetActive (true);
+
+				intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
+				theTextEnemyKill.text = "Enemy Killed: " + intEnemyKilled;
+
+				intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
+				theTextConstructKill.text = "Construct Destroyed: " + intConstructKilled;
+
+
+				theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled- intConstructKilled);
 						Time.timeScale = 0;
 			}
 
