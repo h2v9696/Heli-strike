@@ -9,6 +9,7 @@ TagManager:
   - EnemyBullet
   - CollectItem
   - Boss
+  - ConstructEnemy
   layers:
   - Default
   - TransparentFX
