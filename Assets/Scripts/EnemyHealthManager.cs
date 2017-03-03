@@ -24,11 +24,12 @@ public class EnemyHealthManager : MonoBehaviour {
 		enemyHealth = enemyMaxHealth;
 		animator = GetComponent<Animator> ();
 		isExplosion = false;
-		enemyDead = PlayerPrefs.GetInt("EnemyKilled");
-		constructEnemyDead = PlayerPrefs.GetInt ("ConstructionDestroyed");
+
 	}
 
 	void Update () {
+		enemyDead = PlayerPrefs.GetInt("EnemyKilled");
+		constructEnemyDead = PlayerPrefs.GetInt ("ConstructionDestroyed");
 		if (enemyHealth <= (enemyMaxHealth / 2)) {
 			if (transform.childCount!=0) {
 				var gun = transform.Find ("Gun");
