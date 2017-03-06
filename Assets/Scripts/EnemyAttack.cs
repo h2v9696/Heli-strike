@@ -15,6 +15,8 @@ public class EnemyAttack : MonoBehaviour {
 	public bool isFlying;
 	public bool isMissile;
 	public int numberOfBullet;
+	private int numBull;
+
 	void Start () {
 		player = FindObjectOfType<PlayerController> ();
 		shootCounter = 0;
@@ -51,10 +53,13 @@ public class EnemyAttack : MonoBehaviour {
 	}
 
 	IEnumerator ConstructShoot() {
-		numberOfBullet = 4;
+		if (numberOfBullet == 0) {
+			numBull = 3;
+		} else
+			numBull = numberOfBullet;
 		Vector3 offset = new Vector3(0.25f,0,0);
-		while (0 < numberOfBullet) {
-			numberOfBullet--;
+		while (0 < numBull) {
+			numBull--;
 			Instantiate (enemyBullet, shootPoint.position + offset, gameObject.transform.rotation);
 			yield return new WaitForSeconds (0.1f);
 			Instantiate (enemyBullet, shootPoint.position - offset, gameObject.transform.rotation);
@@ -62,26 +67,34 @@ public class EnemyAttack : MonoBehaviour {
 	}
 
 	IEnumerator FlyShoot() {
-		numberOfBullet = 3;
-		Vector3 offset = new Vector3(0.5f,0,0);
+		if (numberOfBullet == 0) {
+			numBull = 3;
+		} else
+			numBull = numberOfBullet;
+		Vector3 offset = new Vector3 (0.5f, 0, 0);
 		if (!isMissile) {
-			while (0 < numberOfBullet) {
-				numberOfBullet--;
+			while (0 < numBull) {
+				numBull--;
 				if (!isSingleShot) {
 					Instantiate (enemyBullet, shootPoint.position + offset, gameObject.transform.rotation);
 					yield return new WaitForSeconds (0.1f);
-					Instantiate (enemyBullet, shootPoint.position - offset, gameObject.transform.rotation);
+						Instantiate (enemyBullet, shootPoint.position - offset, gameObject.transform.rotation);
 				} else {
 					Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
 					yield return new WaitForSeconds (0.1f);
 				}
 			}
 		} else {
-			Vector3 offset2 = new Vector3(0.3f,0,0);
-			Instantiate (enemyBullet, shootPoint.position + offset2, gameObject.transform.rotation);
-			yield return new WaitForSeconds (0.2f);
-			Instantiate (enemyBullet, shootPoint.position - offset2, gameObject.transform.rotation);
-
+			Vector3 offset2 = new Vector3 (0.3f, 0, 0);
+			if (!isSingleShot) {
+				Instantiate (enemyBullet, shootPoint.position + offset2, gameObject.transform.rotation);
+				yield return new WaitForSeconds (0.2f);
+				Instantiate (enemyBullet, shootPoint.position - offset2, gameObject.transform.rotation);
+			} else {
+				Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
+				yield return new WaitForSeconds (0.1f);
+			}
 		}
+
 	}
 }

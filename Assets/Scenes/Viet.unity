@@ -153,48 +153,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82a19926dbf8d564aa762c953a95a108, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &33865295
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4976091883163088, guid: 9f105cbf33ff9e64a8aa597ecbeefb22, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.2297013
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976091883163088, guid: 9f105cbf33ff9e64a8aa597ecbeefb22, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 4.2587237
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976091883163088, guid: 9f105cbf33ff9e64a8aa597ecbeefb22, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976091883163088, guid: 9f105cbf33ff9e64a8aa597ecbeefb22, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976091883163088, guid: 9f105cbf33ff9e64a8aa597ecbeefb22, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976091883163088, guid: 9f105cbf33ff9e64a8aa597ecbeefb22, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976091883163088, guid: 9f105cbf33ff9e64a8aa597ecbeefb22, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4976091883163088, guid: 9f105cbf33ff9e64a8aa597ecbeefb22, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 9f105cbf33ff9e64a8aa597ecbeefb22, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &162941962
 Prefab:
   m_ObjectHideFlags: 0
@@ -426,6 +384,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1262256980}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1001 &543760929
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4034466686607228, guid: 70add0d2c929ec34aabffffaa88ae6bc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034466686607228, guid: 70add0d2c929ec34aabffffaa88ae6bc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034466686607228, guid: 70add0d2c929ec34aabffffaa88ae6bc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034466686607228, guid: 70add0d2c929ec34aabffffaa88ae6bc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034466686607228, guid: 70add0d2c929ec34aabffffaa88ae6bc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034466686607228, guid: 70add0d2c929ec34aabffffaa88ae6bc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034466686607228, guid: 70add0d2c929ec34aabffffaa88ae6bc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034466686607228, guid: 70add0d2c929ec34aabffffaa88ae6bc, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 70add0d2c929ec34aabffffaa88ae6bc, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &560394966
 Prefab:
   m_ObjectHideFlags: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf2a726823ddd443b1c24ad8b811470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalEnemies: 4
+  totalEnemies: 5
   intEnemyKilled: 0
   intConstructKilled: 0
 --- !u!4 &690735534

@@ -19,6 +19,7 @@ public class EnemyPatrol : MonoBehaviour {
 	public float speedAdd = 0.15f;
 	public bool isBoss;
 	public bool isFlying;
+	public bool isLoop;
 
 	void Start () {
 		enemyHealth = GetComponent<EnemyHealthManager> ();
@@ -43,7 +44,7 @@ public class EnemyPatrol : MonoBehaviour {
 				speed += speedAdd;
 				transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
 			} else {
-				if (isBoss && nextPoint == 0) {
+				if ((isBoss || isLoop) && nextPoint == 0) {
 					speed = moveSpeed;
 				}
 				distance = Vector3.Distance (transform.position, listPoints [nextPoint].position);
@@ -61,13 +62,14 @@ public class EnemyPatrol : MonoBehaviour {
 				//else	speed = moveSpeed;
 			
 				if (nextPoint == points.transform.childCount) {
-					if (!isBoss) {
+					if (!isBoss && !isLoop) {
 						nextPoint = points.transform.childCount - 1;
 						speed = 0;
 
 					} else {
 						nextPoint = 0;
-						speed = 0.5f;
+						if (isBoss)
+							speed = 0.5f;
 					}
 				}
 			}

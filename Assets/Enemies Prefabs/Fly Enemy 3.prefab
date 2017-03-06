@@ -295,7 +295,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1921518276264958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8712039, y: 5.519918, z: 0}
+  m_LocalPosition: {x: 1.45, y: 2.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4876553441858836}
@@ -510,6 +510,7 @@ MonoBehaviour:
   speedAdd: 0.05
   isBoss: 0
   isFlying: 1
+  isLoop: 0
 --- !u!114 &114639123399124510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -531,6 +532,7 @@ MonoBehaviour:
   isConstruct: 0
   isFlying: 1
   isMissile: 1
+  numberOfBullet: 0
 --- !u!114 &114692533584046942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -572,10 +574,11 @@ MonoBehaviour:
   shootPoint: {fileID: 4622071426748012}
   shootDelay: 1
   canShot: 1
-  isSingleShot: 1
+  isSingleShot: 0
   isConstruct: 0
   isFlying: 1
   isMissile: 1
+  numberOfBullet: 0
 --- !u!114 &114922873556615146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -597,6 +600,7 @@ MonoBehaviour:
   isConstruct: 0
   isFlying: 1
   isMissile: 1
+  numberOfBullet: 0
 --- !u!212 &212011476041129958
 SpriteRenderer:
   m_ObjectHideFlags: 1

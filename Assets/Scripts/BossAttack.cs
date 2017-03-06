@@ -30,7 +30,7 @@ public class BossAttack : MonoBehaviour {
 		while (0 < i) {
 				i--;
 				Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
-				yield return new WaitForSeconds (0.2f);
+				yield return new WaitForSeconds (0.4f);
 		}
 	}
 	IEnumerator SideShoot() {
@@ -38,7 +38,7 @@ public class BossAttack : MonoBehaviour {
 		while (0 < i) {
 			i--;
 			Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
-			yield return new WaitForSeconds (0.2f);
+			yield return new WaitForSeconds (0.4f);
 		}
 	}
 }
