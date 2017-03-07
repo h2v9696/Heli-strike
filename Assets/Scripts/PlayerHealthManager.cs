@@ -8,7 +8,7 @@ public class PlayerHealthManager : MonoBehaviour {
 	public int playerHealth;
 	//for death effect
 
-	public PlayerController playerController;
+	private PlayerController playerController;
 	public Explosion explosion;
 
 	private int playerMaxHealth;

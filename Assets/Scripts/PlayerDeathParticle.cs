@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDeathParticle : MonoBehaviour {
 
-	public PlayerController player;
+	private PlayerController player;
 
 	//for explosion animation
 	public Explosion explosion;

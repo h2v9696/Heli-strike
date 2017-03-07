@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 	public float missileShotDelay;
 	private float missileShotDelayCounter;
 	private int firePoint = 1;
+	private bool canUpSpeed;
 
 	//firing bullet
 	public GameObject bullet;
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 	private Sprite damageSprite;
 	private Vector3 firstScale;
 	//public GameObject explosion;
-	public PlayerDeathParticle playerDeathParticle;
+	private PlayerDeathParticle playerDeathParticle;
 
 	public GameObject[] fireType;
 	public int currentFireType;
@@ -42,6 +43,10 @@ public class PlayerController : MonoBehaviour {
 	//count number of missile of player
 	public int numberMissile;
 	private int maxNumberMissile;
+
+
+	//for audio when shooting
+	public AudioSource shootingSound;
 
 
 
@@ -63,6 +68,8 @@ public class PlayerController : MonoBehaviour {
 		maxMoveSpeed = moveSpeed;
 		distance = 0f;
 		previousDistance = 0f;
+
+		canUpSpeed = false;
 
 	}
 	
@@ -243,6 +250,7 @@ public class PlayerController : MonoBehaviour {
 
 	void shot(GameObject fireType)
 	{
+		shootingSound.Play ();
 		Transform firePosition;
 		for (int i = 0; i < fireType.transform.childCount; i++) 
 		{
@@ -269,10 +277,20 @@ public class PlayerController : MonoBehaviour {
 	public void changeMissileType()
 	{
 		missile = Resources.Load<GameObject> ("Missile_2");
+		missileShotDelay = missileShotDelay / 2;
 	}
 
 	public void changeBulletType()
 	{
-		currentFireType = 1;
+		currentFireType += 1;
+		if (currentFireType >= fireType.Length)
+			currentFireType = fireType.Length;
+		if (canUpSpeed == false) {
+			canUpSpeed = true;
+		} else if (canUpSpeed == true) 
+		{
+			bulletShotDelay = bulletShotDelay / 2;
+			canUpSpeed = false;
+		}
 	}
 }
