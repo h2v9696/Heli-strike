@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 58867223025271112}
   - component: {fileID: 114438961553218740}
   - component: {fileID: 82076452739333338}
+  - component: {fileID: 50231401348508718}
+  - component: {fileID: 114019447155055936}
   m_Layer: 0
   m_Name: AddMissileItem
   m_TagString: CollectItem
@@ -43,6 +45,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50231401348508718
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1644918446281404}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &58867223025271112
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -137,6 +159,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114019447155055936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1644918446281404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
 --- !u!114 &114438961553218740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,7 +184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberMissileToAdd: 5
   isUpgradeType: 0
-  audioClip: {fileID: 8300000, guid: b21717f4685bc514dbd95e6c6115b211, type: 3}
 --- !u!212 &212260623959542044
 SpriteRenderer:
   m_ObjectHideFlags: 1
