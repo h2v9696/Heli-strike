@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627724682903426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 0.49, z: 0}
+  m_LocalPosition: {x: -0.83552456, y: 18.317253, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4801811545978430}
@@ -197,7 +197,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: -0.009396076, y: -0.073813915}
   serializedVersion: 2
-  m_Size: {x: 0.9811141, y: 1.0114872}
+  m_Size: {x: 1.06, y: 0.86}
 --- !u!95 &95653557566116946
 Animator:
   serializedVersion: 3
@@ -236,6 +236,7 @@ MonoBehaviour:
   speedAdd: 0.15
   isBoss: 0
   isFlying: 0
+  isLoop: 0
 --- !u!114 &114550802701455922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +270,7 @@ MonoBehaviour:
   isConstruct: 1
   isFlying: 0
   isMissile: 0
+  numberOfBullet: 0
 --- !u!114 &114631799951599030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,6 +292,8 @@ MonoBehaviour:
   isFlying: 0
   angle: 5
   scaleReduce: 0.008
+  enemyDead: 0
+  constructEnemyDead: 0
 --- !u!212 &212097795357540092
 SpriteRenderer:
   m_ObjectHideFlags: 1

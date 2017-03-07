@@ -240,7 +240,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1621708873824604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.34, y: 7.84, z: 0}
+  m_LocalPosition: {x: -0.013453007, y: 4.6474853, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4268352685352850}
@@ -281,7 +281,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.375, y: 0.6875}
+  m_Size: {x: 0.375, y: 0.92}
 --- !u!95 &95689487191030742
 Animator:
   serializedVersion: 3
@@ -315,7 +315,12 @@ MonoBehaviour:
   canMove: 1
   rotationTime: 6
   shadow: {fileID: 0}
+  deathPoint: {fileID: 0}
+  cantRotate: 0
+  speedAdd: 0.15
+  isBoss: 0
   isFlying: 0
+  isLoop: 0
 --- !u!114 &114400355820721094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,6 +338,12 @@ MonoBehaviour:
     type: 2}
   enemyDeath: {fileID: 0}
   isConstructEnemy: 0
+  deathSprite: {fileID: 0}
+  isFlying: 0
+  angle: 5
+  scaleReduce: 0.008
+  enemyDead: 0
+  constructEnemyDead: 0
 --- !u!212 &212323102468219700
 SpriteRenderer:
   m_ObjectHideFlags: 1

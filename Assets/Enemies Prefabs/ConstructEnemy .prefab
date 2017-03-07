@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212919718756857802}
   - component: {fileID: 114304211532240544}
   - component: {fileID: 50301409590048814}
-  - component: {fileID: 61415864759291496}
   - component: {fileID: 114896964941475498}
   - component: {fileID: 95873843066990208}
+  - component: {fileID: 60311323143177146}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -184,8 +184,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61415864759291496
-BoxCollider2D:
+--- !u!60 &60311323143177146
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -195,9 +195,13 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.009396076, y: -0.073813915}
-  serializedVersion: 2
-  m_Size: {x: 0.9811141, y: 1.0114872}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.7490761, y: -0.20770836}
+      - {x: -0.23064137, y: 0.7069275}
+      - {x: -0.7637634, y: 0.1810289}
+      - {x: 0.16451836, y: -0.76378906}
 --- !u!95 &95873843066990208
 Animator:
   serializedVersion: 3
@@ -236,6 +240,7 @@ MonoBehaviour:
   speedAdd: 0.15
   isBoss: 0
   isFlying: 0
+  isLoop: 0
 --- !u!114 &114316820517543436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +274,7 @@ MonoBehaviour:
   isConstruct: 1
   isFlying: 0
   isMissile: 0
+  numberOfBullet: 0
 --- !u!114 &114896964941475498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -290,6 +296,8 @@ MonoBehaviour:
   isFlying: 0
   angle: 5
   scaleReduce: 0.008
+  enemyDead: 0
+  constructEnemyDead: 0
 --- !u!212 &212731989510153854
 SpriteRenderer:
   m_ObjectHideFlags: 1

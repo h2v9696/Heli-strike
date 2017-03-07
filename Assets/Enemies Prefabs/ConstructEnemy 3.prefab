@@ -86,10 +86,10 @@ GameObject:
   - component: {fileID: 212021895550067820}
   - component: {fileID: 114259540199149128}
   - component: {fileID: 50420955776354816}
-  - component: {fileID: 61997483161301494}
   - component: {fileID: 114272606368448342}
   - component: {fileID: 95022183112891254}
   - component: {fileID: 114970543986575206}
+  - component: {fileID: 60749168535131566}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907831329093020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9044907, y: 22.123566, z: 10}
+  m_LocalPosition: {x: -4.1345463, y: 16.513195, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4821961346030040}
@@ -206,8 +206,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61997483161301494
-BoxCollider2D:
+--- !u!60 &60749168535131566
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -217,9 +217,13 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.009396076, y: -0.073813915}
-  serializedVersion: 2
-  m_Size: {x: 0.9811141, y: 1.0114872}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.8308455, y: 0.09211254}
+      - {x: -0.23064137, y: 0.7069275}
+      - {x: -0.90004563, y: -0.35047054}
+      - {x: 0.39619792, y: -0.6956482}
 --- !u!95 &95022183112891254
 Animator:
   serializedVersion: 3
@@ -258,6 +262,7 @@ MonoBehaviour:
   speedAdd: 0.15
   isBoss: 0
   isFlying: 0
+  isLoop: 0
 --- !u!114 &114272606368448342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -314,6 +319,7 @@ MonoBehaviour:
   isConstruct: 1
   isFlying: 0
   isMissile: 0
+  numberOfBullet: 0
 --- !u!114 &114970543986575206
 MonoBehaviour:
   m_ObjectHideFlags: 1
