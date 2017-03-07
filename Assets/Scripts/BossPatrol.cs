@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPatrol : MonoBehaviour {
+public class BossPatrol : MonoBehaviour {
+
 	public float moveSpeed;
 	public Transform points;
 	private Transform[] listPoints = new Transform[20];
@@ -13,8 +14,8 @@ public class EnemyPatrol : MonoBehaviour {
 	public bool canMove;
 	public float rotationTime;
 	public GameObject shadow;
-	private EnemyHealthManager enemyHealth;
 
+	private BossHealthManager bossHealth;
 
 	public Transform deathPoint;
 	public bool cantRotate;
@@ -24,9 +25,9 @@ public class EnemyPatrol : MonoBehaviour {
 	public bool isLoop;
 
 	void Start () {
-		enemyHealth = GetComponent<EnemyHealthManager> ();
-	
-		//bossHealth = GetComponent<BossHealthManager> ();
+
+
+		bossHealth = GetComponent<BossHealthManager> ();
 
 		//Lay list cac diem de di chuyen
 
@@ -39,13 +40,13 @@ public class EnemyPatrol : MonoBehaviour {
 			speed = moveSpeed;
 		else
 			speed = 0;
-		
+
 	}
 	void Update () {
-		
+
 		if (points.transform.childCount != 0) {
-			
-			if (isFlying && (enemyHealth.enemyHealth <= 0) && deathPoint != null) {
+
+			if (isFlying && (bossHealth.bossHealth <= 0) && deathPoint != null) {
 				speed += speedAdd;
 				transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
 			} else {
@@ -60,12 +61,12 @@ public class EnemyPatrol : MonoBehaviour {
 					transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationTime);
 				}
 				transform.position = Vector3.MoveTowards (transform.position, listPoints [nextPoint].position, Time.deltaTime * speed);
-			
+
 				if (distance <= 0.5f) {
 					nextPoint++;
 				} 
 				//else	speed = moveSpeed;
-			
+
 				if (nextPoint == points.transform.childCount) {
 					if (!isBoss && !isLoop) {
 						nextPoint = points.transform.childCount - 1;
@@ -80,7 +81,7 @@ public class EnemyPatrol : MonoBehaviour {
 			}
 		} else {
 			if (isFlying) {
-				if ((enemyHealth.enemyHealth <= 0) && deathPoint != null) {
+				if ((bossHealth.bossHealth <= 0) && deathPoint != null) {
 					speed += speedAdd;
 					transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
 				}
