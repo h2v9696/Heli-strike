@@ -13,11 +13,13 @@ public class PauseScreen : MonoBehaviour {
 	public GameObject pauseMenuCanvas;
 	private GameOver gameOver;
 	private LevelComplete levelComplete;
+	private TextSplit textSplit;
 
 	void Start()
 	{
 		gameOver = FindObjectOfType<GameOver> ();
 		levelComplete = FindObjectOfType<LevelComplete> ();
+		textSplit = FindObjectOfType<TextSplit> ();
 	}
 
 	void Update()
@@ -27,7 +29,7 @@ public class PauseScreen : MonoBehaviour {
 			Time.timeScale = 0f;
 		} else {
 			pauseMenuCanvas.SetActive (false);
-			if (gameOver.isOver == false && levelComplete.isComplete == false)				
+			if (gameOver.isOver == false && levelComplete.isComplete == false && textSplit.doneStory == true)			
 			Time.timeScale = 1f;
 		}
 

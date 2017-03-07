@@ -9,44 +9,72 @@ public class TextSplit : MonoBehaviour {
 	//public string[] strings;
 	public float speed = 0.1f;
 	public GameObject storyCanvas;
-	int finishText = 0;
+	public bool finishText = false;
 	int characterIndex=0;
+	public bool doneStory=false;
 
 	public float delay = 4f;
 
 	float delayTimer;
 	//int stringIndex=0;
 	void Start()
-	{
+	{	Time.timeScale = 0;
 		StartCoroutine (SplitTimer());
+
 	}
 
 	IEnumerator SplitTimer()
 	{while (1 == 1) 
-		{
-			yield return new WaitForSeconds (speed);
+		{	Time.timeScale = 0;
+			//yield return new WaitForSeconds (speed);
+			yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(speed)); //waitforsecond bi anh huong boi timeScale => lam ham waitforreal ko phu thuoc
+		
 			if (characterIndex > String.Length) {
+				finishText = true;
 				continue;
 			}
 			textArea.text = String.Substring(0,characterIndex);
 			characterIndex++;
+
 			//textArea.text = strings [stringIndex].Substring[0,characterIndex];
+		}
+
+	}
+	void Update()
+	{
+		
+	}
+
+
+	public void SkipSplit()
+	{
+		switch (finishText) {
+
+		case false:
+			if (characterIndex < String.Length) {
+				characterIndex = String.Length;
+				finishText = true;
+
+			}
+			break;
+
+		case true:
+			Destroy (storyCanvas);
+			doneStory = true;
+			break;
+			
+
 		}
 	}
 
-	public void SkipSplit()
-	{if (characterIndex < String.Length)
-			characterIndex = String.Length;
-		if (characterIndex == String.Length)
-			finishText = 1;
-	}
-
-	public void finishStory()
-	{if(finishText==1)
-		delayTimer += Time.deltaTime;
-
-		if (delayTimer >= delay) {
-			Destroy (storyCanvas);
+	public static class CoroutineUtil
+	{
+		public static IEnumerator WaitForRealSeconds(float time)
+		{
+			float start = Time.realtimeSinceStartup;
+			while (Time.realtimeSinceStartup < start + time) {
+				yield return null;
+			}
 		}
 	}
 }
