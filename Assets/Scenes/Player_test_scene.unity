@@ -1195,6 +1195,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114917123904808406, guid: 028a1329798155c47ac874d873481571,
+        type: 2}
+      propertyPath: totalEnemies
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a1329798155c47ac874d873481571, type: 2}
   m_IsPrefabParent: 0
@@ -1299,6 +1304,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114906241747538638, guid: 24a6b0782a1e64649b961ae32e660c76,
+        type: 2}
+      propertyPath: nextLevel
+      value: Level1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24a6b0782a1e64649b961ae32e660c76, type: 2}

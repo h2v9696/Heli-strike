@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		//for counting enemy kill
+
+
 		isLiving = true;
 		firstScale = transform.lossyScale;
 		transform.position = new Vector3 (0, 0, 0);

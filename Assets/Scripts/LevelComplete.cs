@@ -17,13 +17,15 @@ public class LevelComplete : MonoBehaviour {
 
 	public int intEnemyKilled;
 	public int intConstructKilled;
-
+	private  int holdForTotalEnemyKill=0;
+	private  int holdForTotalConstructDestroy=0;
 	private LevelManager levelManager;
-
+	private bool isAdded;
 	float delayTimer;
 	void Start () {
 		status = FindObjectOfType<ProgressBar> ();
 		levelManager = FindObjectOfType<LevelManager> ();
+		isAdded = false;
 
 	}
 	
@@ -37,6 +39,7 @@ public class LevelComplete : MonoBehaviour {
 				if (delayTimer >= delay) 
 					{
 				isComplete = true;
+
 						levelCompleteCanvas.SetActive (true);
 				intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
 				theTextEnemyKill.text = "Enemy Killed: " + intEnemyKilled;
@@ -48,6 +51,21 @@ public class LevelComplete : MonoBehaviour {
 				theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled- intConstructKilled);
 
 							Time.timeScale = 0f;
+				if (!isAdded) 
+				{
+					holdForTotalEnemyKill = PlayerPrefs.GetInt ("TotalEnemyKills");
+					Debug.Log (holdForTotalEnemyKill);
+
+					holdForTotalConstructDestroy = PlayerPrefs.GetInt ("TotalConstructDestroy");
+					holdForTotalEnemyKill += intEnemyKilled;
+					holdForTotalConstructDestroy += intConstructKilled;
+					Debug.Log (holdForTotalEnemyKill);
+					PlayerPrefs.SetInt ("TotalEnemyKills", holdForTotalEnemyKill);
+					Debug.Log (holdForTotalEnemyKill);
+
+					PlayerPrefs.SetInt ("TotalConstructDestroy", holdForTotalConstructDestroy);
+					isAdded = true;
+				}
 
 
 					}
