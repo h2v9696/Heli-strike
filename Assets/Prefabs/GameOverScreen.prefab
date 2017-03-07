@@ -329,6 +329,11 @@ MonoBehaviour:
   restart: Chinh
   delay: 0
   isOver: 0
+  theTextEnemyKill: {fileID: 114969968501801256}
+  theTextConstructKill: {fileID: 114328015318043942}
+  theTextEnemySurvived: {fileID: 114505128795180408}
+  intEnemyKilled: 0
+  intConstructKilled: 0
 --- !u!114 &114505128795180408
 MonoBehaviour:
   m_ObjectHideFlags: 1

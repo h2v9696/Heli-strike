@@ -22,6 +22,7 @@ public class LevelComplete : MonoBehaviour {
 
 	float delayTimer;
 	void Start () {
+		isComplete = false;
 		status = FindObjectOfType<ProgressBar> ();
 		levelManager = FindObjectOfType<LevelManager> ();
 

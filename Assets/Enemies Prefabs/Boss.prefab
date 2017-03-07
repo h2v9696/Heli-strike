@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 4043629678879356}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 4687970225137856}
   m_Layer: 0
   m_Name: Points
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,6 +539,7 @@ MonoBehaviour:
   speedAdd: 0.15
   isBoss: 1
   isFlying: 0
+  isLoop: 0
 --- !u!114 &114004668037830938
 MonoBehaviour:
   m_ObjectHideFlags: 1
