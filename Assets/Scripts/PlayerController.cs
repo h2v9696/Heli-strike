@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed;
 	private float maxMoveSpeed;
 	private PauseScreen pauseMenu;
-	public bool isPausing;
+
+
 
 	private float distance;
 	private float previousDistance;
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 	private float bulletShotDelayCounter;
 
 	//deathMovement
-	public bool isLiving;
+
 	private Sprite damageSprite;
 	private Vector3 firstScale;
 	//public GameObject explosion;
@@ -44,6 +45,14 @@ public class PlayerController : MonoBehaviour {
 	public int numberMissile;
 	private int maxNumberMissile;
 
+	//Game story 
+
+	private TextSplit textsplit;
+	private LevelComplete levelComplete;
+
+	//
+	public bool isPausing;
+	public bool isLiving;
 
 	//for audio when shooting
 	public AudioSource shootingSound;
@@ -53,10 +62,16 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		//for counting enemy kill
+
+
 		isLiving = true;
 		firstScale = transform.lossyScale;
 		transform.position = new Vector3 (0, 0, 0);
 		damageSprite = Resources.Load<Sprite> ("DamagePlayer");
+
+		textsplit = FindObjectOfType<TextSplit> ();
+		levelComplete = FindObjectOfType<LevelComplete> ();
 
 		pauseMenu = FindObjectOfType<PauseScreen> ();
 		isPausing = pauseMenu.getIsPaused();
@@ -77,6 +92,10 @@ public class PlayerController : MonoBehaviour {
 	void Update () 
 	{
 		isPausing = pauseMenu.getIsPaused();
+		if (textsplit.doneStory == false || levelComplete.isComplete == true) 
+		{
+			isPausing = true;
+		}
 		if (isLiving && !isPausing ) 
 		{
 			Move ();

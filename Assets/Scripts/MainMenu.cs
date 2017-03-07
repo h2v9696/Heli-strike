@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviour {
 
 	public void NewGame()
 	{
+		PlayerPrefs.SetInt ("TotalEnemyKills", 0);
+		PlayerPrefs.SetInt ("TotalConstructDestroy",0);
 		panelNewGame.SetActive (true);
 	}
 
