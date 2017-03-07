@@ -48,7 +48,7 @@ public class EnemyAttack : MonoBehaviour {
 	}
 	IEnumerator DoubleShoot() {
 		Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
-		yield return new WaitForSeconds (0.2f);
+		yield return new WaitForSeconds (0.1f);
 		Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
 	}
 
