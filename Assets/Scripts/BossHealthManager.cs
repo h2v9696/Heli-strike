@@ -18,10 +18,12 @@ public class BossHealthManager : MonoBehaviour {
 	public float angle = 5f;
 	public float scaleReduce = 0.008f;
 	public bool isDeath;
+	private GunController disableRotate;
 
 
 	void Start () {
 		firstScale = transform.lossyScale;
+		disableRotate = GetComponent<GunController> ();
 
 		bossHealth = bossMaxHealth;
 		animator = GetComponent<Animator> ();
@@ -35,6 +37,9 @@ public class BossHealthManager : MonoBehaviour {
 			if (!isFlying) {
 				isDeath = true;
 			} else {
+				if (disableRotate != null) {
+					disableRotate.gunCantRotate = true;
+				}
 				if (deathSprite != null)
 					GetComponent<SpriteRenderer> ().sprite = deathSprite;
 
