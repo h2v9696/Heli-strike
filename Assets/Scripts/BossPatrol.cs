@@ -23,7 +23,7 @@ public class BossPatrol : MonoBehaviour {
 	public bool isBoss;
 	public bool isFlying;
 	public bool isLoop;
-
+	public bool isFinalBoss;
 	void Start () {
 
 
@@ -45,37 +45,69 @@ public class BossPatrol : MonoBehaviour {
 	void Update () {
 
 		if (points.transform.childCount != 0) {
+			if (!isFinalBoss) {
+				if (isFlying && (bossHealth.bossHealth <= 0) && deathPoint != null) {
+					speed += speedAdd;
+					transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
+				} else {
+					if ((isBoss || isLoop) && nextPoint == 0) {
+						speed = moveSpeed;
+					}
+					distance = Vector3.Distance (transform.position, listPoints [nextPoint].position);
+					Vector3 relativePos = listPoints [nextPoint].position - transform.position;
+					if (!cantRotate) {
+						float angle = Mathf.Atan2 (relativePos.y, relativePos.x) * Mathf.Rad2Deg - 90;
+						Quaternion rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+						transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationTime);
+					}
+					transform.position = Vector3.MoveTowards (transform.position, listPoints [nextPoint].position, Time.deltaTime * speed);
 
-			if (isFlying && (bossHealth.bossHealth <= 0) && deathPoint != null) {
-				speed += speedAdd;
-				transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
+					if (distance <= 0.5f) {
+						nextPoint++;
+					} 
+					//else	speed = moveSpeed;
+
+					if (nextPoint == points.transform.childCount) {
+						if (!isBoss && !isLoop) {
+							nextPoint = points.transform.childCount - 1;
+							speed = 0;
+
+						} else {
+							nextPoint = 0;
+							if (isBoss)
+								speed = 0.5f;
+						}
+					}
+				}
 			} else {
-				if ((isBoss || isLoop) && nextPoint == 0) {
-					speed = moveSpeed;
-				}
-				distance = Vector3.Distance (transform.position, listPoints [nextPoint].position);
-				Vector3 relativePos = listPoints [nextPoint].position - transform.position;
-				if (!cantRotate) {
-					float angle = Mathf.Atan2 (relativePos.y, relativePos.x) * Mathf.Rad2Deg - 90;
-					Quaternion rotation = Quaternion.AngleAxis (angle, Vector3.forward);
-					transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationTime);
-				}
-				transform.position = Vector3.MoveTowards (transform.position, listPoints [nextPoint].position, Time.deltaTime * speed);
+				if (isFlying && (bossHealth.bossHealth <= 0) && deathPoint != null) {
+					speed += speedAdd;
+					transform.position = Vector3.MoveTowards (transform.position, deathPoint.position, Time.deltaTime * speed);
+				} else {
+					if (nextPoint == 0 || nextPoint == 3) {
+						speed = 2f;
 
-				if (distance <= 0.5f) {
-					nextPoint++;
-				} 
-				//else	speed = moveSpeed;
-
-				if (nextPoint == points.transform.childCount) {
-					if (!isBoss && !isLoop) {
-						nextPoint = points.transform.childCount - 1;
-						speed = 0;
-
+						cantRotate = true;
 					} else {
+						speed = moveSpeed;
+						cantRotate = false;
+					}
+					distance = Vector3.Distance (transform.position, listPoints [nextPoint].position);
+					Vector3 relativePos = listPoints [nextPoint].position - transform.position;
+					if (!cantRotate) {
+						float angle = Mathf.Atan2 (relativePos.y, relativePos.x) * Mathf.Rad2Deg - 90;
+						Quaternion rotation = Quaternion.AngleAxis (angle, Vector3.forward);
+						transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationTime);
+					}
+					transform.position = Vector3.MoveTowards (transform.position, listPoints [nextPoint].position, Time.deltaTime * speed);
+
+					if (distance <= 0.5f) {
+						nextPoint++;
+					} 
+					if (nextPoint == points.transform.childCount) {
 						nextPoint = 0;
-						if (isBoss)
-							speed = 0.5f;
+
+						speed = 0.5f;
 					}
 				}
 			}

@@ -9,6 +9,9 @@ public class EnemyAttack : MonoBehaviour {
 	public Transform shootPoint;
 	public float shootDelay;
 	private float shootCounter;
+	public float delayShootAtFirst;
+	private float counterShootAtFirst;
+
 	public bool canShot;
 	public bool isSingleShot;
 	public bool isConstruct;
@@ -20,31 +23,34 @@ public class EnemyAttack : MonoBehaviour {
 	void Start () {
 		player = FindObjectOfType<PlayerController> ();
 		shootCounter = 0;
+		counterShootAtFirst = delayShootAtFirst;
 		if (!canShot) {
 			gameObject.SetActive (false);
 		}
 	}
 
 	void Update () {
-		shootCounter -= Time.deltaTime;
-		if (shootCounter <= 0 && isConstruct) {
-			StartCoroutine ("ConstructShoot");
-			shootCounter = shootDelay;
-		} else if (shootCounter <= 0 && isFlying) {
-			StartCoroutine ("FlyShoot");
-			shootCounter = shootDelay;
-		} else {
-			if (shootCounter <= 0 && !isSingleShot) {
-				StartCoroutine ("DoubleShoot");
+		counterShootAtFirst -= Time.deltaTime;
+		if (counterShootAtFirst <= 0) {
+			shootCounter -= Time.deltaTime;
+			if (shootCounter <= 0 && isConstruct) {
+				StartCoroutine ("ConstructShoot");
 				shootCounter = shootDelay;
-			}
-			if (shootCounter <= 0 && isSingleShot) {
-				Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
+			} else if (shootCounter <= 0 && isFlying) {
+				StartCoroutine ("FlyShoot");
+				shootCounter = shootDelay;
+			} else {
+				if (shootCounter <= 0 && !isSingleShot) {
+					StartCoroutine ("DoubleShoot");
+					shootCounter = shootDelay;
+				}
+				if (shootCounter <= 0 && isSingleShot) {
+					Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
 
-				shootCounter = shootDelay;
+					shootCounter = shootDelay;
+				}
 			}
 		}
-
 	}
 	IEnumerator DoubleShoot() {
 		Instantiate (enemyBullet, shootPoint.position, gameObject.transform.rotation);
