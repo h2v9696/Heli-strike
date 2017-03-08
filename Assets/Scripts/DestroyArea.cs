@@ -14,7 +14,7 @@ public class DestroyArea : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D c)
 	{
-		if (c.name == "SpawnPoint")
+		if (c.tag == "SpawnPoint")
 			
 		c.gameObject.GetComponent<SpawnPoint> ().SpawnEnemy ();
 	}

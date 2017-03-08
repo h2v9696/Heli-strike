@@ -10,6 +10,7 @@ TagManager:
   - CollectItem
   - Boss
   - ConstructEnemy
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
