@@ -19,8 +19,12 @@ public class LevelComplete : MonoBehaviour {
 	public int intConstructKilled;
 	private  int holdForTotalEnemyKill=0;
 	private  int holdForTotalConstructDestroy=0;
-	private LevelManager levelManager;
+	private  int holdForTotalEnemySurvived = 0;
 	private bool isAdded;
+
+
+	private LevelManager levelManager;
+
 	float delayTimer;
 	void Start () {
 		isComplete = false;
@@ -55,16 +59,22 @@ public class LevelComplete : MonoBehaviour {
 				if (!isAdded) 
 				{
 					holdForTotalEnemyKill = PlayerPrefs.GetInt ("TotalEnemyKills");
-					Debug.Log (holdForTotalEnemyKill);
+					//Debug.Log (holdForTotalEnemyKill);
+
 
 					holdForTotalConstructDestroy = PlayerPrefs.GetInt ("TotalConstructDestroy");
+					holdForTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
+
+					holdForTotalEnemySurvived += levelManager.totalEnemies - intEnemyKilled- intConstructKilled
 					holdForTotalEnemyKill += intEnemyKilled;
 					holdForTotalConstructDestroy += intConstructKilled;
-					Debug.Log (holdForTotalEnemyKill);
+
+					//Debug.Log (holdForTotalEnemyKill);
 					PlayerPrefs.SetInt ("TotalEnemyKills", holdForTotalEnemyKill);
-					Debug.Log (holdForTotalEnemyKill);
+					//Debug.Log (holdForTotalEnemyKill);
 
 					PlayerPrefs.SetInt ("TotalConstructDestroy", holdForTotalConstructDestroy);
+					PlayerPrefs.SetInt ("TotalEnemySurvived", holdForTotalEnemySurvived);
 					isAdded = true;
 				}
 
