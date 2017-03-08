@@ -65,7 +65,7 @@ public class LevelComplete : MonoBehaviour {
 					holdForTotalConstructDestroy = PlayerPrefs.GetInt ("TotalConstructDestroy");
 					holdForTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
 
-					holdForTotalEnemySurvived += levelManager.totalEnemies - intEnemyKilled- intConstructKilled
+					holdForTotalEnemySurvived += levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
 					holdForTotalEnemyKill += intEnemyKilled;
 					holdForTotalConstructDestroy += intConstructKilled;
 

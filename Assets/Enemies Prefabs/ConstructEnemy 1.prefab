@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 114329461269979112}
   - component: {fileID: 95066600978558262}
   - component: {fileID: 60866833833695820}
+  - component: {fileID: 114262921664475944}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -231,6 +232,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 0
+--- !u!114 &114262921664475944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458506813444930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
 --- !u!114 &114329461269979112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +267,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114648476005474084
 MonoBehaviour:
   m_ObjectHideFlags: 1

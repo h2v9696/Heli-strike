@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61944928070264984}
   - component: {fileID: 114284943752497914}
   - component: {fileID: 95137481019933534}
+  - component: {fileID: 114856274768296912}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -161,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998178184475552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5987036, y: 17.935665, z: 0}
+  m_LocalPosition: {x: -4.1513066, y: 20.206985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4144028914424334}
@@ -308,6 +309,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114526482059287740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,6 +344,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 0
+--- !u!114 &114856274768296912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1005773531924544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
 --- !u!212 &212064351884799508
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -372,7 +386,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1550618461
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 23fbde54155045a4aaefb6638e08cf95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

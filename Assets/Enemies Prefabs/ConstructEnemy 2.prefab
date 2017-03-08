@@ -308,6 +308,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114475661251767324
 MonoBehaviour:
   m_ObjectHideFlags: 1

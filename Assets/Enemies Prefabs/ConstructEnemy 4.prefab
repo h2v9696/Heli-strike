@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 61455508107718824}
   - component: {fileID: 114631799951599030}
   - component: {fileID: 95653557566116946}
+  - component: {fileID: 114333574859669334}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -215,6 +216,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114333574859669334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1852465099107752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
 --- !u!114 &114494257849312720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,6 +307,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!212 &212097795357540092
 SpriteRenderer:
   m_ObjectHideFlags: 1
