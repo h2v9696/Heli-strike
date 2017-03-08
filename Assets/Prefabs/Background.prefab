@@ -659,6 +659,7 @@ GameObject:
   - component: {fileID: 114334244825624642}
   - component: {fileID: 50495196258286746}
   - component: {fileID: 114572327573913172}
+  - component: {fileID: 82699841902416068}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -2307,6 +2308,86 @@ BoxCollider2D:
   m_Offset: {x: -0.009396076, y: -0.073813915}
   serializedVersion: 2
   m_Size: {x: 0.9811141, y: 1.0114872}
+--- !u!82 &82699841902416068
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1543414389057032}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 55edf915386e9c7488a8d379bb0dbc53, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95692392183746484
 Animator:
   serializedVersion: 3
@@ -2403,6 +2484,7 @@ MonoBehaviour:
   isConstruct: 1
   isFlying: 0
   isMissile: 0
+  numberOfBullet: 0
 --- !u!114 &114199594522105048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2426,6 +2508,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114224417745564200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2459,6 +2542,7 @@ MonoBehaviour:
   speedAdd: 0.15
   isBoss: 0
   isFlying: 0
+  isLoop: 0
 --- !u!114 &114316298299125206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2482,6 +2566,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114334244825624642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2515,6 +2600,7 @@ MonoBehaviour:
   isConstruct: 1
   isFlying: 0
   isMissile: 0
+  numberOfBullet: 0
 --- !u!114 &114447562364861486
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2538,6 +2624,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114472788384959454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2571,6 +2658,7 @@ MonoBehaviour:
   speedAdd: 0.15
   isBoss: 0
   isFlying: 0
+  isLoop: 0
 --- !u!114 &114572327573913172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2616,6 +2704,7 @@ MonoBehaviour:
   speedAdd: 0.15
   isBoss: 0
   isFlying: 0
+  isLoop: 0
 --- !u!114 &114740765413773280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2649,6 +2738,7 @@ MonoBehaviour:
   isConstruct: 1
   isFlying: 0
   isMissile: 0
+  numberOfBullet: 0
 --- !u!212 &212009867809857254
 SpriteRenderer:
   m_ObjectHideFlags: 1
