@@ -18,13 +18,14 @@ public class EnemyHealthManager : MonoBehaviour {
 	public float scaleReduce = 0.008f;
 	public int enemyDead;
 	public int constructEnemyDead;
-	//public bool isBoss;
+	public bool isBoss;
+	private GunController disableRotate;
 	void Start () {
 		firstScale = transform.lossyScale;
 		enemyHealth = enemyMaxHealth;
 		animator = GetComponent<Animator> ();
 		isExplosion = false;
-
+		disableRotate = GetComponent<GunController> ();
 	}
 
 	void Update () {
@@ -33,8 +34,16 @@ public class EnemyHealthManager : MonoBehaviour {
 		if (enemyHealth <= (enemyMaxHealth / 2)) {
 			if (transform.childCount!=0) {
 				var gun = transform.Find ("Gun");
-				if (gun!=null)
-					Destroy (gun.gameObject);
+				if (gun != null) {
+					if (!isBoss) {
+						Destroy (gun.gameObject);
+					} else {
+						if (enemyHealth <= 0) {
+							Destroy (gun.gameObject);
+
+						}
+					}
+				}
 			}
 		}
 		if (enemyHealth <= 0) {
@@ -47,7 +56,12 @@ public class EnemyHealthManager : MonoBehaviour {
 				var parent = transform.parent;
 				Destroy (parent.gameObject);
 				if (isConstructEnemy) {
-					Instantiate (enemyDeath, transform.position, enemyDeath.transform.rotation);
+					if (enemyDeath == null) {
+						GetComponent<SpriteRenderer> ().sprite = deathSprite;
+					}
+					else {
+						Instantiate (enemyDeath, transform.position, enemyDeath.transform.rotation);
+					}
 					constructEnemyDead++;
 					PlayerPrefs.SetInt ("ConstructionDestroyed", constructEnemyDead);
 
@@ -58,6 +72,9 @@ public class EnemyHealthManager : MonoBehaviour {
 				}
 				
 			} else {
+				if (disableRotate != null) {
+					disableRotate.gunCantRotate = true;
+				}
 				if (deathSprite != null)
 					GetComponent<SpriteRenderer> ().sprite = deathSprite;
 

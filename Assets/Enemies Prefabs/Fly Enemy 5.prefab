@@ -221,7 +221,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1775914804649632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7866945, y: 4.5751066, z: 0}
+  m_LocalPosition: {x: 1.8285799, y: 5.3070593, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4734454368113968}
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c47f479ea8fc646b5bdf757c114c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMaxHealth: 4
+  enemyMaxHealth: 15
   enemyHealth: 2
   explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
     type: 2}
@@ -403,6 +403,7 @@ MonoBehaviour:
   scaleReduce: 0.01
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114432523922139808
 MonoBehaviour:
   m_ObjectHideFlags: 1

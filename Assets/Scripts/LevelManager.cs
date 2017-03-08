@@ -11,9 +11,9 @@ public class LevelManager : MonoBehaviour {
 
 	//private bool isAdded;
 
-	private LevelComplete levelComplete;
+	//private LevelComplete levelComplete;
 	void Start () {
-		levelComplete = FindObjectOfType<LevelComplete> ();
+		//levelComplete = FindObjectOfType<LevelComplete> ();
 		PlayerPrefs.SetInt("EnemyKilled",0);
 		PlayerPrefs.SetInt("ConstructionDestroyed",0);
 		//isAdded = false;

@@ -722,7 +722,12 @@ GameObject:
   - component: {fileID: 4687832720829548}
   - component: {fileID: 114334244825624642}
   - component: {fileID: 50495196258286746}
+<<<<<<< HEAD
   - component: {fileID: 114963538011737596}
+=======
+  - component: {fileID: 114572327573913172}
+  - component: {fileID: 82699841902416068}
+>>>>>>> 45ffa8146622d8a1074fe7556b1e75de522e1348
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -2294,7 +2299,91 @@ BoxCollider2D:
   m_Offset: {x: -0.009396076, y: -0.073813915}
   serializedVersion: 2
   m_Size: {x: 0.9811141, y: 1.0114872}
+<<<<<<< HEAD
 --- !u!95 &95837731553992192
+=======
+--- !u!82 &82699841902416068
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1543414389057032}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 55edf915386e9c7488a8d379bb0dbc53, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!95 &95692392183746484
+>>>>>>> 45ffa8146622d8a1074fe7556b1e75de522e1348
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -2357,6 +2446,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 0
+<<<<<<< HEAD
+=======
+--- !u!114 &114064164682230920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264768928711598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+--- !u!114 &114092308211634648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739145958983144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21fc91a2dc34ff48a57e4fa17bcb620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBullet: {fileID: 1171744911522798, guid: 060953e005095d642bef0640c074a63a,
+    type: 2}
+  player: {fileID: 0}
+  shootPoint: {fileID: 4779903221377630}
+  shootDelay: 2
+  canShot: 0
+  isSingleShot: 0
+  isConstruct: 1
+  isFlying: 0
+  isMissile: 0
+  numberOfBullet: 0
+--- !u!114 &114199594522105048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264768928711598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c47f479ea8fc646b5bdf757c114c1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaxHealth: 20
+  enemyHealth: 2
+  explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
+    type: 2}
+  enemyDeath: {fileID: 1272717192393318, guid: b554c672f41b1f146b0a6b315a2e612d, type: 2}
+  isConstructEnemy: 1
+  deathSprite: {fileID: 0}
+  isFlying: 0
+  angle: 5
+  scaleReduce: 0.008
+  enemyDead: 0
+  constructEnemyDead: 0
+  isBoss: 0
+>>>>>>> 45ffa8146622d8a1074fe7556b1e75de522e1348
 --- !u!114 &114224417745564200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2393,6 +2543,7 @@ MonoBehaviour:
   isBoss: 0
   isFlying: 0
   isLoop: 0
+<<<<<<< HEAD
 --- !u!114 &114306542917410758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2407,6 +2558,8 @@ MonoBehaviour:
   theProgressBar: {fileID: 0}
   eventPoint: {fileID: 0}
   eventCompleteEnemy: {fileID: 0}
+=======
+>>>>>>> 45ffa8146622d8a1074fe7556b1e75de522e1348
 --- !u!114 &114316298299125206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2430,6 +2583,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114334244825624642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2510,6 +2664,7 @@ MonoBehaviour:
   isFlying: 0
   isMissile: 0
   numberOfBullet: 0
+<<<<<<< HEAD
 --- !u!114 &114628347616455518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2525,6 +2680,9 @@ MonoBehaviour:
   eventPoint: {fileID: 0}
   eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114700079463544306
+=======
+--- !u!114 &114447562364861486
+>>>>>>> 45ffa8146622d8a1074fe7556b1e75de522e1348
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2547,7 +2705,12 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+<<<<<<< HEAD
 --- !u!114 &114740765413773280
+=======
+  isBoss: 0
+--- !u!114 &114472788384959454
+>>>>>>> 45ffa8146622d8a1074fe7556b1e75de522e1348
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2581,7 +2744,23 @@ MonoBehaviour:
   isBoss: 0
   isFlying: 0
   isLoop: 0
+<<<<<<< HEAD
 --- !u!114 &114897709557111692
+=======
+--- !u!114 &114572327573913172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1543414389057032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+--- !u!114 &114630205556019794
+>>>>>>> 45ffa8146622d8a1074fe7556b1e75de522e1348
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2614,8 +2793,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8f9812e1ee61441aedad1e76e73583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   gunCantRotate: 0
 --- !u!114 &114963538011737596
+=======
+  moveSpeed: 2
+  points: {fileID: 4175649886455660}
+  canMove: 0
+  rotationTime: 0
+  shadow: {fileID: 0}
+  deathPoint: {fileID: 0}
+  cantRotate: 0
+  speedAdd: 0.15
+  isBoss: 0
+  isFlying: 0
+  isLoop: 0
+--- !u!114 &114740765413773280
+>>>>>>> 45ffa8146622d8a1074fe7556b1e75de522e1348
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2648,10 +2842,15 @@ MonoBehaviour:
   isConstructEnemy: 1
   deathSprite: {fileID: 0}
   isFlying: 0
+<<<<<<< HEAD
   angle: 5
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+=======
+  isMissile: 0
+  numberOfBullet: 0
+>>>>>>> 45ffa8146622d8a1074fe7556b1e75de522e1348
 --- !u!212 &212009867809857254
 SpriteRenderer:
   m_ObjectHideFlags: 1

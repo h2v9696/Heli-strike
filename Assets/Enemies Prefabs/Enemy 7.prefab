@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 61308798926219690}
   - component: {fileID: 114010989295640420}
   - component: {fileID: 95837377399590742}
+  - component: {fileID: 114837217813831494}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -238,6 +239,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114456513172782966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,6 +284,18 @@ MonoBehaviour:
   isFlying: 1
   isMissile: 0
   numberOfBullet: 0
+--- !u!114 &114837217813831494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271058669251302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
 --- !u!114 &114849241431778784
 MonoBehaviour:
   m_ObjectHideFlags: 1
