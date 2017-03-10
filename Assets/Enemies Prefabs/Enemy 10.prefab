@@ -37,6 +37,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4716337753768030}
+  - component: {fileID: 114843286132852578}
+  - component: {fileID: 50351149256477418}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -165,6 +167,26 @@ Transform:
   m_Father: {fileID: 4415358741059292}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50351149256477418
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1657570294096744}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50846174087745262
 Rigidbody2D:
   serializedVersion: 4
@@ -244,6 +266,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4418097390051686}
   shootDelay: 2
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 1
@@ -308,6 +331,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
+--- !u!114 &114843286132852578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1657570294096744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!212 &212237727675719816
 SpriteRenderer:
   m_ObjectHideFlags: 1

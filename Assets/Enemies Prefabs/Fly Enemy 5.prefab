@@ -85,6 +85,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4480133693942634}
+  - component: {fileID: 114626713640309750}
+  - component: {fileID: 50012116147801662}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -193,7 +195,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1421051804671950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.25, y: -2.31, z: 0}
+  m_LocalPosition: {x: 0.15, y: -0.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4480133693942634}
@@ -221,7 +223,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1775914804649632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8285799, y: 5.3070593, z: 0}
+  m_LocalPosition: {x: -3.0969656, y: 1.5580304, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4734454368113968}
@@ -263,7 +265,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409017927800726}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -3.45, y: -1.47, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: -2, z: 2}
   m_Children:
   - {fileID: 4709002860644292}
@@ -306,12 +308,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1650236538673268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.35, y: -2.25, z: 0}
+  m_LocalPosition: {x: 6.75, y: -0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4480133693942634}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50012116147801662
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605341834443072}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50247517645540024
 Rigidbody2D:
   serializedVersion: 4
@@ -442,6 +464,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4797202298623636}
   shootDelay: 0.3
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 1
   isConstruct: 0
@@ -460,6 +483,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 1
+--- !u!114 &114626713640309750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605341834443072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!212 &212442597757662374
 SpriteRenderer:
   m_ObjectHideFlags: 1

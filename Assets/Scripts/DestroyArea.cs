@@ -17,5 +17,8 @@ public class DestroyArea : MonoBehaviour
 		if (c.tag == "SpawnPoint")
 			
 		c.gameObject.GetComponent<SpawnPoint> ().SpawnEnemy ();
+
+		if (c.tag == "Enemy")
+			c.gameObject.SetActive (true);
 	}
 }
