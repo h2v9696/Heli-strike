@@ -64,6 +64,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4724912078888804}
+  - component: {fileID: 114217764721811462}
+  - component: {fileID: 50800544300363788}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -209,6 +211,7 @@ GameObject:
   - component: {fileID: 61022481299775274}
   - component: {fileID: 114931520778804184}
   - component: {fileID: 95188338507697482}
+  - component: {fileID: 114737038593809282}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -426,6 +429,26 @@ Transform:
   m_Father: {fileID: 4724912078888804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50800544300363788
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1350503873904780}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50847243203415488
 Rigidbody2D:
   serializedVersion: 4
@@ -488,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ce148ed270b1548acf86f98fc73d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4
   points: {fileID: 4724912078888804}
   canMove: 1
   rotationTime: 6
@@ -499,6 +522,20 @@ MonoBehaviour:
   isBoss: 0
   isFlying: 1
   isLoop: 0
+--- !u!114 &114217764721811462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1350503873904780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114375031188295464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -511,6 +548,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 1
+--- !u!114 &114737038593809282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873259111144768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114931520778804184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -534,6 +585,7 @@ MonoBehaviour:
   scaleReduce: 0.008
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114997284070471852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -550,6 +602,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4202268168665296}
   shootDelay: 1
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 0

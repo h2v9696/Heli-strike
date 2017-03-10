@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4986618024245796}
+  - component: {fileID: 114464169036918230}
+  - component: {fileID: 50240989815173694}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -165,6 +167,26 @@ Transform:
   m_Father: {fileID: 4892168171427602}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50240989815173694
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124263556368358}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50806151610286006
 Rigidbody2D:
   serializedVersion: 4
@@ -250,6 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114451504050871810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,6 +310,20 @@ MonoBehaviour:
   enemyDead: 0
   constructEnemyDead: 0
   isBoss: 0
+--- !u!114 &114464169036918230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124263556368358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114551185820489480
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,6 +340,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4068042979373958}
   shootDelay: 2
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 0

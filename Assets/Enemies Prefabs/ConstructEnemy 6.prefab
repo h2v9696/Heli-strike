@@ -290,6 +290,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4594471976797240}
   shootDelay: 2
+  delayShootAtFirst: 0
   canShot: 0
   isSingleShot: 0
   isConstruct: 1
@@ -308,6 +309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!212 &212305538442657328
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -106,6 +106,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4503764225217502}
+  - component: {fileID: 114747198105524924}
+  - component: {fileID: 50049287747865870}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -243,7 +245,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1587088491029256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.47, y: -14.64, z: 0}
+  m_LocalPosition: {x: 9.75, y: -17.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4503764225217502}
@@ -269,7 +271,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451656198280392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.92, y: 2.26, z: 0}
+  m_LocalPosition: {x: 0.36, y: -0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4503764225217502}
@@ -379,7 +381,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113163945917558}
   m_LocalRotation: {x: 0.9824679, y: 0.18643224, z: -0, w: 0}
-  m_LocalPosition: {x: -4.82, y: 4.35, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.0384018, y: -2, z: 2}
   m_Children:
   - {fileID: 4085219277889334}
@@ -403,6 +405,26 @@ Transform:
   m_Father: {fileID: 4876553441858836}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50049287747865870
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424396918552592}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50614455981466130
 Rigidbody2D:
   serializedVersion: 4
@@ -477,6 +499,7 @@ MonoBehaviour:
   scaleReduce: 0.01
   enemyDead: 0
   constructEnemyDead: 0
+  isBoss: 0
 --- !u!114 &114230955057712926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,6 +550,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4528426528158984}
   shootDelay: 0.5
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 1
   isConstruct: 0
@@ -557,6 +581,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 0
+--- !u!114 &114747198105524924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424396918552592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114784059467458648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -573,6 +611,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4622071426748012}
   shootDelay: 1
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 0
@@ -595,6 +634,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4124493000230090}
   shootDelay: 0.5
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 1
   isConstruct: 0
