@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour {
 		// lay toa do 2 goc tren duoi cua camera va toa do player
 
 		Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
-		Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1,1));
+		Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1,0.9f));
 		Vector2 pos = transform.position;
 
 		//di chuyen bang chuot
