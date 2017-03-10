@@ -39,6 +39,9 @@ public class ScrollBackground : MonoBehaviour {
 	public ProgressBar theProgressBar;
 	public GameObject eventPoint;
 	public GameObject eventCompleteEnemy;
+
+
+
 	private int enemyAlive =0;
 
 	void Start()
@@ -50,36 +53,40 @@ public class ScrollBackground : MonoBehaviour {
 
 
 		void Update()
-		{	
+{	
 		if (theProgressBar.progress >= theProgressBar.maxValue)
 			speed = 0f;
 
-	if (theProgressBar.distantToEvent <= 0) 
+
+		if (theProgressBar.haveEventPoint)
 		{
-
-		if (eventCompleteEnemy = GameObject.FindGameObjectWithTag ("Boss"))
-			enemyAlive = 1;
-		else
-			enemyAlive = 0;
-
-
-	}
-
-
-	switch(enemyAlive)
-		{
-		case(1):
-			speed = 0f;
-			break;
-
-		default:
 			
-			break;
-		}
+				if (theProgressBar.distantToEvent <= 0) 
+			{
 
-		GetComponent<Rigidbody2D>().velocity = (Vector3.up * speed * -1);
-		}
+				if (eventCompleteEnemy = GameObject.FindGameObjectWithTag ("Event"))
+					enemyAlive = 1;
+				else
+					enemyAlive = 0;
+
+
 			}
+
+
+				switch (enemyAlive) 
+			{
+			case(1):
+				speed = 0f;
+				break;
+
+			default:
+			
+				break;
+			}
+		}
+		GetComponent<Rigidbody2D>().velocity = (Vector3.up * speed * -1);
+}
+}
 
 
 

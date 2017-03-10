@@ -11,6 +11,7 @@ TagManager:
   - Boss
   - ConstructEnemy
   - SpawnPoint
+  - Event
   layers:
   - Default
   - TransparentFX
