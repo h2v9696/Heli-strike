@@ -52,7 +52,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4922011864777472}
   - component: {fileID: 50648762218303462}
-  - component: {fileID: 114584568264140086}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -225,7 +224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1339446852528764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.92, z: 0}
+  m_LocalPosition: {x: 0.04, y: -3.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4922011864777472}
@@ -305,7 +304,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1546423455850050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6999397, y: 3.5204835, z: 0}
+  m_LocalPosition: {x: 2.480804, y: 62.46966, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4121545210165422}
@@ -414,20 +413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 0
---- !u!114 &114584568264140086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1346789447132462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theProgressBar: {fileID: 0}
-  eventPoint: {fileID: 0}
-  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114615812075300316
 MonoBehaviour:
   m_ObjectHideFlags: 1

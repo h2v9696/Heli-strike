@@ -264,6 +264,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.75
   m_Text: LEVEL COMPLETE
+  m_Text: GAME COMPLETE
 --- !u!114 &114296950354868360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -505,14 +506,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCompleteCanvas: {fileID: 1255392291691956}
+<<<<<<< HEAD
   nextLevel: Level1
+=======
+  nextLevel: Level2
+>>>>>>> feature/Demo
   delay: 0
   isComplete: 0
   theTextEnemyKill: {fileID: 114460061663455312}
   theTextConstructKill: {fileID: 114506594495618164}
   theTextEnemySurvived: {fileID: 114312353092557046}
+  title: {fileID: 0}
   intEnemyKilled: 0
   intConstructKilled: 0
+  isLastLevel: 0
 --- !u!114 &114928526896963778
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 4034466686607228}
   m_Layer: 0
   m_Name: Boss 1
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,7 +167,6 @@ GameObject:
   - component: {fileID: 114046211535376000}
   - component: {fileID: 50720628345355414}
   - component: {fileID: 61559970820459640}
-  - component: {fileID: 114735596778753290}
   - component: {fileID: 95897949776855828}
   - component: {fileID: 114394903432017944}
   - component: {fileID: 114311340431800976}
@@ -296,7 +295,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1267796604078062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.27, y: -0.21, z: 0}
+  m_LocalPosition: {x: 3.9493823, y: 81.316956, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4538038479145296}
@@ -420,7 +419,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1409319037111656}
   m_LocalRotation: {x: -0, y: 0, z: -0.98246837, w: -0.18642955}
-  m_LocalPosition: {x: -10.83, y: 3.96, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.0384018, y: -2, z: 2}
   m_Children:
   - {fileID: 4325714130604284}
@@ -451,7 +450,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404550911233500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -6.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4561131448306938}
@@ -633,6 +632,7 @@ MonoBehaviour:
   isBoss: 1
   isFlying: 1
   isLoop: 1
+  isFinalBoss: 0
 --- !u!114 &114260947455996520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -712,30 +712,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 1
---- !u!114 &114735596778753290
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1409319037111656}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c47f479ea8fc646b5bdf757c114c1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyMaxHealth: 100
-  enemyHealth: 2
-  explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
-    type: 2}
-  enemyDeath: {fileID: 0}
-  isConstructEnemy: 0
-  deathSprite: {fileID: 21300000, guid: be45ed664f62c9b4fa5592f918164e1c, type: 3}
-  isFlying: 1
-  angle: 10
-  scaleReduce: 0.01
-  enemyDead: 0
-  constructEnemyDead: 0
-  isBoss: 1
 --- !u!114 &114768263929480192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -781,6 +757,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4362235035518876}
   shootDelay: 4
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 0
@@ -803,6 +780,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4875166376258338}
   shootDelay: 1
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 1
   isConstruct: 0

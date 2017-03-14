@@ -15,6 +15,7 @@ public class PauseScreen : MonoBehaviour {
 	private LevelComplete levelComplete;
 	private TextSplit textSplit;
 
+
 	void Start()
 	{
 		gameOver = FindObjectOfType<GameOver> ();
