@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+	public static PlayerController instance;
+
 	public float moveSpeed;
 	private float maxMoveSpeed;
 	private PauseScreen pauseMenu;
@@ -57,7 +59,10 @@ public class PlayerController : MonoBehaviour {
 	//for audio when shooting
 	public AudioSource shootingSound;
 
-
+	void Awake()
+	{
+		instance = this;
+	}
 
 	// Use this for initialization
 	void Start () 
