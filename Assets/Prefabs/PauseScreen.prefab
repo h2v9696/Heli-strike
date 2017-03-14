@@ -56,7 +56,6 @@ GameObject:
   - component: {fileID: 224496499010805942}
   - component: {fileID: 222489316979000896}
   - component: {fileID: 114130537681152548}
-  - component: {fileID: 82198039864328220}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -111,6 +110,7 @@ GameObject:
   - component: {fileID: 114638276049203544}
   - component: {fileID: 114397600210313062}
   - component: {fileID: 114343837376823596}
+  - component: {fileID: 82236285015777838}
   m_Layer: 5
   m_Name: PauseScreen
   m_TagString: Untagged
@@ -118,12 +118,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &82198039864328220
+--- !u!82 &82236285015777838
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1600110251917536}
+  m_GameObject: {fileID: 1898359249034142}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -276,7 +276,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82198039864328220}
+      - m_Target: {fileID: 82236285015777838}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -424,7 +424,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 82198039864328220}
+      - m_Target: {fileID: 82236285015777838}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
