@@ -11,6 +11,9 @@ public class Missile : MonoBehaviour {
 	public GameObject missileFireTailShadow;
 
 
+
+
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -25,6 +28,5 @@ public class Missile : MonoBehaviour {
 		missileFireTailShadow.transform.localScale = new Vector2 (missileFireTailShadow.transform.localScale.x + missileFireTailShadow.transform.localScale.x * 0.4f * Time.deltaTime, missileFireTailShadow.transform.localScale.y + missileFireTailShadow.transform.localScale.y * 0.4f * Time.deltaTime);
 		missileFireTailShadow.transform.position = new Vector2 (missileFireTailShadow.transform.position.x, missileFireTailShadow.transform.position.y);
 	}
-	
 
 }

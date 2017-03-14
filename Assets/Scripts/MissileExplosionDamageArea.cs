@@ -6,6 +6,7 @@ public class MissileExplosionDamageArea : MonoBehaviour {
 
 	private EnemyHealthManager enemyHealthManager;
 	private BossHealthManager bossHealthManager;
+	public GameObject shockwave;
 	public int dameToGive;
 	public float explosionRadius;
 
@@ -26,6 +27,7 @@ public class MissileExplosionDamageArea : MonoBehaviour {
 			enemyHealthManager = other.GetComponent<EnemyHealthManager> ();
 			enemyHealthManager.TakeDamage (dameToGive * 3);
 			MakeRadiusDamage ();
+			Instantiate (shockwave, other.transform.position, transform.rotation);
 			Destroy (gameObject);
 		}
 		if (other.tag == "Boss" ) 
