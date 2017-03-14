@@ -9,9 +9,10 @@ public class MainMenu : MonoBehaviour {
 
 	public GameObject audioOnIcon;
 	public GameObject audioOffIcon;
-
+	public AudioSource audio;
 	void Start()
 	{
+		audio = GetComponent<AudioSource> ();
 		SetSoundState ();
 	}
 
@@ -56,5 +57,7 @@ public class MainMenu : MonoBehaviour {
 			audioOffIcon.SetActive (true);
 		}
 	}
-
+	public void PlaySound() {
+		audio.Play ();
+	}
 }
