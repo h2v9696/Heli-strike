@@ -14,13 +14,16 @@ public class LevelComplete : MonoBehaviour {
 	public Text theTextEnemyKill;
 	public Text theTextConstructKill;
 	public Text theTextEnemySurvived;
+	public Text title;
 
 	public int intEnemyKilled;
 	public int intConstructKilled;
 	private  int holdForTotalEnemyKill=0;
 	private  int holdForTotalConstructDestroy=0;
 	private  int holdForTotalEnemySurvived = 0;
+	private int intTotalEnemySurvived;
 	private bool isAdded;
+	public bool isLastLevel;
 
 
 	private LevelManager levelManager;
@@ -44,16 +47,33 @@ public class LevelComplete : MonoBehaviour {
 				if (delayTimer >= delay) 
 					{
 				isComplete = true;
+				levelCompleteCanvas.SetActive (true);
+				if (!isLastLevel) {
+					
+					intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
+					theTextEnemyKill.text = "Enemy Killed: " + intEnemyKilled;
 
-						levelCompleteCanvas.SetActive (true);
-				intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
-				theTextEnemyKill.text = "Enemy Killed: " + intEnemyKilled;
-
-				intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
-				theTextConstructKill.text = "Construct Destroyed: " + intConstructKilled;
+					intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
+					theTextConstructKill.text = "Construct Destroyed: " + intConstructKilled;
 
 
-				theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled- intConstructKilled);
+					theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled - intConstructKilled);
+				}
+
+				if (isLastLevel) {
+					title.text = "GAME COMPLETE";
+					intEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
+					theTextEnemyKill.text = "Total Enemy Killed: " + intEnemyKilled;
+
+					intConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
+					theTextConstructKill.text = "Total Construct Destroyed: " + intConstructKilled;
+					intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
+					theTextEnemySurvived.text = "Total Enemy Survived: " + intTotalEnemySurvived;
+				}
+
+
+
+
 
 							Time.timeScale = 0f;
 				if (!isAdded) 

@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 61387052326167554}
   - component: {fileID: 114961298510786660}
   - component: {fileID: 95603831167750752}
+  - component: {fileID: 114632566619587164}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -91,6 +92,7 @@ GameObject:
   - component: {fileID: 61173559598086470}
   - component: {fileID: 114236513668245416}
   - component: {fileID: 95080855984309058}
+  - component: {fileID: 114134226614595814}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -130,6 +132,7 @@ GameObject:
   - component: {fileID: 61131436986367348}
   - component: {fileID: 114191957698901060}
   - component: {fileID: 95337543288901430}
+  - component: {fileID: 114525996641596184}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -199,6 +202,7 @@ GameObject:
   - component: {fileID: 61593674176131672}
   - component: {fileID: 114224995897988018}
   - component: {fileID: 95253755342583076}
+  - component: {fileID: 114465490226317938}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -230,6 +234,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4055832726243712}
   - component: {fileID: 212116499127741584}
+  - component: {fileID: 50897970485039804}
+  - component: {fileID: 114404638299939806}
   m_Layer: 0
   m_Name: Boss 2
   m_TagString: Untagged
@@ -440,6 +446,7 @@ GameObject:
   - component: {fileID: 61901292028657720}
   - component: {fileID: 114074851254270906}
   - component: {fileID: 95911886611881784}
+  - component: {fileID: 114708930483561342}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -454,8 +461,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469844692154608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24546182, y: 1.383679, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -0.02, y: 76.32, z: 0}
+  m_LocalScale: {x: 2.1622114, y: 2.0696328, z: 2}
   m_Children:
   - {fileID: 4683862369798382}
   - {fileID: 4227965938797488}
@@ -890,6 +897,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50897970485039804
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469844692154608}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50986874192627090
 Rigidbody2D:
   serializedVersion: 4
@@ -1133,6 +1160,20 @@ MonoBehaviour:
   isBoss: 0
   isFlying: 0
   isLoop: 0
+--- !u!114 &114134226614595814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167859956041972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114165201923460210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1233,6 +1274,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4459915814502350}
   shootDelay: 1
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 0
@@ -1289,12 +1331,41 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4648330230896906}
   shootDelay: 1
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 0
   isFlying: 0
   isMissile: 0
   numberOfBullet: 0
+--- !u!114 &114404638299939806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469844692154608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
+--- !u!114 &114465490226317938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342272779596266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114512705137507938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1307,6 +1378,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunCantRotate: 0
+--- !u!114 &114525996641596184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200281820503228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114549608649931964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1323,6 +1408,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4141742541872234}
   shootDelay: 3
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 1
@@ -1345,12 +1431,41 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4178795954618882}
   shootDelay: 3
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 1
   isFlying: 0
   isMissile: 0
   numberOfBullet: 0
+--- !u!114 &114632566619587164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049507579021998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
+--- !u!114 &114708930483561342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1911587388028976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc489661ccd462441833b5673591f3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!114 &114764965306492498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1379,6 +1494,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4588546325311796}
   shootDelay: 3
+  delayShootAtFirst: 0
   canShot: 1
   isSingleShot: 0
   isConstruct: 1
