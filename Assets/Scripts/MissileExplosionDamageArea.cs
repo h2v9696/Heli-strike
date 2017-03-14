@@ -25,7 +25,7 @@ public class MissileExplosionDamageArea : MonoBehaviour {
 		if (other.tag == "Enemy" || other.tag == "ConstructEnemy")
 		{
 			enemyHealthManager = other.GetComponent<EnemyHealthManager> ();
-			enemyHealthManager.TakeDamage (dameToGive * 3);
+			enemyHealthManager.TakeDamage (dameToGive * 2);
 			MakeRadiusDamage ();
 			Instantiate (shockwave, other.transform.position, transform.rotation);
 			Destroy (gameObject);
