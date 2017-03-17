@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class LevelComplete : MonoBehaviour {
 
 	private ProgressBar status;
@@ -24,7 +24,7 @@ public class LevelComplete : MonoBehaviour {
 	private int intTotalEnemySurvived;
 	private bool isAdded;
 	public bool isLastLevel;
-
+	private int highScore;
 
 	private LevelManager levelManager;
 
@@ -69,6 +69,9 @@ public class LevelComplete : MonoBehaviour {
 					theTextConstructKill.text = "Total Construct Destroyed: " + intConstructKilled;
 					intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
 					theTextEnemySurvived.text = "Total Enemy Survived: " + intTotalEnemySurvived;
+					highScore = intEnemyKilled + intConstructKilled;
+					PlayerPrefs.SetInt ("HighScore", highScore);
+
 				}
 
 
@@ -107,7 +110,8 @@ public class LevelComplete : MonoBehaviour {
 
 	public void NextLevel()
 	{
-		Application.LoadLevel (nextLevel);
+		SceneManager.LoadScene (nextLevel, LoadSceneMode.Single);		
+
 	}
 
 

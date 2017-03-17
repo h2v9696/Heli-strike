@@ -20,9 +20,11 @@ public Text theTextEnemyKill;
 
 	public int intEnemyKilled;
 	public int intConstructKilled;
+	public int totalEnemyKilled;
+	public int totalConstructKilled;
 
 	private LevelManager levelManager;
-
+	private int highScore;
 
 
 	void Start () {
@@ -41,10 +43,17 @@ public Text theTextEnemyKill;
 				gameOverCanvas.SetActive (true);
 
 				intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
-				theTextEnemyKill.text = "Enemy Killed: " + intEnemyKilled;
+				totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
+				totalEnemyKilled += intEnemyKilled;
+				PlayerPrefs.SetInt ("TotalEnemyKills", totalEnemyKilled);
+				theTextEnemyKill.text = "Enemy Killed: " + totalEnemyKilled;
 
 				intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
-				theTextConstructKill.text = "Construct Destroyed: " + intConstructKilled;
+				totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
+				totalConstructKilled += intConstructKilled;
+				theTextConstructKill.text = "Construct Destroyed: " + totalConstructKilled;
+				highScore = totalEnemyKilled + totalConstructKilled;
+				PlayerPrefs.SetInt ("HighScore", highScore);
 
 
 				theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled- intConstructKilled);

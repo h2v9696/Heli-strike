@@ -11630,7 +11630,7 @@ GameObject:
   - component: {fileID: 1480818093}
   - component: {fileID: 1480818092}
   m_Layer: 0
-  m_Name: Background (1)
+  m_Name: Background Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

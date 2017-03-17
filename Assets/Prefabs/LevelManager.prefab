@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf2a726823ddd443b1c24ad8b811470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalEnemies: 5
+  totalEnemies: 39
   intEnemyKilled: 0
   intConstructKilled: 0

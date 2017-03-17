@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameCompleteScreen : MonoBehaviour {
 
@@ -65,7 +66,7 @@ public class GameCompleteScreen : MonoBehaviour {
 
 	public void NextLevel()
 	{
-		Application.LoadLevel (nextLevel);
+		SceneManager.LoadScene (nextLevel, LoadSceneMode.Single);		
 	}
 
 

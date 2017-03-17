@@ -2897,6 +2897,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1258242697621362, guid: 5605367825f5bbc4ba6bdec181956297, type: 2}
+      propertyPath: m_Name
+      value: LevelCompleteScreen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5605367825f5bbc4ba6bdec181956297, type: 2}
   m_IsPrefabParent: 0
@@ -4701,7 +4705,7 @@ GameObject:
   - component: {fileID: 405141247}
   - component: {fileID: 405141246}
   m_Layer: 0
-  m_Name: Background (1)
+  m_Name: Background Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20272,15 +20276,6 @@ Prefab:
     - target: {fileID: 4584400395174460, guid: 028a1329798155c47ac874d873481571, type: 2}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1321928129114064, guid: 028a1329798155c47ac874d873481571, type: 2}
-      propertyPath: m_Name
-      value: LevelManager (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114917123904808406, guid: 028a1329798155c47ac874d873481571,
-        type: 2}
-      propertyPath: totalEnemies
-      value: 39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a1329798155c47ac874d873481571, type: 2}

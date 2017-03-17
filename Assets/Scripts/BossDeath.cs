@@ -11,6 +11,7 @@ public class BossDeath : MonoBehaviour {
 	private int currentExplosionPos;
 	private Explosion cloneExplosion;
 	private BossHealthManager boss;
+	public int enemyDead;
 
 	void Start() {
 		boss = FindObjectOfType<BossHealthManager> ();

@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 82508842287645150}
   - component: {fileID: 50608511043224060}
   - component: {fileID: 114066461669218478}
-  - component: {fileID: 198663902461939486}
-  - component: {fileID: 199748889636089330}
+  - component: {fileID: 199770715644100812}
+  - component: {fileID: 198379872543874730}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facdd01ca98b7404b941bc18a2315ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!198 &198663902461939486
+--- !u!198 &198379872543874730
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -198,7 +198,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 2
   simulationSpeed: 1
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   autoRandomSeed: 1
@@ -244,7 +244,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1835453382
+  randomSeed: -1739520697
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -420,7 +420,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       minMaxState: 0
     startSize:
-      scalar: 10
+      scalar: 8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2748,7 +2748,7 @@ ParticleSystem:
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       minMaxState: 0
---- !u!199 &199748889636089330
+--- !u!199 &199770715644100812
 ParticleSystemRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -2780,7 +2780,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 257183233
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

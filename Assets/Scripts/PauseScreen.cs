@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseScreen : MonoBehaviour {
 
@@ -52,6 +53,6 @@ public class PauseScreen : MonoBehaviour {
 
 	public void MainMenu()
 	{
-		Application.LoadLevel (mainMenu);
+		SceneManager.LoadScene (mainMenu, LoadSceneMode.Single);		
 	}
 }

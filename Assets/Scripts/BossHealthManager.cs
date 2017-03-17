@@ -34,6 +34,10 @@ public class BossHealthManager : MonoBehaviour {
 	void Update () {
 
 		if (bossHealth <= 0) {
+			enemyDead = PlayerPrefs.GetInt("EnemyKilled");
+			enemyDead++;
+			PlayerPrefs.SetInt ("EnemyKilled", enemyDead);
+
 			if (!isFlying) {
 				isDeath = true;
 			} else {

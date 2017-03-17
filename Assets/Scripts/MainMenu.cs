@@ -9,10 +9,10 @@ public class MainMenu : MonoBehaviour {
 
 	public GameObject audioOnIcon;
 	public GameObject audioOffIcon;
-	public AudioSource audio;
+	private AudioSource audioSource;
 	void Start()
 	{
-		audio = GetComponent<AudioSource> ();
+		audioSource = GetComponent<AudioSource> ();
 		SetSoundState ();
 	}
 
@@ -23,6 +23,7 @@ public class MainMenu : MonoBehaviour {
 		PlayerPrefs.SetInt ("TotalEnemyKills", 0);
 		PlayerPrefs.SetInt ("TotalConstructDestroy",0);
 		PlayerPrefs.SetInt ("TotalEnemySurvived",0);
+		PlayerPrefs.SetInt ("HighScore", 0);
 		panelNewGame.SetActive (true);
 	}
 
@@ -58,6 +59,6 @@ public class MainMenu : MonoBehaviour {
 		}
 	}
 	public void PlaySound() {
-		audio.Play ();
+		audioSource.Play ();
 	}
 }
