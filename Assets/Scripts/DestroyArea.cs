@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DestroyArea : MonoBehaviour 
 {
+	public void Start() {
+	}
+
 	private SpawnPoint spawnPoint;
 
 	void OnTriggerExit2D(Collider2D c)

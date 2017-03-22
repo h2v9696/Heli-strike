@@ -21,7 +21,7 @@ public class GameCompleteScreen : MonoBehaviour {
 
 	public int intTotalEnemySurvived;
 
-	private LevelManager levelManager;
+	//private LevelManager levelManager;
 
 
 	 
@@ -29,7 +29,7 @@ public class GameCompleteScreen : MonoBehaviour {
 	void Start () {
 		isComplete = false;
 		status = FindObjectOfType<ProgressBar> ();
-		levelManager = FindObjectOfType<LevelManager> ();
+		//levelManager = FindObjectOfType<LevelManager> ();
 	
 
 	}

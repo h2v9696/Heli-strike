@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
+using admob;
 
 public class MainMenu : MonoBehaviour {
 
 	public GameObject panelNewGame;
 	public GameObject panelHowTo;
 
+
 	public GameObject audioOnIcon;
 	public GameObject audioOffIcon;
 	private AudioSource audioSource;
+
+
 	void Start()
 	{
 		audioSource = GetComponent<AudioSource> ();
@@ -25,6 +30,9 @@ public class MainMenu : MonoBehaviour {
 		PlayerPrefs.SetInt ("TotalEnemySurvived",0);
 		PlayerPrefs.SetInt ("HighScore", 0);
 		panelNewGame.SetActive (true);
+		AdManager.Instance.ShowVideo ();
+
+
 	}
 
 	public void HowToPlay()

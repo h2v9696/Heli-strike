@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject missile;
 	public GameObject missileFirePoint;
 	public float missileShotDelay;
-	private float missileShotDelayCounter;
+	public float missileShotDelayCounter;
 	private int firePoint = 1;
 	private bool canUpSpeed;
 
@@ -182,9 +182,11 @@ public class PlayerController : MonoBehaviour {
 				missileShotDelayCounter -= Time.deltaTime;
 				if (missileShotDelayCounter <= 0) 
 				{
+
 					shotMissile ();
 					numberMissile -=1;
 					missileShotDelayCounter = missileShotDelay;
+		
 				}
 			}
 
@@ -249,7 +251,19 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
-	void shotMissile ()
+	public void ShootMissile() {
+		missileShotDelayCounter -= Time.deltaTime;
+		if (missileShotDelayCounter <= 0) 
+		{
+
+			shotMissile ();
+			numberMissile -=1;
+			missileShotDelayCounter = missileShotDelay;
+
+		}
+	}
+
+	public void shotMissile ()
 	{
 		//int firePoint;
 		Vector3 offset = new Vector3 (0.3f, 0, 0);

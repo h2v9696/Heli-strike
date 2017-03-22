@@ -8,7 +8,7 @@ public class PauseScreen : MonoBehaviour {
 	//public string titleScreen;
 
 	public bool isPaused;
-
+	public bool check;
 	public string mainMenu;
 
 	public GameObject pauseMenuCanvas;
@@ -19,6 +19,7 @@ public class PauseScreen : MonoBehaviour {
 
 	void Start()
 	{
+
 		gameOver = FindObjectOfType<GameOver> ();
 		levelComplete = FindObjectOfType<LevelComplete> ();
 		textSplit = FindObjectOfType<TextSplit> ();
@@ -26,6 +27,14 @@ public class PauseScreen : MonoBehaviour {
 
 	void Update()
 	{
+		if (isPaused) {
+			if (!check)
+				AdManager.Instance.ShowBanner ();
+			check = true;
+		} else if (check) {
+			AdManager.Instance.RemoveBanner ();
+			check = false;
+		}
 		if (isPaused) {
 			pauseMenuCanvas.SetActive (true);
 			Time.timeScale = 0f;
@@ -38,6 +47,7 @@ public class PauseScreen : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape)) 
 		{
 			isPaused = !isPaused;
+
 		}
 	}
 

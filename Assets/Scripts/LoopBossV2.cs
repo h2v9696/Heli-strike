@@ -8,7 +8,7 @@ public class LoopBossV2 : MonoBehaviour {
 	public GameObject beforeBsOne;
 	public GameObject beforeBsTwo;
 	//public GameObject EndPoint
-	private ProgressBar progressBar;
+	//private ProgressBar progressBar;
 	private float chieuDaiMotScreen;
 	public GameObject endPoint;
 	public GameObject bossAlive;
@@ -16,7 +16,7 @@ public class LoopBossV2 : MonoBehaviour {
 	void Start()
 	{
 		chieuDaiMotScreen =  beforeBsTwo.transform.position.y - beforeBsOne.transform.position.y;
-		progressBar = FindObjectOfType<ProgressBar>();
+		//progressBar = FindObjectOfType<ProgressBar>();
 	}
 
 	void OnTriggerEnter2D(Collider2D other)

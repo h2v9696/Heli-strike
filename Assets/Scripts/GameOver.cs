@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using admob;
 
 public class GameOver : MonoBehaviour {
 
@@ -25,10 +26,14 @@ public Text theTextEnemyKill;
 
 	private LevelManager levelManager;
 	private int highScore;
+	private bool added;
+	private bool added2;
+	public bool check = false;
 
+	public float dropRate = 0.25f;
 
 	void Start () {
-
+		
 		playerHealth = FindObjectOfType<PlayerHealthManager> ();
 		levelManager = FindObjectOfType<LevelManager> ();
 	}
@@ -42,15 +47,32 @@ public Text theTextEnemyKill;
 				isOver = true;
 				gameOverCanvas.SetActive (true);
 
+				if (isOver) {
+					if (Random.Range (0.0f, 1.0f) <= dropRate) {
+
+						if (!check) {
+							AdManager.Instance.ShowVideo ();
+							check = true;
+						}
+					}
+				}
+
 				intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
 				totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
-				totalEnemyKilled += intEnemyKilled;
+				if (!added) {
+					totalEnemyKilled += intEnemyKilled;
+					added = true;
+				}
 				PlayerPrefs.SetInt ("TotalEnemyKills", totalEnemyKilled);
 				theTextEnemyKill.text = "Enemy Killed: " + totalEnemyKilled;
 
 				intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
 				totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
-				totalConstructKilled += intConstructKilled;
+				if (!added2) {
+					totalConstructKilled += intConstructKilled;
+
+					added2 = true;
+				}
 				theTextConstructKill.text = "Construct Destroyed: " + totalConstructKilled;
 				highScore = totalEnemyKilled + totalConstructKilled;
 				PlayerPrefs.SetInt ("HighScore", highScore);
@@ -64,6 +86,8 @@ public Text theTextEnemyKill;
 		
 		
 	}
+
+
 
 	public void Restart()
 	{

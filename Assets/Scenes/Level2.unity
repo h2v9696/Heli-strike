@@ -11565,9 +11565,31 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114906241747538638, guid: 5605367825f5bbc4ba6bdec181956297,
+        type: 2}
+      propertyPath: nextLevel
+      value: MainMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5605367825f5bbc4ba6bdec181956297, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1440779849 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1905666853269954, guid: 5605367825f5bbc4ba6bdec181956297,
+    type: 2}
+  m_PrefabInternal: {fileID: 1440779848}
+--- !u!114 &1440779850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1440779849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f05a192ac13ae4794cf02f34a07c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneId: 
 --- !u!1001 &1456447305
 Prefab:
   m_ObjectHideFlags: 0
