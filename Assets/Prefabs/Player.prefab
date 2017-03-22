@@ -476,7 +476,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1485544843134522}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.45, y: 0.24, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4831304459968564}
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f9d067dce5c4a4fa518ffb89a35bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 20
+  playerHealth: 50
   explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
     type: 2}
 --- !u!114 &114812471867820106
@@ -697,6 +697,7 @@ MonoBehaviour:
   missile: {fileID: 1459781105333006, guid: 8a7ea24813c13b0418a5037d0e433ccc, type: 2}
   missileFirePoint: {fileID: 1303253377558652}
   missileShotDelay: 0.5
+  missileShotDelayCounter: 0
   bullet: {fileID: 1196057262165784, guid: 36cf7f7696f8db34eac6d9eda3357782, type: 2}
   bulletShotDelay: 0.1
   fireType:
