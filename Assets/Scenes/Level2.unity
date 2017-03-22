@@ -4020,7 +4020,7 @@ Prefab:
         type: 2}
       propertyPath: endPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 440060994}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a251a3435ab9cbb48a06966f4fbb4b06, type: 2}
   m_IsPrefabParent: 0

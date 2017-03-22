@@ -666,7 +666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d989797d7866c14ea969eff22cf31c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossMaxHealth: 100
+  bossMaxHealth: 500
   bossHealth: 0
   explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
     type: 2}

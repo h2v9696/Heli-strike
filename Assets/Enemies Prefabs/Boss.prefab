@@ -592,8 +592,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d989797d7866c14ea969eff22cf31c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossMaxHealth: 50
+  bossMaxHealth: 200
   bossHealth: 0
+  explosion: {fileID: 0}
+  deathSprite: {fileID: 0}
+  isFlying: 0
+  enemyDead: 0
+  angle: 5
+  scaleReduce: 0.008
   isDeath: 0
 --- !u!114 &114338441254898000
 MonoBehaviour:
@@ -625,6 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
     type: 2}
+  enemyDead: 0
 --- !u!114 &114448290253820522
 MonoBehaviour:
   m_ObjectHideFlags: 1
