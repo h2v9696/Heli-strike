@@ -23,6 +23,7 @@ public Text theTextEnemyKill;
 	public int intConstructKilled;
 	public int totalEnemyKilled;
 	public int totalConstructKilled;
+	public int totalEnemySurvived;
 
 	private LevelManager levelManager;
 	private int highScore;
@@ -36,6 +37,8 @@ public Text theTextEnemyKill;
 		
 		playerHealth = FindObjectOfType<PlayerHealthManager> ();
 		levelManager = FindObjectOfType<LevelManager> ();
+		highScore = PlayerPrefs.GetInt ("HighScore");
+
 	}
 	
 
@@ -77,6 +80,7 @@ public Text theTextEnemyKill;
 				highScore = totalEnemyKilled + totalConstructKilled;
 				PlayerPrefs.SetInt ("HighScore", highScore);
 
+				totalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
 
 				theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled- intConstructKilled);
 						Time.timeScale = 0;

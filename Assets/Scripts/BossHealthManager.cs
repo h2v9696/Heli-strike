@@ -19,9 +19,10 @@ public class BossHealthManager : MonoBehaviour {
 	public float scaleReduce = 0.008f;
 	public bool isDeath;
 	private GunController disableRotate;
-
+	private bool added;
 
 	void Start () {
+		added = false;
 		firstScale = transform.lossyScale;
 		disableRotate = GetComponent<GunController> ();
 
@@ -35,7 +36,10 @@ public class BossHealthManager : MonoBehaviour {
 
 		if (bossHealth <= 0) {
 			enemyDead = PlayerPrefs.GetInt("EnemyKilled");
-			enemyDead++;
+			if (!added) {
+				enemyDead++;
+				added = true;
+			}
 			PlayerPrefs.SetInt ("EnemyKilled", enemyDead);
 
 			if (!isFlying) {
@@ -61,8 +65,7 @@ public class BossHealthManager : MonoBehaviour {
 				} else {
 					var parent = transform.parent;
 					Destroy (parent.gameObject);
-					enemyDead++;
-					PlayerPrefs.SetInt ("EnemyKilled", enemyDead);
+
 					clone = Instantiate (explosion, transform.position, transform.rotation);
 					clone.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z) * 2f;
 

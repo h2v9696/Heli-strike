@@ -820,7 +820,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 75694142}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78f05a192ac13ae4794cf02f34a07c64, type: 3}
   m_Name: 
@@ -2928,7 +2928,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 241502467}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78f05a192ac13ae4794cf02f34a07c64, type: 3}
   m_Name: 
@@ -4330,7 +4330,7 @@ Transform:
   - {fileID: 475693041}
   - {fileID: 672967740}
   m_Father: {fileID: 602987617}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &391380510
 GameObject:
@@ -4553,7 +4553,7 @@ Transform:
   - {fileID: 661471632}
   - {fileID: 760460511}
   m_Father: {fileID: 602987617}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &405141245
 GameObject:
@@ -6841,8 +6841,6 @@ Transform:
   - {fileID: 819927996}
   - {fileID: 812561416}
   - {fileID: 916732333}
-  - {fileID: 1963774539}
-  - {fileID: 1763248598}
   - {fileID: 619372647}
   - {fileID: 396944633}
   - {fileID: 388630186}
@@ -7003,7 +7001,7 @@ Transform:
   - {fileID: 391380511}
   - {fileID: 1119762053}
   m_Father: {fileID: 602987617}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622965699
 GameObject:
@@ -8605,7 +8603,7 @@ Transform:
   - {fileID: 296157416}
   - {fileID: 1938415173}
   m_Father: {fileID: 602987617}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &752981867
 Rigidbody2D:
@@ -8954,7 +8952,7 @@ Transform:
   - {fileID: 1407032320}
   - {fileID: 2059458289}
   m_Father: {fileID: 602987617}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &794776458
 GameObject:
@@ -10192,7 +10190,7 @@ Transform:
   - {fileID: 483981890}
   - {fileID: 322387150}
   m_Father: {fileID: 602987617}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &909586624
 Prefab:
@@ -13110,6 +13108,8 @@ Transform:
   - {fileID: 1980110518}
   - {fileID: 602987617}
   - {fileID: 900265742}
+  - {fileID: 1963774539}
+  - {fileID: 1763248598}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13775,7 +13775,7 @@ Transform:
   - {fileID: 622965700}
   - {fileID: 2085780277}
   m_Father: {fileID: 602987617}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1263887835 stripped
 Transform:
@@ -18225,8 +18225,8 @@ Transform:
   m_Children:
   - {fileID: 1880575536}
   - {fileID: 786886183}
-  m_Father: {fileID: 602987617}
-  m_RootOrder: 4
+  m_Father: {fileID: 1193454599}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1766055195
 Prefab:
@@ -19667,7 +19667,7 @@ Transform:
   - {fileID: 438077798}
   - {fileID: 126735079}
   m_Father: {fileID: 602987617}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1953480788
 GameObject:
@@ -19898,8 +19898,8 @@ Transform:
   m_Children:
   - {fileID: 1465840958}
   - {fileID: 1415497170}
-  m_Father: {fileID: 602987617}
-  m_RootOrder: 3
+  m_Father: {fileID: 1193454599}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1964293203 stripped
 Transform:
@@ -20372,6 +20372,21 @@ Prefab:
     - target: {fileID: 4584400395174460, guid: 028a1329798155c47ac874d873481571, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114917123904808406, guid: 028a1329798155c47ac874d873481571,
+        type: 2}
+      propertyPath: spawnEnemies
+      value: 
+      objectReference: {fileID: 1179130291}
+    - target: {fileID: 114917123904808406, guid: 028a1329798155c47ac874d873481571,
+        type: 2}
+      propertyPath: constructEnemies
+      value: 
+      objectReference: {fileID: 602987616}
+    - target: {fileID: 114917123904808406, guid: 028a1329798155c47ac874d873481571,
+        type: 2}
+      propertyPath: totalEnemies
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 028a1329798155c47ac874d873481571, type: 2}
