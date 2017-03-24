@@ -251,7 +251,7 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
-	public void ShootMissile() {
+	/*public void ShootMissile() {
 		missileShotDelayCounter -= Time.deltaTime;
 		if (missileShotDelayCounter <= 0) 
 		{
@@ -261,7 +261,7 @@ public class PlayerController : MonoBehaviour {
 			missileShotDelayCounter = missileShotDelay;
 
 		}
-	}
+	}*/
 
 	public void shotMissile ()
 	{
