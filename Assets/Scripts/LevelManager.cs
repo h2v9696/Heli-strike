@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour {
 		//levelComplete = FindObjectOfType<LevelComplete> ();
 		PlayerPrefs.SetInt("EnemyKilled",0);
 		PlayerPrefs.SetInt("ConstructionDestroyed",0);
+
 		//isAdded = false;
 
 	}

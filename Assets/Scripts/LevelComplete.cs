@@ -30,6 +30,7 @@ public class LevelComplete : MonoBehaviour {
 	public int totalConstructKilled;
 	private bool added;
 	private bool added2;
+	private bool added3;
 	private LevelManager levelManager;
 
 	float delayTimer;
@@ -55,49 +56,76 @@ public class LevelComplete : MonoBehaviour {
 				if (!isLastLevel) {
 					
 					intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
+					if (!added) {
+						totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
+
+						totalEnemyKilled += intEnemyKilled;
+						PlayerPrefs.SetInt ("TotalEnemyKills", totalEnemyKilled);
+						added = true;
+					}
 					theTextEnemyKill.text = "Enemy Killed: " + intEnemyKilled;
 
 					intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
+					if (!added2) {
+						totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
+
+						totalConstructKilled += intConstructKilled;
+						PlayerPrefs.SetInt ("TotalConstructDestroy", totalConstructKilled);
+						added2 = true;
+					}
 					theTextConstructKill.text = "Construct Destroyed: " + intConstructKilled;
 
+					highScore = totalEnemyKilled + totalConstructKilled;
+					PlayerPrefs.SetInt ("HighScore", highScore);
 
-					theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled - intConstructKilled);
+					intEnemySurvived = levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
+					if (!added3) {
+						intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
+
+						intTotalEnemySurvived += intEnemySurvived;
+						PlayerPrefs.SetInt ("TotalEnemySurvived", intTotalEnemySurvived);
+						added3 = true;
+					}
+					theTextEnemySurvived.text = "Enemy Survived: " + intEnemySurvived;
 				}
 
 				if (isLastLevel) {
 					title.text = "GAME COMPLETE";
 
 					intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
-					totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
 					if (!added) {
+						totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
 						totalEnemyKilled += intEnemyKilled;
+						PlayerPrefs.SetInt ("TotalEnemyKills", totalEnemyKilled);
 						added = true;
 					}
-					PlayerPrefs.SetInt ("TotalEnemyKills", totalEnemyKilled);
-					theTextEnemyKill.text = "Enemy Killed: " + totalEnemyKilled;
+					theTextEnemyKill.text = "Total Enemy Killed: " + totalEnemyKilled;
 
 					intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
-					totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
 					if (!added2) {
+						totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
 						totalConstructKilled += intConstructKilled;
-
+						PlayerPrefs.SetInt ("TotalConstructDestroy", totalConstructKilled);
 						added2 = true;
 					}
-					theTextConstructKill.text = "Construct Destroyed: " + totalConstructKilled;
+					theTextConstructKill.text = "Total Construct Destroyed: " + totalConstructKilled;
+
 					highScore = totalEnemyKilled + totalConstructKilled;
 					PlayerPrefs.SetInt ("HighScore", highScore);
 
-
-					theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled- intConstructKilled);
+					intEnemySurvived = levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
+					if (!added3) {
+						intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
+						intTotalEnemySurvived += intEnemySurvived;
+						PlayerPrefs.SetInt ("TotalEnemySurvived", intTotalEnemySurvived);
+						added3 = true;
+					}
+					theTextEnemySurvived.text = "Total Enemy Survived: " + intTotalEnemySurvived;
 
 				}
 
-
-
-
-
 							Time.timeScale = 0f;
-				if (!isAdded) 
+				/*if (!isAdded) 
 				{
 					holdForTotalEnemyKill = PlayerPrefs.GetInt ("TotalEnemyKills");
 					//Debug.Log (holdForTotalEnemyKill);
@@ -117,22 +145,18 @@ public class LevelComplete : MonoBehaviour {
 					PlayerPrefs.SetInt ("TotalConstructDestroy", holdForTotalConstructDestroy);
 					PlayerPrefs.SetInt ("TotalEnemySurvived", holdForTotalEnemySurvived);
 					isAdded = true;
-				}
+				}*/
 
 
 					}
 		}
 	}
-
-
-
+		
 	public void NextLevel()
 	{
 		SceneManager.LoadScene (nextLevel, LoadSceneMode.Single);		
 
 	}
 
-
-
-
 }
+	

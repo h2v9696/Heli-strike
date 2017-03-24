@@ -23,12 +23,13 @@ public Text theTextEnemyKill;
 	public int intConstructKilled;
 	public int totalEnemyKilled;
 	public int totalConstructKilled;
-	public int totalEnemySurvived;
-
+	public int intTotalEnemySurvived;
+	public int intEnemySurvived;
 	private LevelManager levelManager;
 	private int highScore;
 	private bool added;
 	private bool added2;
+	private bool added3;
 	public bool check = false;
 
 	public float dropRate = 0.25f;
@@ -52,7 +53,6 @@ public Text theTextEnemyKill;
 
 				if (isOver) {
 					if (Random.Range (0.0f, 1.0f) <= dropRate) {
-
 						if (!check) {
 							AdManager.Instance.ShowVideo ();
 							check = true;
@@ -61,29 +61,34 @@ public Text theTextEnemyKill;
 				}
 
 				intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
-				totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
 				if (!added) {
+					totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
 					totalEnemyKilled += intEnemyKilled;
 					added = true;
 				}
-				PlayerPrefs.SetInt ("TotalEnemyKills", totalEnemyKilled);
+				PlayerPrefs.SetInt ("TotalEnemyKills", 0);
 				theTextEnemyKill.text = "Enemy Killed: " + totalEnemyKilled;
 
 				intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
-				totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
 				if (!added2) {
+					totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
 					totalConstructKilled += intConstructKilled;
-
 					added2 = true;
 				}
+				PlayerPrefs.SetInt ("TotalConstructDestroy", 0);
 				theTextConstructKill.text = "Construct Destroyed: " + totalConstructKilled;
 				highScore = totalEnemyKilled + totalConstructKilled;
 				PlayerPrefs.SetInt ("HighScore", highScore);
 
-				totalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
-
-				theTextEnemySurvived.text = "Enemy Survived: " + (levelManager.totalEnemies - intEnemyKilled- intConstructKilled);
-						Time.timeScale = 0;
+				intEnemySurvived = levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
+				if (!added3) {
+					intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
+					intTotalEnemySurvived += intEnemySurvived;
+					added3 = true;
+				}
+				PlayerPrefs.SetInt ("TotalEnemySurvived", 0);
+				theTextEnemySurvived.text = "Enemy Survived: " + intTotalEnemySurvived;
+				Time.timeScale = 0;
 			}
 
 		}
