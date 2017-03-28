@@ -14,8 +14,6 @@ public class PlayerController : MonoBehaviour {
 
 	private float distance;
 	private float previousDistance;
-	//private bool isMoving;
-	//public GameObject point;
 	private Vector2 target;
 	public GameObject shadow;
 
@@ -37,7 +35,6 @@ public class PlayerController : MonoBehaviour {
 
 	private Sprite damageSprite;
 	private Vector3 firstScale;
-	//public GameObject explosion;
 	private PlayerDeathParticle playerDeathParticle;
 
 	public GameObject[] fireType;
@@ -59,10 +56,8 @@ public class PlayerController : MonoBehaviour {
 	//for audio when shooting
 	public AudioSource shootingSound;
 	//testing fix v2
-	public bool canMove;
 	Touch t;
 	int fingerIDMove;
-	bool touching = false;
 	void Awake()
 	{
 		instance = this;
@@ -73,7 +68,6 @@ public class PlayerController : MonoBehaviour {
 	{
 		//for counting enemy kill
 
-		canMove = true;
 		isLiving = true;
 		firstScale = transform.lossyScale;
 		transform.position = new Vector3 (0, 0, 0);
@@ -107,37 +101,26 @@ public class PlayerController : MonoBehaviour {
 		}
 		if (isLiving && !isPausing ) 
 		{
-			//Vector2 posCurrentTouch;
-			/*if (Input.touchCount <= 0) {
-				touching = false;
-				Move ();
-			} else {
-				if (!touching) {
-					touching = true;
-					fingerIDMove = Input.GetTouch(0).fingerId;
-				} else {
-					for (int i = 0; i < Input.touchCount; i++) {
-						t = Input.GetTouch (i);
-						if (t.fingerId == fingerIDMove)
-							break;
-					}
-					moveWithTouch (t.position);
-				}
-			}*/
-			if (Input.touchCount > 0) {
+			
+			if (Input.touchCount > 0) 
+			{
 				t = Input.GetTouch (0);
-				if (t.phase == TouchPhase.Began && Input.touchCount == 1) {
+				if (t.phase == TouchPhase.Began && Input.touchCount == 1) 
+				{
 					fingerIDMove = t.fingerId;
 				}
-				if (Input.touchCount > 1) {
+				if (Input.touchCount > 1) 
+				{
 					int i = 0;
-					while (i < Input.touchCount) {
+					while (i < Input.touchCount) 
+					{
 						t = Input.GetTouch (i);
 						if (t.fingerId == fingerIDMove)
 							break;
 					}
 				}
-				if (fingerIDMove == t.fingerId) {
+				if (fingerIDMove == t.fingerId) 
+				{
 					moveWithTouch (t.position);
 				}
 			} else 
@@ -180,16 +163,6 @@ public class PlayerController : MonoBehaviour {
 					}
 				}
 			}
-
-			//change bullet fire type
-			/*
-			 if (Input.GetMouseButtonDown (1)) 
-			{
-				currentFireType++;
-				if (currentFireType >= fireType.Length)
-					currentFireType = 0;
-			}
-			*/
 
 			//change fire type
 			if (Input.GetAxis ("Mouse ScrollWheel") != 0f) 
@@ -332,19 +305,7 @@ public class PlayerController : MonoBehaviour {
 		pos.y = Mathf.Clamp (pos.y, min.y + 1f, max.y - 1f);
 		transform.position = pos;
 	}
-
-	/*public void ShootMissile() {
-		missileShotDelayCounter -= Time.deltaTime;
-		if (missileShotDelayCounter <= 0) 
-		{
-
-			shotMissile ();
-			numberMissile -=1;
-			missileShotDelayCounter = missileShotDelay;
-
-		}
-	}*/
-
+		
 	public void shotMissile ()
 	{
 		//int firePoint;
