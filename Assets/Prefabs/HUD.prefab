@@ -310,28 +310,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!1 &1635614818341748
-=======
---- !u!1 &1810058233708310
->>>>>>> d90e01b1fca51ad4d91c88bf95bf3ee3ef33f1af
+
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 224014161597481516}
   - component: {fileID: 222282179654939464}
   - component: {fileID: 114403212649774462}
   - component: {fileID: 114809290103041042}
-=======
-  - component: {fileID: 224686843416964242}
-  - component: {fileID: 222237647082386098}
-  - component: {fileID: 114566857205712426}
-  - component: {fileID: 114738054473829806}
->>>>>>> d90e01b1fca51ad4d91c88bf95bf3ee3ef33f1af
+
   m_Layer: 5
   m_Name: FireMissileButton
   m_TagString: Untagged
@@ -1316,20 +1307,14 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839854136721736}
-<<<<<<< HEAD
 --- !u!222 &222282179654939464
-=======
---- !u!222 &222237647082386098
->>>>>>> d90e01b1fca51ad4d91c88bf95bf3ee3ef33f1af
+
 CanvasRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1635614818341748}
-=======
-  m_GameObject: {fileID: 1810058233708310}
->>>>>>> d90e01b1fca51ad4d91c88bf95bf3ee3ef33f1af
+
 --- !u!222 &222336498995112442
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1820,11 +1805,8 @@ RectTransform:
   - {fileID: 224773356105027698}
   - {fileID: 224320924719129952}
   - {fileID: 224915298690914190}
-<<<<<<< HEAD
   - {fileID: 224142291047301186}
-=======
-  - {fileID: 224239502714194618}
->>>>>>> d90e01b1fca51ad4d91c88bf95bf3ee3ef33f1af
+
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
