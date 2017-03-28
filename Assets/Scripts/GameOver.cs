@@ -28,8 +28,6 @@ public Text theTextEnemyKill;
 	private LevelManager levelManager;
 	private int highScore;
 	private bool added;
-	private bool added2;
-	private bool added3;
 	public bool check = false;
 
 	public float dropRate = 0.25f;
@@ -61,31 +59,31 @@ public Text theTextEnemyKill;
 				}
 
 				intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
+				intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
+				intEnemySurvived = levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
+
 				if (!added) {
 					totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
 					totalEnemyKilled += intEnemyKilled;
+
+					totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
+					totalConstructKilled += intConstructKilled;
+
+					intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
+					intTotalEnemySurvived += intEnemySurvived;
+
+					highScore = totalEnemyKilled + totalConstructKilled;
 					added = true;
 				}
+				PlayerPrefs.SetInt ("HighScore", highScore);
+
 				PlayerPrefs.SetInt ("TotalEnemyKills", 0);
 				theTextEnemyKill.text = "Enemy Killed: " + totalEnemyKilled;
 
-				intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
-				if (!added2) {
-					totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
-					totalConstructKilled += intConstructKilled;
-					added2 = true;
-				}
 				PlayerPrefs.SetInt ("TotalConstructDestroy", 0);
 				theTextConstructKill.text = "Construct Destroyed: " + totalConstructKilled;
-				highScore = totalEnemyKilled + totalConstructKilled;
-				PlayerPrefs.SetInt ("HighScore", highScore);
 
-				intEnemySurvived = levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
-				if (!added3) {
-					intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
-					intTotalEnemySurvived += intEnemySurvived;
-					added3 = true;
-				}
+
 				PlayerPrefs.SetInt ("TotalEnemySurvived", 0);
 				theTextEnemySurvived.text = "Enemy Survived: " + intTotalEnemySurvived;
 				Time.timeScale = 0;

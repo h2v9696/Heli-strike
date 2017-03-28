@@ -19,18 +19,16 @@ public class LevelComplete : MonoBehaviour {
 	public int intEnemyKilled;
 	public int intConstructKilled;
 	public int intEnemySurvived;
-	private  int holdForTotalEnemyKill=0;
-	private  int holdForTotalConstructDestroy=0;
-	private  int holdForTotalEnemySurvived = 0;
+	//private  int holdForTotalEnemyKill=0;
+	//private  int holdForTotalConstructDestroy=0;
+	//private  int holdForTotalEnemySurvived = 0;
 	private int intTotalEnemySurvived;
-	private bool isAdded;
 	public bool isLastLevel;
 	private int highScore;
 	public int totalEnemyKilled;
 	public int totalConstructKilled;
 	private bool added;
-	private bool added2;
-	private bool added3;
+
 	private LevelManager levelManager;
 
 	float delayTimer;
@@ -38,7 +36,6 @@ public class LevelComplete : MonoBehaviour {
 		isComplete = false;
 		status = FindObjectOfType<ProgressBar> ();
 		levelManager = FindObjectOfType<LevelManager> ();
-		isAdded = false;
 		highScore = PlayerPrefs.GetInt ("HighScore");
 	}
 	
@@ -56,36 +53,31 @@ public class LevelComplete : MonoBehaviour {
 				if (!isLastLevel) {
 					
 					intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
+					intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
+					intEnemySurvived = levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
+
+
 					if (!added) {
 						totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
-
 						totalEnemyKilled += intEnemyKilled;
 						PlayerPrefs.SetInt ("TotalEnemyKills", totalEnemyKilled);
+
+						totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
+						totalConstructKilled += intConstructKilled;
+						PlayerPrefs.SetInt ("TotalConstructDestroy", totalConstructKilled);
+
+						highScore = totalEnemyKilled + totalConstructKilled;
+						PlayerPrefs.SetInt ("HighScore", highScore);
+
+						intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
+						intTotalEnemySurvived += intEnemySurvived;
+						PlayerPrefs.SetInt ("TotalEnemySurvived", intTotalEnemySurvived);
 						added = true;
 					}
 					theTextEnemyKill.text = "Enemy Killed: " + intEnemyKilled;
 
-					intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
-					if (!added2) {
-						totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
-
-						totalConstructKilled += intConstructKilled;
-						PlayerPrefs.SetInt ("TotalConstructDestroy", totalConstructKilled);
-						added2 = true;
-					}
 					theTextConstructKill.text = "Construct Destroyed: " + intConstructKilled;
 
-					highScore = totalEnemyKilled + totalConstructKilled;
-					PlayerPrefs.SetInt ("HighScore", highScore);
-
-					intEnemySurvived = levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
-					if (!added3) {
-						intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
-
-						intTotalEnemySurvived += intEnemySurvived;
-						PlayerPrefs.SetInt ("TotalEnemySurvived", intTotalEnemySurvived);
-						added3 = true;
-					}
 					theTextEnemySurvived.text = "Enemy Survived: " + intEnemySurvived;
 				}
 
@@ -93,33 +85,30 @@ public class LevelComplete : MonoBehaviour {
 					title.text = "GAME COMPLETE";
 
 					intEnemyKilled = PlayerPrefs.GetInt ("EnemyKilled");
+					intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
+					intEnemySurvived = levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
+
 					if (!added) {
 						totalEnemyKilled = PlayerPrefs.GetInt ("TotalEnemyKills");
 						totalEnemyKilled += intEnemyKilled;
 						PlayerPrefs.SetInt ("TotalEnemyKills", totalEnemyKilled);
+
+						totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
+						totalConstructKilled += intConstructKilled;
+						PlayerPrefs.SetInt ("TotalConstructDestroy", totalConstructKilled);
+
+						highScore = totalEnemyKilled + totalConstructKilled;
+						PlayerPrefs.SetInt ("HighScore", highScore);
+
+						intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
+						intTotalEnemySurvived += intEnemySurvived;
+						PlayerPrefs.SetInt ("TotalEnemySurvived", intTotalEnemySurvived);
 						added = true;
 					}
 					theTextEnemyKill.text = "Total Enemy Killed: " + totalEnemyKilled;
 
-					intConstructKilled = PlayerPrefs.GetInt ("ConstructionDestroyed");
-					if (!added2) {
-						totalConstructKilled = PlayerPrefs.GetInt ("TotalConstructDestroy");
-						totalConstructKilled += intConstructKilled;
-						PlayerPrefs.SetInt ("TotalConstructDestroy", totalConstructKilled);
-						added2 = true;
-					}
 					theTextConstructKill.text = "Total Construct Destroyed: " + totalConstructKilled;
 
-					highScore = totalEnemyKilled + totalConstructKilled;
-					PlayerPrefs.SetInt ("HighScore", highScore);
-
-					intEnemySurvived = levelManager.totalEnemies - intEnemyKilled - intConstructKilled;
-					if (!added3) {
-						intTotalEnemySurvived = PlayerPrefs.GetInt ("TotalEnemySurvived");
-						intTotalEnemySurvived += intEnemySurvived;
-						PlayerPrefs.SetInt ("TotalEnemySurvived", intTotalEnemySurvived);
-						added3 = true;
-					}
 					theTextEnemySurvived.text = "Total Enemy Survived: " + intTotalEnemySurvived;
 
 				}
