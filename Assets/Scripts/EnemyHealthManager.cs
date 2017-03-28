@@ -20,7 +20,9 @@ public class EnemyHealthManager : MonoBehaviour {
 	public int constructEnemyDead;
 	public bool isBoss;
 	private GunController disableRotate;
+	private bool isAdded;
 	void Start () {
+		isAdded = false;
 		firstScale = transform.lossyScale;
 		enemyHealth = enemyMaxHealth;
 		animator = GetComponent<Animator> ();
@@ -57,7 +59,8 @@ public class EnemyHealthManager : MonoBehaviour {
 				Destroy (parent.gameObject);
 				if (isConstructEnemy) {
 					if (enemyDeath == null) {
-						GetComponent<SpriteRenderer> ().sprite = deathSprite;
+						if (deathSprite!=null)
+							GetComponent<SpriteRenderer> ().sprite = deathSprite;
 					}
 					else {
 						Instantiate (enemyDeath, transform.position, enemyDeath.transform.rotation);
@@ -72,6 +75,11 @@ public class EnemyHealthManager : MonoBehaviour {
 				}
 				
 			} else {
+				if (!isAdded) {
+					enemyDead++;
+					isAdded = true;
+				}
+				PlayerPrefs.SetInt ("EnemyKilled", enemyDead);
 				if (disableRotate != null) {
 					disableRotate.gunCantRotate = true;
 				}
@@ -92,8 +100,7 @@ public class EnemyHealthManager : MonoBehaviour {
 				} else {
 					var parent = transform.parent;
 					Destroy (parent.gameObject);
-					enemyDead++;
-					PlayerPrefs.SetInt ("EnemyKilled", enemyDead);
+
 					clone = Instantiate (explosion, transform.position, transform.rotation);
 					clone.transform.localScale = new Vector3 (explosion.transform.localScale.x, explosion.transform.localScale.y, explosion.transform.localScale.z) * 2f;
 

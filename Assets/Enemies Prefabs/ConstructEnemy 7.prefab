@@ -232,7 +232,7 @@ MonoBehaviour:
   explosion: {fileID: 114467431320845386, guid: 3262adcef37fa0d479f1e1a501d7096c,
     type: 2}
   enemyDeath: {fileID: 1272717192393318, guid: b554c672f41b1f146b0a6b315a2e612d, type: 2}
-  isConstructEnemy: 0
+  isConstructEnemy: 1
   deathSprite: {fileID: 0}
   isFlying: 0
   angle: 5
@@ -256,6 +256,7 @@ MonoBehaviour:
   player: {fileID: 0}
   shootPoint: {fileID: 4369447553644390}
   shootDelay: 2
+  delayShootAtFirst: 0
   canShot: 0
   isSingleShot: 0
   isConstruct: 1
@@ -308,6 +309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theProgressBar: {fileID: 0}
+  eventPoint: {fileID: 0}
+  eventCompleteEnemy: {fileID: 0}
 --- !u!212 &212359277253733042
 SpriteRenderer:
   m_ObjectHideFlags: 1
