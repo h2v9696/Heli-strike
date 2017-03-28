@@ -58,7 +58,11 @@ public class PlayerController : MonoBehaviour {
 
 	//for audio when shooting
 	public AudioSource shootingSound;
-
+	//testing fix v2
+	public bool canMove;
+	Touch t;
+	int fingerIDMove;
+	bool touching = false;
 	void Awake()
 	{
 		instance = this;
@@ -69,7 +73,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		//for counting enemy kill
 
-
+		canMove = true;
 		isLiving = true;
 		firstScale = transform.lossyScale;
 		transform.position = new Vector3 (0, 0, 0);
@@ -103,11 +107,44 @@ public class PlayerController : MonoBehaviour {
 		}
 		if (isLiving && !isPausing ) 
 		{
-			Move ();
+			//Vector2 posCurrentTouch;
+			/*if (Input.touchCount <= 0) {
+				touching = false;
+				Move ();
+			} else {
+				if (!touching) {
+					touching = true;
+					fingerIDMove = Input.GetTouch(0).fingerId;
+				} else {
+					for (int i = 0; i < Input.touchCount; i++) {
+						t = Input.GetTouch (i);
+						if (t.fingerId == fingerIDMove)
+							break;
+					}
+					moveWithTouch (t.position);
+				}
+			}*/
+			if (Input.touchCount > 0) {
+				t = Input.GetTouch (0);
+				if (t.phase == TouchPhase.Began && Input.touchCount == 1) {
+					fingerIDMove = t.fingerId;
+				}
+				if (Input.touchCount > 1) {
+					int i = 0;
+					while (i < Input.touchCount) {
+						t = Input.GetTouch (i);
+						if (t.fingerId == fingerIDMove)
+							break;
+					}
+				}
+				if (fingerIDMove == t.fingerId) {
+					moveWithTouch (t.position);
+				}
+			} else 
+			{
+				Move ();
+			}
 
-
-
-		
 			if (Input.GetMouseButtonDown (0)) 
 			{
 				if (isFireBullet) 
@@ -249,6 +286,51 @@ public class PlayerController : MonoBehaviour {
 		pos.y = Mathf.Clamp (pos.y, min.y + 1f, max.y - 1f);
 		transform.position = pos;
 
+	}
+
+	void moveWithTouch (Vector3 target_2)
+	{
+		// lay toa do 2 goc tren duoi cua camera va toa do player
+
+		Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0,0));
+		Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1,0.9f));
+		Vector2 pos = transform.position;
+
+		//di chuyen bang chuot
+		target = Camera.main.ScreenToWorldPoint (target_2);
+		pos = Vector2.MoveTowards (transform.position, target, moveSpeed);
+
+		// dieu khien toc do di chuyen qua moi frame
+		if (distance > previousDistance) 
+		{
+			moveSpeed = maxMoveSpeed * distance * 0.5f;
+			if (moveSpeed > maxMoveSpeed * 2f) 
+			{
+				moveSpeed = maxMoveSpeed * 2f;
+			}
+
+		}
+		else if (distance < previousDistance) 
+		{
+			moveSpeed = maxMoveSpeed * distance * 0.2f ;
+			if (moveSpeed < maxMoveSpeed * 0.2f) 
+			{
+				moveSpeed = maxMoveSpeed * 0.2f;
+			}
+		}
+
+		previousDistance = distance;
+		distance = Vector2.Distance (target, (Vector2)transform.position);
+
+
+		//dieu khien vi tri cua bong
+		shadow.transform.position = new Vector2(transform.position.x - transform.position.x * 0.1f,transform.position.y - transform.position.y * 0.1f);
+
+		//gioi han vi tri di chuyen cua player
+
+		pos.x = Mathf.Clamp (pos.x,min.x + 1f ,max.x - 1f);
+		pos.y = Mathf.Clamp (pos.y, min.y + 1f, max.y - 1f);
+		transform.position = pos;
 	}
 
 	/*public void ShootMissile() {

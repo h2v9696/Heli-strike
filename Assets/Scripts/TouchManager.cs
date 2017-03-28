@@ -13,7 +13,5 @@ public class TouchManager : MonoBehaviour {
 	public void Shoot() {
 		player.shotMissile ();
 		player.numberMissile -= 1;
-		Debug.Log ("Shoot");
 	}
-
 }

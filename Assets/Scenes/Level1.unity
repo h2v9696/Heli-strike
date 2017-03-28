@@ -10454,22 +10454,22 @@ Prefab:
     - target: {fileID: 224488360647110478, guid: 7f419f23f80073747abca71535638354,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 34
+      value: 889
       objectReference: {fileID: 0}
     - target: {fileID: 224488360647110478, guid: 7f419f23f80073747abca71535638354,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -433
+      value: -308
       objectReference: {fileID: 0}
     - target: {fileID: 224488360647110478, guid: 7f419f23f80073747abca71535638354,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 167
+      value: 138
       objectReference: {fileID: 0}
     - target: {fileID: 224488360647110478, guid: 7f419f23f80073747abca71535638354,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 183
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 224488360647110478, guid: 7f419f23f80073747abca71535638354,
         type: 2}
@@ -11739,6 +11739,34 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 365537687}
           m_MethodName: Shoot
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 365537687}
+          m_MethodName: cannotMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 365537687}
+          m_MethodName: canMove
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
